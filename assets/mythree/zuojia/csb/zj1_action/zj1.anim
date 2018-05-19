@@ -1,0 +1,91 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "zj1",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.5,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "zuojia": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -47.0013,
+                59.9994
+              ]
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": [
+                -28.0013,
+                33.9993
+              ]
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": [
+                -6.0013,
+                3.9992
+              ]
+            },
+            {
+              "frame": 0.5,
+              "value": [
+                21.9981,
+                -13.001
+              ]
+            }
+          ],
+          "scaleX": [
+            {
+              "frame": 0,
+              "value": 0.2
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0.4
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 0.8
+            },
+            {
+              "frame": 0.5,
+              "value": 1
+            }
+          ],
+          "scaleY": [
+            {
+              "frame": 0,
+              "value": 0.2
+            },
+            {
+              "frame": 0.16666666666666666,
+              "value": 0.4
+            },
+            {
+              "frame": 0.3333333333333333,
+              "value": 0.8
+            },
+            {
+              "frame": 0.5,
+              "value": 1
+            }
+          ],
+          "rotation": [
+            {
+              "frame": 0,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

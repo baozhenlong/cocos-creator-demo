@@ -1,0 +1,30 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "left-to-right",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.8333333333333334,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "props": {},
+    "paths": {
+      "Label": {
+        "props": {
+          "x": [
+            {
+              "frame": 0,
+              "value": -550
+            },
+            {
+              "frame": 0.8333333333333334,
+              "value": 550
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

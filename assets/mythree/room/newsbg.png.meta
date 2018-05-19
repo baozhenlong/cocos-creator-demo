@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "b1d352a8-dfdf-4f0d-8a25-5589413b3530",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "newsbg": {
+      "ver": "1.0.3",
+      "uuid": "7c9f28b6-0158-458b-85c8-01a1f6084c4c",
+      "rawTextureUuid": "b1d352a8-dfdf-4f0d-8a25-5589413b3530",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 1,
+      "width": 580,
+      "height": 41,
+      "rawWidth": 580,
+      "rawHeight": 43,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

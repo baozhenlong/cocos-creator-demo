@@ -1,0 +1,41 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "Game_King",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 0.1,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "Panel_3/Sprite_45": {
+        "comps": {
+          "cc.Sprite": {
+            "spriteFrame": [
+              {
+                "frame": 0,
+                "value": {
+                  "__uuid__": "9827a5ba-f2b6-49ec-ac9a-a2dc66668814"
+                }
+              },
+              {
+                "frame": 0.05,
+                "value": {
+                  "__uuid__": "5dcd69a4-29cb-42d5-9438-bb1f96bc2412"
+                }
+              },
+              {
+                "frame": 0.1,
+                "value": {
+                  "__uuid__": "9827a5ba-f2b6-49ec-ac9a-a2dc66668814"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "events": []
+}

@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "7f12a489-df2b-47bd-97b9-79757ca7394d",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "bg_jindu_shaizi": {
+      "ver": "1.0.3",
+      "uuid": "74289751-b64c-4f11-b30e-4c39b40a7baf",
+      "rawTextureUuid": "7f12a489-df2b-47bd-97b9-79757ca7394d",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 318,
+      "height": 32,
+      "rawWidth": 319,
+      "rawHeight": 32,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

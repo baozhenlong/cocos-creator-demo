@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "22470b51-7b97-496d-a428-864c24f8cad2",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "title_zoushi_bairen": {
+      "ver": "1.0.3",
+      "uuid": "8e783e0e-796d-4c5c-b7c0-d6c640c73be0",
+      "rawTextureUuid": "22470b51-7b97-496d-a428-864c24f8cad2",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0.5,
+      "offsetY": -0.5,
+      "trimX": 4,
+      "trimY": 4,
+      "width": 448,
+      "height": 131,
+      "rawWidth": 455,
+      "rawHeight": 138,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

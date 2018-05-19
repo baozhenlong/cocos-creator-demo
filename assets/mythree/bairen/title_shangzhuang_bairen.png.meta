@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "00dfa408-0bd4-4a5c-ac9a-5b4eea564d4e",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "title_shangzhuang_bairen": {
+      "ver": "1.0.3",
+      "uuid": "eccfaaa1-fc86-4a9b-a160-7797834039ed",
+      "rawTextureUuid": "00dfa408-0bd4-4a5c-ac9a-5b4eea564d4e",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -0.5,
+      "offsetY": 1,
+      "trimX": 7,
+      "trimY": 4,
+      "width": 415,
+      "height": 102,
+      "rawWidth": 430,
+      "rawHeight": 112,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

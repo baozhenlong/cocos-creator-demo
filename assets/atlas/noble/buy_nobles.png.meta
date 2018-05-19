@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "buy_nobles": {
+      "ver": "1.0.3",
+      "uuid": "704dd65c-8eb8-4c96-83c6-ff5fae9b39c4",
+      "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 527,
+      "height": 947,
+      "rawWidth": 527,
+      "rawHeight": 947,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

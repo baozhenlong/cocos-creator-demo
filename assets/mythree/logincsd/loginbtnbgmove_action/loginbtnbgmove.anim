@@ -1,0 +1,89 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "loginbtnbgmove",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 2.1666666666666665,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "loginlight_1": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -440.0044,
+                80.8441
+              ]
+            },
+            {
+              "frame": 1.8333333333333333,
+              "value": [
+                442.6584,
+                82.1696
+              ]
+            },
+            {
+              "frame": 2.1666666666666665,
+              "value": [
+                540.7317,
+                82.1694
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 1.8333333333333333,
+              "value": 255
+            },
+            {
+              "frame": 2.1666666666666665,
+              "value": 0
+            }
+          ]
+        }
+      },
+      "loginlight_2": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                -439.2815,
+                -66.9884
+              ]
+            },
+            {
+              "frame": 1.8333333333333333,
+              "value": [
+                442.0549,
+                -78.2649
+              ]
+            },
+            {
+              "frame": 2.1666666666666665,
+              "value": [
+                544.1047,
+                -79.5902
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 1.8333333333333333,
+              "value": 255
+            },
+            {
+              "frame": 2.1666666666666665,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

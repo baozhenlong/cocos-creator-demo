@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "cadd85df-f31f-40e2-bb28-9ad5615bbafe",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "touxiang_ingame": {
+      "ver": "1.0.3",
+      "uuid": "f39ad5c0-7077-4c72-be4e-79c5d0c532b9",
+      "rawTextureUuid": "cadd85df-f31f-40e2-bb28-9ad5615bbafe",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 110,
+      "height": 110,
+      "rawWidth": 110,
+      "rawHeight": 110,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

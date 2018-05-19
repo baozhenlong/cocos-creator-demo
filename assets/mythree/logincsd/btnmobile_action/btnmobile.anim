@@ -1,0 +1,63 @@
+{
+  "__type__": "cc.AnimationClip",
+  "_name": "btnmobile",
+  "_objFlags": 0,
+  "_rawFiles": null,
+  "_duration": 1.6666666666666667,
+  "sample": 60,
+  "speed": 1,
+  "wrapMode": 1,
+  "curveData": {
+    "paths": {
+      "loginbtnlight_2": {
+        "props": {
+          "position": [
+            {
+              "frame": 0,
+              "value": [
+                70.6417,
+                73.2516
+              ]
+            },
+            {
+              "frame": 0.5,
+              "value": [
+                202.5387,
+                73.2513
+              ]
+            },
+            {
+              "frame": 0.75,
+              "value": [
+                238.0067,
+                74.3596
+              ]
+            },
+            {
+              "frame": 1.6666666666666667,
+              "value": [
+                238.0067,
+                74.3596
+              ]
+            }
+          ],
+          "opacity": [
+            {
+              "frame": 0.5,
+              "value": 255
+            },
+            {
+              "frame": 0.75,
+              "value": 0
+            },
+            {
+              "frame": 1.6666666666666667,
+              "value": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "events": []
+}

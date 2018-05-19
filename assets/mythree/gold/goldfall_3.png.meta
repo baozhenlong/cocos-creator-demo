@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "fe41dc61-fb4c-42d7-bc99-6a9f028c0e1a",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "goldfall_3": {
+      "ver": "1.0.3",
+      "uuid": "3403066e-9a42-40bc-a0dc-e37ca3407354",
+      "rawTextureUuid": "fe41dc61-fb4c-42d7-bc99-6a9f028c0e1a",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": -1,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 61,
+      "height": 70,
+      "rawWidth": 63,
+      "rawHeight": 70,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

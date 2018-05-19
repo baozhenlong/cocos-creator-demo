@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "81055b4b-f57b-4f58-b856-e544eed8d2dd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "bg_shuzi_diandang": {
+      "ver": "1.0.3",
+      "uuid": "ad461569-5bb2-45ca-b730-e9e5ce087458",
+      "rawTextureUuid": "81055b4b-f57b-4f58-b856-e544eed8d2dd",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 225,
+      "height": 44,
+      "rawWidth": 225,
+      "rawHeight": 44,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

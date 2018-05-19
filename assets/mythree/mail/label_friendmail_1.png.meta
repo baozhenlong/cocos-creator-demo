@@ -1,0 +1,30 @@
+{
+  "ver": "1.0.0",
+  "uuid": "030a22df-c835-4255-92b4-56fc7fa1becd",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "subMetas": {
+    "label_friendmail_1": {
+      "ver": "1.0.3",
+      "uuid": "6f21f550-48f4-4ba7-850a-32dc945e44b8",
+      "rawTextureUuid": "030a22df-c835-4255-92b4-56fc7fa1becd",
+      "trimType": "auto",
+      "trimThreshold": -1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 235,
+      "height": 98,
+      "rawWidth": 235,
+      "rawHeight": 98,
+      "borderTop": 11,
+      "borderBottom": 11,
+      "borderLeft": 15,
+      "borderRight": 15,
+      "subMetas": {}
+    }
+  }
+}
