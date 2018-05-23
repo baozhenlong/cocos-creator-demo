@@ -16,6 +16,15 @@ cc.Class({
             },
             isCleanup: true
         });
+    },
+
+    onJumpTipClicked: function() {
+        cc.vv.popupMgr.showPopup(constant.popupKeyObj.jumpTip, {}, [
+            'tip is tip tip tip tip',
+            function goFunc() {
+                console.log('execute go func');
+            }
+        ]);
     }
 
     // start () {

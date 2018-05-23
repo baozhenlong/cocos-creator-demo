@@ -49,13 +49,7 @@ cc.Class({
     },
 
     getCurDate: function() {
-        var date = new Date();
-        var year = date.getFullYear();
-        var month = date.getMonth() + 1;
-        var day1 = date.getDate();
-        var hour = date.getHours();
-        var minute = date.getMinutes();
-        var second = date.getSeconds();
+
     },
 
     getBagData: function() {
