@@ -56,7 +56,7 @@ cc.Class({
         //第一个参数path（String）---节点名字
         //第二个可选参数referenceNode（Node）---参考节点，在该节点下查找
         //第二个参数省略时，referenceNode = scene(当前场景，cc.director.getScene(),instanceof cc.Node == true)，将从场景根节点开始查找
-
+        //返回值---Node|null
 
         //常用节点和组件接口
 
