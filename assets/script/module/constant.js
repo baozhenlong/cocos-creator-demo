@@ -6,7 +6,8 @@ var constant = {
         bag: 'bag'
     },
     popupKeyObj: {
-        bag: 'bag'
+        bag: 'bag',
+        jumpTip: 'jump-tip'
     }
 };
 
