@@ -1,4 +1,4 @@
-var ToggleSup = require('toggle-sup');
+var ToggleSup = require('toggle-group-sup');
 cc.Class({
     extends: ToggleSup,
 

@@ -10,17 +10,17 @@ cc.Class({
     onLoad() {},
 
     registerTouchEvent: function() {
-        // console.log('------toggle-sup registerTouchEvent');
+        // console.log('------toggle-group-sup registerTouchEvent');
         this.node.on('touchend', this.touchHandle, this);
     },
 
     unregisterTouchEvent: function() {
-        // console.log('------toggle-sup unregisterTouchEvent');
+        // console.log('------toggle-group-sup unregisterTouchEvent');
         this.node.off('touchend', this.touchHandle, this);
     },
 
     touchHandle: function() {
-        console.log('------toggle-sup touchHandle');
+        console.log('------toggle-group-sup touchHandle');
         this.updateCheckMark(this.index);
     },
 
