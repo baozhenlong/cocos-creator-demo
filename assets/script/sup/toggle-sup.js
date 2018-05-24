@@ -1,5 +1,6 @@
+var ItemSup = require('item-sup');
 cc.Class({
-    extends: cc.Component,
+    extends: ItemSup,
 
     properties: {
         checkMarkNode: cc.Node,
@@ -9,13 +10,26 @@ cc.Class({
     onLoad() {},
 
     registerTouchEvent: function() {
-        // console.log('------sup registerTouchEvent');
+        // console.log('------toggle-sup registerTouchEvent');
         this.node.on('touchend', this.touchHandle, this);
     },
 
     unregisterTouchEvent: function() {
-        // console.log('------sup unregisterTouchEvent');
+        // console.log('------toggle-sup unregisterTouchEvent');
         this.node.off('touchend', this.touchHandle, this);
+    },
+
+    touchHandle: function() {
+        console.log('------toggle-sup touchHandle');
+        this.updateCheckMark(this.index);
+    },
+
+    updateCheckMark: function(index) {
+        console.log('------updateCheckMark index = ' + index);
+        var children = this.parentNode.children;
+        for (let i = 0; i < children.length; i++) {
+            children[i].getComponent('item-sup').setCheck(i === index);
+        }
     },
 
     setCheck: function(value) {

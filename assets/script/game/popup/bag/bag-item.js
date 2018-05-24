@@ -15,11 +15,13 @@ cc.Class({
         this.unregisterTouchEvent();
     },
 
-    init: function(bagUiJs, data, index) {
-        this.bagUiJs = bagUiJs;
-        this.data = data;
+    init: function(uiJs, parentNode, data, index) {
+        console.log('------bag-item init');
+        this._super(uiJs, parentNode, data, index);
         this.nameLb.string = data.name;
-        this.index = index;
+        if (index === 0) {
+            this.setCheck(true);
+        }
     },
 
     registerTouchEvent: function() {
@@ -30,10 +32,10 @@ cc.Class({
         this._super();
     },
 
-    touchHandle: function(event) {
-        // console.log('------sub touchHandle');
-        this.bagUiJs.updateCheckMark(this.index);
-        this.bagUiJs.updateDetailUi(this.data.name, this.data.detail, this.data.use);
+    touchHandle: function() {
+        console.log('------bag touchHandle');
+        this._super();
+        this.uiJs.updateDetailUi(this.data.name, this.data.detail, this.data.use);
     },
 
     // start () {

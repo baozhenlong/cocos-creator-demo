@@ -7,7 +7,7 @@ cc.Class({
         nameLb: cc.Label,
         detailLb: cc.Label,
         useNode: cc.Node,
-        bagItemPrefab: cc.Prefab
+        // bagItemPrefab: cc.Prefab
     },
 
     onLoad() {
@@ -66,25 +66,26 @@ cc.Class({
     },
 
     initUi: function() {
-        var self = this;
-        this.bagContentNode.removeAllChildren();
-        this.propList.forEach(function(ele, index) {
-            self.addBagItem(ele, index);
-        });
+        this.bagContentNode.getComponent('item-list-sup').init(this, this.propList);
+        // var self = this;
+        // this.bagContentNode.removeAllChildren();
+        // this.propList.forEach(function(ele, index) {
+        //     self.addBagItem(ele, index);
+        // });
     },
 
-    addBagItem: function(data, index) {
-        var item = cc.instantiate(this.bagItemPrefab);
-        item.getComponent('bag-item').init(this, data, index);
-        item.parent = this.bagContentNode;
-    },
+    // addBagItem: function(data, index) {
+    //     var item = cc.instantiate(this.bagItemPrefab);
+    //     item.getComponent('bag-item').init(this, data, index);
+    //     item.parent = this.bagContentNode;
+    // },
 
-    updateCheckMark: function(index) {
-        var children = this.bagContentNode.children;
-        for (let i = 0; i < children.length; i++) {
-            children[i].getComponent('bag-item').setCheck(i === index);
-        }
-    },
+    // updateCheckMark: function(index) {
+    //     var children = this.bagContentNode.children;
+    //     for (let i = 0; i < children.length; i++) {
+    //         children[i].getComponent('bag-item').setCheck(i === index);
+    //     }
+    // },
 
     updateDetailUi: function(name, detail, isVisible) {
         this.nameLb.string = name;
