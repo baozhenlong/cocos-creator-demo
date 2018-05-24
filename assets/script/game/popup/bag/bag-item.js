@@ -24,14 +24,6 @@ cc.Class({
         }
     },
 
-    registerTouchEvent: function() {
-        this._super();
-    },
-
-    unregisterTouchEvent: function() {
-        this._super();
-    },
-
     touchHandle: function() {
         console.log('------bag touchHandle');
         this._super();

@@ -31,13 +31,13 @@ cc.Class({
         console.log('node name = ' + this.node.name);
         //2---获得同一节点上指定类型的组件---node.getComponent(typeOrClassName)
         //参数typeOrClassName（Function | String）---构造函数或脚本的名称
-        //调用者可以是这个节点或这个节点上的任一组件
-        //传入构造函数
+        //匹配构造函数，返回相应的组件
+        //2.1---传入构造函数
         var lb = this.node.getComponent(cc.Label);
         var lb2 = this.getComponent(cc.Label); //实际上调用的是node.getComponent()
         console.log('lb string = ' + lb.string);
         console.log('lb2 string = ' + lb2.string);
-        //传入脚本名称
+        //2.2---传入脚本名称
         var js = lb.getComponent('node-and-component');
         console.log('js name = ' + js.name); //nodeAndComponent<node-and-component>
 

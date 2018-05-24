@@ -7,7 +7,8 @@ var constant = {
     },
     popupKeyObj: {
         bag: 'bag',
-        jumpTip: 'jump-tip'
+        jumpTip: 'jump-tip',
+        labelList: 'label-list'
     }
 };
 

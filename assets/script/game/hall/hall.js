@@ -25,6 +25,10 @@ cc.Class({
                 console.log('execute go func');
             }
         ]);
+    },
+
+    onLabelListClicked: function() {
+        cc.vv.popupMgr.showPopup(constant.popupKeyObj.labelList);
     }
 
     // start () {
