@@ -52,11 +52,35 @@ cc.Class({
         var child = this.node.getChildByName('child');
         console.log('child name = ' + child.name); //child
         //3---全局查找
-        //cc.find(path, referenceNode)
-        //第一个参数path（String）---节点名字
+        //cc.find(path, referenceNode)---按层次结构路径查找节点
+        //第一个参数path（String）---路径；通过使用'/'字符分割路径来遍历层次结构
         //第二个可选参数referenceNode（Node）---参考节点，在该节点下查找
         //第二个参数省略时，referenceNode = scene(当前场景，cc.director.getScene(),instanceof cc.Node == true)，将从场景根节点开始查找
         //返回值---Node|null
+        //---start
+        // var match = referenceNode;
+        // var startIndex = (path[0] !== '/') ? 0 : 1; // skip first '/'
+        // var nameList = path.split('/');
+        //parse path
+        // for (var n = startIndex; n < nameList.length; n++) {
+        //     var name = nameList[n];
+        //     var children = match._children;
+        //     match = null;
+        //     for (var t = 0, len = children.length; t < len; ++t) {
+        //         var subChild = children[t];
+        //         //判断子节点中是否有节点的名字 匹配 当前层次路径
+        //         if (subChild.name === name) {
+        //             //将匹配的节点赋值给math；从math的子节点开始 匹配 下个层次路径
+        //             match = subChild;
+        //             break;
+        //         }
+        //     }
+        //     if (!match) {
+        //         return null;
+        //     }
+        // }
+        // return match;
+        //---end
 
         //常用节点和组件接口
 
