@@ -1,5 +1,5 @@
 //创建Sprite节点
-var createSpriteNode = function(targetNode, nodeName, url) {
+var createSpriteNode = function (targetNode, nodeName, url) {
     var node = new cc.Node();
     var sp = node.addComponent(cc.Sprite);
     if (url instanceof cc.SpriteFrame) {
@@ -25,7 +25,7 @@ var createSpriteNode = function(targetNode, nodeName, url) {
 };
 
 //刷新sprtieFrame
-var refreshSpriteFrame = function(targetSprite, url) {
+var refreshSpriteFrame = function (targetSprite, url) {
     if (!targetSprite) {
         return;
     }
@@ -38,12 +38,7 @@ var refreshSpriteFrame = function(targetSprite, url) {
 };
 
 //红点提示
-var updateRedTip = function(targetNode, tipKey) {
-    //cc.find(path, referenceNode)
-    //参数path（String）---节点名
-    //参数referenceNode（Node）---参考节点，在该节点下查找（默认为cc.director.getScene(),instanceof cc.Node === true）
-    //返回值---Node|null
-
+var updateRedTip = function (targetNode, tipKey) {
     //初始化红点
     console.log('------updateRedTip targetNode.name = ' + targetNode.name);
     var redTip = cc.find('redTip', targetNode);
@@ -67,7 +62,7 @@ var updateRedTip = function(targetNode, tipKey) {
 };
 
 //加载远程资源和设备资源
-var load = function(targetSprite, url) {
+var load = function (targetSprite, url) {
     if (!url) {
         return;
     }
@@ -77,7 +72,7 @@ var load = function(targetSprite, url) {
     //远程url带图片后缀名---url = remoteUrl
     //远程url不带图片后缀名，此时必须指定远程图片文件的类型---url = {url: remoteUrl, type: 'png'}
     //url（absolutePath---设备资源）---绝对路径，url = absolutePath
-    cc.loader.load(url, function(err, res) {
+    cc.loader.load(url, function (err, res) {
         if (err) {
             console.log('------load error = ' + JSON.stringify(err));
             return;
@@ -88,7 +83,7 @@ var load = function(targetSprite, url) {
 };
 
 //加载项目资源
-var loadRes = function(targetNode, url, type) {
+var loadRes = function (targetNode, url, type) {
     if (!url || !targetNode) {
         return;
     }
@@ -97,7 +92,7 @@ var loadRes = function(targetNode, url, type) {
     //第一个参数url---路径（相对于resources的路径，并且路径结尾出不能包含文件扩展名）
     if (type === 'Prefab') {
         //加载Prefab
-        cc.loader.loadRes(url, function(err, prefab) {
+        cc.loader.loadRes(url, function (err, prefab) {
             if (err) {
                 console.log('------loadRes error = ' + JSON.stringify(err));
                 return;
@@ -108,7 +103,7 @@ var loadRes = function(targetNode, url, type) {
         });
     } else if (type === 'Clip') {
         //加载AnimationClip
-        cc.loader.loadRes(url, function(err, clip) {
+        cc.loader.loadRes(url, function (err, clip) {
             //addClip()
             //第一个参数clip（AnimationClip）---动画剪辑
             //第二个参数newName（String）---动画剪辑名称
@@ -122,7 +117,7 @@ var loadRes = function(targetNode, url, type) {
     } else if (type === 'SpriteAtlas') {
         //加载SpriteAtlas（图集）
         //指定第二个参数为资源的类型        
-        cc.loader.loadRes(url, cc.SpriteAtlas, function(err, atlas) {
+        cc.loader.loadRes(url, cc.SpriteAtlas, function (err, atlas) {
             if (err) {
                 console.log('------loadRes error = ' + JSON.stringify(err));
                 return;
@@ -134,7 +129,7 @@ var loadRes = function(targetNode, url, type) {
     } else if (type === 'SpriteFrame') {
         //加载独立的SpriteFrame
         //指定第二个参数为资源的类型---直接加载得到的类型为cc.Texture2D，指定参数后为cc.SpriteFrame   
-        cc.loader.loadRes(url, cc.SpriteFrame, function(err, spriteFrame) {
+        cc.loader.loadRes(url, cc.SpriteFrame, function (err, spriteFrame) {
             if (err) {
                 console.log('------loadRes error = ' + JSON.stringify(err));
                 return;

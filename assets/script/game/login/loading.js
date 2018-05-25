@@ -24,19 +24,17 @@ cc.Class({
         var subNodeJsBySub = this.subNode.getComponent('sub');
         console.log('subNodeJsBySub name = ' + subNodeJsBySup.name); //sub<sub>
         console.log('subNodeJsBySub name = ' + subNodeJsBySub.name); //sub<sub>
-        console.log('bool {} = ' + Boolean({}));
-        console.log('bool [] = ' + Boolean([]));
     },
 
-    onLeftClicked: function() {
+    onLeftClicked: function () {
         cc.vv.animMgr.playAnim('left-to-right', true);
     },
 
-    onBottomClicked: function() {
+    onBottomClicked: function () {
         cc.vv.animMgr.playAnim('bottom-to-top', true);
     },
 
-    getSeveralDecimalNum: function(num, decimal) {
+    getSeveralDecimalNum: function (num, decimal) {
         console.log('num = ' + num);
         var pow = Math.pow(10, decimal);
         var newNum = Math.round(num * pow) / pow;
@@ -44,8 +42,8 @@ cc.Class({
         return newNum;
     },
 
-    showLogin: function() {
-        this.preLoadSceneList(["hall"], function() {
+    showLogin: function () {
+        this.preLoadSceneList(["hall"], function () {
             //cc.director(sceneName, cb)---通过场景名进行加载场景，加载完之后自动切换运行新场景
             //参数sceneName（String）---场景名，不包含扩展名
             //可选参数cb（Function）---指定场景加载后的回调函数
@@ -54,15 +52,15 @@ cc.Class({
     },
 
     //预加载场景
-    preLoadSceneList: function(sceneList, cb) {
+    preLoadSceneList: function (sceneList, cb) {
         console.log("------loading preLoadSceneList");
         var len = sceneList.length;
         var count = 0;
-        sceneList.forEach(function(scene) {
+        sceneList.forEach(function (scene) {
             //cc.director.preloadScene(sceneName, cb)---预加载场景
             //参数sceneName（String）---场景名，不包含扩展名
             //可选参数cb（Function）---场景预加载后的回调函数
-            cc.director.preloadScene(scene, function() {
+            cc.director.preloadScene(scene, function () {
                 count++;
                 if (count == len && cb) {
                     console.log("------loading execute cb");
@@ -72,15 +70,15 @@ cc.Class({
         });
     },
 
-    showNobel: function() {
+    showNobel: function () {
         cc.director.loadScene("noble");
     },
 
-    onTestClicked: function() {
+    onTestClicked: function () {
 
     },
 
-    getTruncateStr: function(str, len) {
+    getTruncateStr: function (str, len) {
         ///<summary>获得字符串实际长度，中文2，英文1</summary>
         ///<param name="str">要获得长度的字符串</param>
         var realLength = 0,

@@ -5,9 +5,9 @@ cc.Class({
 
     },
 
-    onLoad() {
+    // onLoad() {
 
-    },
+    // },
 
     // start () {
 
