@@ -30,7 +30,7 @@ var Sub = cc.Class({
 
     //构造函数（Function）    
     //注意---不论子类是否有定义构造函数，子类实例化前，父类的构造函数都会被自动调用，再调用子类构造函数（存在时）
-    ctor: function() {
+    ctor: function () {
         console.log('sub');
     },
 
@@ -57,7 +57,7 @@ var Sub = cc.Class({
     //1---实例变量
     //this.xxx
     //2---实例方法
-    print: function() {
+    print: function () {
         console.log('this.name = ' + this.name); //ccclass<cc-class>---节点名<脚本名>
     },
     //3---静态成员（Object）
@@ -66,10 +66,10 @@ var Sub = cc.Class({
         //静态变量
         subName: 'subStatics',
         //静态方法
-        getName: function() {}
+        getName: function () {}
     },
 
-    onInstantiateClicked: function() {
+    onInstantiateClicked: function () {
         //继承
         //实例化---实例化时，父类构造函数会自动调用，再调用子构造函数
         var sub = new Sub(); //sup sub
@@ -91,7 +91,8 @@ var Sub = cc.Class({
     //重写
     //所有成员方法都是虚方法，子类方法可以直接重写父类方法
     //父类被重写的方法并不会被CCClass自动调用
-    printName: function() {
+    printName: function () {
+        //在调用方法时，总是先去找有没有子类扩展的方法，如果没有就去父类中找（层层递进）
         //调用被重写方法
         //1---使用CCClass封装的this._super()
         this._super(); //print name = sup
