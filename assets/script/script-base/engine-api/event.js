@@ -21,7 +21,7 @@ cc.Class({
         //第一个参数type（String）---事件类型（事件名）
         //第二个参数cb（Function）---回调函数（响应函数）
         //第三个函数target（Objcet）---响应函数的this对象
-        this.aNode.on('name', function(event) {
+        this.aNode.on('name', function (event) {
             console.log('a node');
             //event（cc.Event）---在事件监听回调中，收到的事件对象
             //stopPropagation()---停止冒泡阶段，事件将不会继续向父节点传递，当前节点的剩余监听器仍然会接收到事件
@@ -34,7 +34,7 @@ cc.Class({
             console.log('event data = ' + JSON.stringify(event.getUserData())); //{"msg":"hello","who":"dammon"}
         }, this);
         //或者
-        this.bNode.on('name', function(event) {
+        this.bNode.on('name', function (event) {
             console.log('b node');
         }.bind(this));
         //1.2---once---在监听函数响应后就会关闭监听事件
@@ -68,20 +68,20 @@ cc.Class({
         //系统事件
         //1---节点系统事件
         //1.1---使用枚举类型来注册事件的监听器
-        this.cNode.on(cc.Node.EventType.TOUCH_START, function(event) {
+        this.cNode.on(cc.Node.EventType.TOUCH_START, function (event) {
             console.log('use enum');
         }, this);
         //1.2---使用事件名来注册事件的监听器
-        this.cNode.on('touchstart', function(event) {
+        this.cNode.on('touchstart', function (event) {
             console.log('use name');
         }, this);
         //1.3---触摸事件
         //1.3.1---触摸事件类型
         //事件名---'touchstart'
         //事件触发的时机---当手指触点落在目标节点区域内时
-        this.touchNode.on(cc.Node.EventType.TOUCH_START, function(event) {
+        this.touchNode.on(cc.Node.EventType.TOUCH_START, function (event) {
             // console.log('touch start');
-            //API-event.touch（cc.Touch）---当前事件关联的触点对象
+            //API---event.touch（cc.Touch）---当前事件关联的触点对象
             var touch = event.touch;
             console.log("event.touch = " + JSON.stringify(touch));
             // event.touch = {
@@ -101,27 +101,43 @@ cc.Class({
             //     },
             //     "_startPointCaptured": true
             // }
-            //API---parentNode.convertTouchToNodeSpaceAR(cc.Touch)---把触点（cc.Touch）转换成节点坐标系中的位置，返回值基于节点坐标
+            //API---parentNode.convertTouchToNodeSpaceAR(cc.Touch)---转换一个cc.Touch（世界坐标）到一个局部坐标，返回值基于节点坐标（挂钩锚点）
+            // convertTouchToNodeSpaceAR (touch) {
+            //     return this.convertToNodeSpaceAR(touch.getLocation());
+            // },
             var nodePos = this.touchNode.convertTouchToNodeSpaceAR(touch);
+            var nodePosTemp = this.touchNode.convertTouchToNodeSpace(touch);
             console.log("nodePos = " + JSON.stringify(nodePos));
             // nodePos = {
             //     "x": 634.8799999999999,
             //     "y": 2.8799999999999955
             // }
+            console.log("nodePosTemp = " + JSON.stringify(nodePosTemp));
+            //API---event.getTouches()---获取触摸点的列表，触点对象的数组
+            var touchList = event.getTouches();
+            console.log('touch === touchList[0]' + (touch === touchList[0])); //true
+            //API---parentNode.convertToNodeSpaceAR(cc.Touch)---将一个点（Vec2）转换到局部（节点）坐标，返回值基于节点坐标（挂钩锚点）          
+            var nodePos2 = this.touchNode.convertToNodeSpaceAR(touchList[0].getLocation());
+            console.log("nodePos2 = " + JSON.stringify(nodePos2));
+            // nodePos2 = {
+            //     "x": 634.8799999999999,
+            //     "y": 2.8799999999999955
+            // }
+            console.log('nodePos.x === nodePos2' + (nodePos.x === nodePos2.x)); //true
         }, this);
         //事件名---'touchmove'
         //事件触发的时机---当手指在目标节点区域内移动时
-        this.touchNode.on(cc.Node.EventType.TOUCH_MOVE, function(event) {
+        this.touchNode.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
             // console.log('touch move');
         });
         //事件名---'touchend'
         //事件触发的时机---当手指在目标节点区域内，离开屏幕时
-        this.touchNode.on(cc.Node.EventType.TOUCH_END, function(event) {
+        this.touchNode.on(cc.Node.EventType.TOUCH_END, function (event) {
             // console.log('touch end');
         });
         //事件名---'touchcancel'
         //事件触发的时机---当手指在目标节点区域外，离开屏幕时
-        this.touchNode.on(cc.Node.EventType.TOUCH_CANCEL, function(event) {
+        this.touchNode.on(cc.Node.EventType.TOUCH_CANCEL, function (event) {
             // console.log('touch cancel');
         });
         //1.3.2---事件冒泡
@@ -141,7 +157,7 @@ cc.Class({
         // cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
     },
 
-    onKeyDown: function(event) {
+    onKeyDown: function (event) {
         switch (event.keyCode) {
             case cc.KEY.a:
                 console.log('press a key');
@@ -149,7 +165,7 @@ cc.Class({
         }
     },
 
-    onKeyUp: function(event) {
+    onKeyUp: function (event) {
         switch (event.keyCode) {
             case cc.KEY.a:
                 console.log('release a key');

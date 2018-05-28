@@ -14,6 +14,19 @@ cc.Class({
         var arrJoin = ['hi', 1, 'hello'];
         console.log('arrJoin.join() = ' + arrJoin.join()); //hi,1,hello
         console.log("arrJoin.join('|') = " + arrJoin.join('|')); //hi|1|hello
+
+        //2---Array.map(function(currentValue, index, arr), thisValue)---按照原始数组元素的顺序依次处理元素
+        //参数function（Function）---函数，数组中的每个元素都会执行这个函数
+        //函数参数currentValue---当前元素的值
+        //函数可选参数index---当前元素的索引值
+        //函数可选参数arr---当前元素属于的数组对象
+        //可选参数thisValue（Object）---作为该执行回调时使用，传递给函数，用作this的值；如果省略了thisValue，this的值为undefined
+        //返回值---一个新数组，数组中的元素为原始数组元素调用函数处理后的值
+        var arrMap = [1, 2, 3];
+        var arrMapTemp = arrMap.map(function (ele, index) {
+            return ++ele; //2,3,4
+        }, this);
+        console.log('arrMapTemp = ' + arrMapTemp);
     },
 
     // start () {
