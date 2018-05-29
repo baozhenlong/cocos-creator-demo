@@ -27,6 +27,53 @@ cc.Class({
             return ++ele; //2,3,4
         }, this);
         console.log('arrMapTemp = ' + arrMapTemp);
+
+        //3---push()和pop()使用数组提供的先进后出栈的功能
+        //3.1---Array.push(ele1, ele2, ..., eleX)---向数组的末尾添加一个或多个元素，并返回新的长度；直接修改原有的数组
+        //参数ele1---要添加到数组的第一个参数
+        //可选参数ele2，eleX---要添加到数组末尾的多个元素
+        //返回值---数组的新长度
+        var arrPush = [1];
+        arrPush.push(2);
+        console.log('arrPush = ' + arrPush); //1,2       
+        var pushLen = arrPush.push(3, 4, 5);
+        console.log('arrPush = ' + arrPush); //1,2,3,4,5
+        console.log('pushLen = ' + pushLen); //5
+        //3.2---Array.pop()---删除并返回数组的最后一个元素；直接修改原有的数组
+        //返回值---数组的最后一个元素
+        //如果数组是空的，那么pop()方法将不进行任何操作，返回undefined值 
+        var arrPop = [];
+        var popTempEle = arrPop.pop();
+        console.log('popTempEle = ' + popTempEle); //undefined
+        console.log('arrPop = ' + JSON.stringify(arrPop)); //[]
+        arrPop.push(1, 2, 3);
+        var popEle = arrPop.pop();
+        console.log('popEle = ' + popEle); //3
+        console.log('arrPop = ' + arrPop); //1,2
+
+        //---unshift()和shift()
+        //4.1---unshift(ele1, ele2, ..., eleX)---向数组的开头添加一个或多个元素，并返回新的长度；直接修改原有的数组
+        //参数ele1---要添加到数组的第一个参数
+        //可选参数ele2，eleX---要添加到数组开头的多个元素
+        //返回值---数组的新长度
+        //该方法把参数插入到数组的头部，并将已经存在的元素顺次的移到较高的下标处
+        var arrUnshift = [1];
+        arrUnshift.unshift(2);
+        console.log('arrUnshift = ' + arrUnshift); //2,1  
+        var unshiftLen = arrUnshift.unshift(3, 4);
+        console.log('arrUnshift = ' + arrUnshift); //3,4,2,1
+        console.log('unshiftLen = ' + unshiftLen); //4       
+        //4.2---Array.shift()---删除数组的第一个元素，并返回第一个元素的值；直接修改原有的数组
+        //返回值---数组原来的第一个元素的值
+        //如果数组是空的，那么shift()方法将不进行任何操作，返回undefined值
+        var arrShift = [];
+        var shiftTempEle = arrShift.shift();
+        console.log('shiftTempEle = ' + shiftTempEle); //undefined
+        console.log('arrShift = ' + JSON.stringify(arrShift)); //[]
+        arrShift.push(1, 2, 3);
+        var shiftEle = arrShift.shift();
+        console.log('shiftEle = ' + shiftEle); //1
+        console.log('arrShift = ' + arrShift); //2,3
     },
 
     // start () {

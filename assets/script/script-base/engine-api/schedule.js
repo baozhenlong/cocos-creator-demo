@@ -44,7 +44,7 @@ cc.Class({
     },
 
     onCancelAllSchedule: function () {
-        //4---取消这个组件的所有计时器
+        //4---取消这个组件的所有计时器---定制的回调函数，update回调函数；动作不收此方法影响
         this.unscheduleAllCallbacks();
     }
 

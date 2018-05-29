@@ -52,7 +52,7 @@ cc.Class({
         //3---获取对象池中存储的对象
         // createNode
         //4---将对象返回对象池
-        //onBack
+        //releaseNode
         //5---使用组件来处理回收和复用的事件（事件的注册和反注册）
         //在使用构造函数创建对象池时，指定组件脚本
         //get时，调用组件脚本的的reuse方法---get还以传入任意数量类型的参数
@@ -62,7 +62,7 @@ cc.Class({
         this.createNode(this.parentNode);
     },
 
-    createNode: function(parentNode) {
+    createNode: function (parentNode) {
         //get(params)---获取对象池中的对象，如果对象池没有可以对象，则返回空
         //可选参数params（Any）---可以传入任意数量类型的参数，这些参数会被原样原地给reuse方法
         //返回值（Node|null）
@@ -92,18 +92,18 @@ cc.Class({
         node.parent = parentNode; //将生成的节点加入节点树
     },
 
-    onKillClicked: function() {
+    onKillClicked: function () {
         var children = this.parentNode.children;
         if (children.length !== 0) {
-            this.onBack(children[0]);
+            this.releaseNode(children[0]);
         }
     },
 
-    onBack: function(node) {
+    releaseNode: function (node) {
         this.nodePool.put(node);
     },
 
-    clearNode: function() {
+    clearNode: function () {
         //clear()---销毁对象池中缓存的所有节点
         //---start
         // var count = this._pool.length;

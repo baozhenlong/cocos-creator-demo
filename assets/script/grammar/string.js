@@ -24,14 +24,10 @@ cc.Class({
         //没有设置howmany参数：整个字符串都会被分割，不考虑它的长度
         //返回值（Array）---一个字符串数组，该数组是用通过separator指定的边界处将字符串分割成子串创建的，返回的数组中子串不包括separator本身
         //提示---String.split('')---每个字符之间都会被分割
-        console.log('"12345".split("") = ' + '12345'.split(''));
-        //"12345".split("") = 1,2,3,4,5
-        console.log('"12345".split("", 3) = ' + '12345'.split('', 3));
-        //"12345".split("", 3) = 1,2,3
-        console.log('"2:3:4:5".split(":") = ' + ('2:3:4:5'.split(':')));
-        //"2:3:4:5".split(":") = 2,3,4,5
-        console.log('"|a|b|c".split("|") = ' + ('|a|b|c'.split('|')));
-        //"|a|b|c".split("|") = ,a,b,c
+        console.log('"12345".split("") = ' + '12345'.split('')); //1,2,3,4,5
+        console.log('"12345".split("", 3) = ' + '12345'.split('', 3)); //1,2,3
+        console.log('"2:3:4:5".split(":") = ' + ('2:3:4:5'.split(':'))); //2,3,4,5
+        console.log('"|a|b|c".split("|") = ' + ('|a|b|c'.split('|'))); // ,a,b,c
     },
 
     // start () {

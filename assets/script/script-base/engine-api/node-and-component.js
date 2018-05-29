@@ -125,6 +125,8 @@ cc.Class({
         //使用Sprite，Label这些基本的渲染组件时，修改颜色和不透明度的操作只能在节点的实例上进行
         //颜色---mySprite.node.color = cc.Color.RED;
         //不透明度---mySprite.node.opacity = 128;
+        //2.7---stopAllActions()---停止并且移除所有正在运行的动作列表
+        //this.node.stopAllActions();
 
         //3---常用组件接口
         //cc.Component是所有组件的基类，任何组件都包括如下的常用接口
