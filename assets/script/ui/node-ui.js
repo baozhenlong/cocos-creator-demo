@@ -14,7 +14,7 @@ cc.Class({
         this.updateVisibleUi();
     },
 
-    updateSelectedUi: function() {
+    updateSelectedUi: function () {
         if (this.targetSprite) {
             if (this.isSelected) {
                 if (this.selectedSpriteFrame) {
@@ -28,7 +28,7 @@ cc.Class({
         }
     },
 
-    updateVisibleUi: function() {
+    updateVisibleUi: function () {
         if (this.isVisible) {
             this.node.opacity = 255;
         } else {
@@ -36,7 +36,7 @@ cc.Class({
         }
     },
 
-    setSelected: function(value) {
+    setSelected: function (value) {
         if (this.isSelected === value) {
             return;
         }
@@ -44,14 +44,13 @@ cc.Class({
         this.updateSelectedUi();
     },
 
-    setVisible: function(value) {
+    setVisible: function (value) {
         if (this.isVisible === value) {
             return;
         }
         this.isVisible = value;
         this.updateVisibleUi();
     }
-
 
     // start () {
 

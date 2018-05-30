@@ -54,11 +54,11 @@ cc.Class({
 
     },
 
-    //进入桌子
+    //请求进入桌子
     joinTable: function () {
-        this._super();
-    },
 
+    },
+    //进入桌子
     joinTableResp: function (event) {
         var data = event.getUserData();
         var info = true;
@@ -71,9 +71,9 @@ cc.Class({
         }
     },
 
-    //准备
+    //请求准备
     onReadyClicked: function () {},
-
+    //准备
     readyResp: function (event) {
         var data = event.getUserData();
         this.setGameReady();
