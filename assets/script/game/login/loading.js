@@ -1,9 +1,5 @@
 var PopupMgr = require('popup-mgr');
 var AnimMgr = require('anim-mgr');
-//全局变量
-window.constant = require('constant');
-window.commonFunc = require('common-func');
-window.localStorageMgr = require('local-storage-mgr');
 cc.Class({
     extends: cc.Component,
 

@@ -1,3 +1,8 @@
+//全局变量
+window.constant = require('constant');
+window.commonFunc = require('common-func');
+window.localStorageMgr = require('local-storage-mgr');
+window.c2s = require('c2s');
 cc.Class({
     extends: cc.Component,
 
@@ -8,8 +13,7 @@ cc.Class({
 
 
     onLoad() {
-        console.log("------GameControl onLoad");
-
+        console.log('------game-control onLoad');
         //引擎同时只会运行一个场景，当切换场景时，默认会将场景内所有节点和其他实例销毁
         //如果需要用一个组件控制所有场景的加载，或在场景之间传递参数数据，就需要将该组件所在的节点标记为常驻节点
         //常驻节点---在场景切换时，不被自动销毁，常驻内存
@@ -24,21 +28,21 @@ cc.Class({
         //     console.log("execute confirmCb");
         // });
 
-        this.showHintBox("confirm", function() {
+        this.showHintBox("confirm", function () {
             console.log("execute confirmCb");
-        }, function() {
+        }, function () {
             console.log("execute cancelCb");
         });
 
-        console.log("game name = " + constant.gameName);
+        console.log('gameName = ' + constant.gameName);
     },
 
     //声明构造函数
-    ctor: function() {
-        console.log("------GameControl ctor");
+    ctor: function () {
+        console.log('------game-control ctor');
     },
 
-    showTip: function(tip) {
+    showTip: function (tip) {
         var scene = cc.director.getScene();
         var tipItem = cc.instantiate(this.tipPrefab);
         tipItem.parent = scene;
@@ -47,7 +51,7 @@ cc.Class({
         tipItem.getComponent("tip").init(tip);
     },
 
-    showHintBox: function(hint, confirmCb, cancelCb) {
+    showHintBox: function (hint, confirmCb, cancelCb) {
         this.hintBoxNode.getComponent("hint-box").init(hint, confirmCb, cancelCb);
     }
 
