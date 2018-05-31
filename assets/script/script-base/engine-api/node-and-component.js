@@ -171,33 +171,21 @@ cc.Class({
 
     //start()---会在组件第一次执行update之前触发
     //通常用于初始化一些中间状态的数据，这些数据可能在update时会发生变化，并且被频繁地enable和disable
-    start() {
-
-    },
+    start() {},
 
     //update()---当this.enabled = true时，每帧执行；在所有动画更新前执行
-    update(dt) {
-
-    },
+    update(dt) {},
 
     //lateUpdate()---在update执行之后才执行
-    lateUpdate(dt) {
-
-    },
+    lateUpdate(dt) {},
 
     //onEnable()---当组件的enabled属性从false变为true时，或者所在节点的active属性从false变为true时，会激活onEable回调
     //如果节点第一次被创建且enabled为true，则会在onLoad之后，start之前被调用
-    onEnable() {
-
-    },
+    onEnable() {},
 
     //onDisable()---当组件的enabled属性从true变为false时，或者所在节点的active属性从true变为false时，会激活onDisable回调
-    onDisable() {
-
-    },
+    onDisable() {},
 
     //onDestroy()---当组件或者所在节点调用了destroy()，则会调用onDestroy()回调，并在当帧结束时统一回收组件
-    onDestroy() {
-
-    }
+    onDestroy() {}
 });
