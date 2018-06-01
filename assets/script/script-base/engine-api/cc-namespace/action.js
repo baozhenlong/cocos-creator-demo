@@ -62,28 +62,47 @@ cc.Class({
         var seq = cc.sequence(finish1, delayTime, finish2, finish3);
         // var seq = cc.sequence([finish1, delayTime, finish2, finish3]);
         // this.actionNode.runAction(seq);
-        //3.3---cc.scaleTo(duration, sx, sy)---将节点大小缩放到指定的倍数
+        //3.3---cc.scaleTo(duration, sx, sy)---将节点大小缩放到目标倍数
+        //---cc.scaleBy(duration, sx, sy)---按目标倍数缩放节点大小
         //参数duration（Number）---动作持续时间
         //参数sx（Number）---scaleX
         //参数sy（Number）---scaleY，(sy != undefined) ? sy : sx
         // var scaleTo = cc.scaleTo(5, 1.5, 2).easing(cc.easeIn(3));
         // var scaleTo = cc.scaleTo(5, 1.5, 2).easing(cc.easeOut(3));
         var scaleTo = cc.scaleTo(5, 1.5, 2).easing(cc.easeInOut(3));
-        //3.4---rotateBy(duration, deltaAngleX, delaAngleY)---旋转指定的角度
+        //3.4---rotateBy(duration, deltaAngleX, delaAngleY)---旋转目标角度
+        //---rotateTo(duration, deltaAngleX, delaAngleY)---旋转到目标角度
         //参数duration（Number）---动作持续时间
         //参数deltaAngleX---旋转的x轴角度
         //参数deltaAngleY---旋转的y轴角度，(deltaAngleY != undefined) ? deltaAngleY : deltaAngleX
         //deltaAngleX === deltaAngleY时，是平面旋转
+        //返回值（ActionInterval）        
         var rotateBy = cc.rotateBy(5, 45);
         //3.5---bezierTo(t, c)---按贝塞尔曲线轨迹移动到目标位置
         //参数t（Number）---动作持续时间
         //参数c（[Vec2]）---贝塞尔曲线参考点
+        //返回值（ActionInterval）        
         var startPos = cc.p(0, 0);
         var endPos = cc.p(640, 320);
         var controlPos = cc.p(860, 480);
         var bezier = [startPos, controlPos, endPos];
         var bezierTo = cc.bezierTo(5, bezier);
         this.actionNode.runAction(cc.spawn(scaleTo, rotateBy, bezierTo));
+        //3.6---1---moveTo(duration, position)---移动到目标位置
+        //3.6---2---moveTo(duration, x, y)---移动到目标位置
+        //---moveBy()---移动目标距离
+        //参数duration（Number）---动作持续时间
+        //参数position（Vec2）---位置|距离
+        //参数x（Number）---x轴坐标
+        //参数y（Number）---x轴坐标
+        //返回值（ActionInterval）
+        //3.7---repeat(action, times)---有限次数重复一个动作   
+        //参数action（FiniteTimeAction）
+        //参数times（Number）---次数
+        //返回值（ActionInterval）
+        //3.8---repeatForever(action)---永远重复一个动作；不能被添加到cc.sequence或cc.spawn中 
+        //参数action（FiniteTimeAction）
+        //返回值（ActionInterval）    
 
         //4---cc.spawn(action|actionArray)---同步执行动作
         //参数action|actionArray（FiniteTimeAction|[FiniteTimeAction]）

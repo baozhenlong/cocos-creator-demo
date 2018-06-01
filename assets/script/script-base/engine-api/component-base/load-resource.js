@@ -10,6 +10,7 @@ cc.Class({
             type: cc.SpriteFrame
         },
         //2---Raw Asset---用URL字符串指代资源
+        //当要在引擎中使用Raw Asset，只要把URL传给引擎的API，引擎内部会自动加载这个URL对应的资源
         //cc.Texture2D，cc.AudioClip，cc.ParticleAsset等
         textureURL: {
             default: '',
@@ -22,11 +23,12 @@ cc.Class({
         var self = this;
         //动态加载---异步，需要在回调函数中获得载入的资源
         //所有需要通过脚本动态加载的资源，都必须放置在assets/resources文件夹下或它的子文件夹下
+
         //1---加载Asset
         //cc.loader.loadRes(path, type, cb)---一次只能加载单个Asset
-        //第一个参数path（String）---相对于resources的路径，结尾处不能包含后缀名（文件扩展名）
-        //第二个可选参数type（Function）---资源类型，查找重名资源或者获取"子资源"（如获取Texture2D生成的SpriteFrame）
-        //第三个参数cb（Function）---在回调函数中获得载入的资源
+        //参数path（String）---相对于resources的路径，结尾处不能包含后缀名（文件扩展名）
+        //可选参数type（Function）---资源类型，查找重名资源或者获取"子资源"（如获取Texture2D生成的SpriteFrame）
+        //参数cb（Function）---在回调函数中获得载入的资源
         //1.1---加载Prefab
         // cc.loader.loadRes('popup/cocosHead', function(err, prefab) {
         //     if (err) {
@@ -40,8 +42,8 @@ cc.Class({
         //1.2---加载AnimationClip
         // cc.loader.loadRes('url', function(err, clip) {
         //     //addClip(clip, newName)
-        //     //第一个参数clip（AnimationClip）---动画剪辑
-        //     //第二个参数newName（String）---动画剪辑名称
+        //     //参数clip（AnimationClip）---动画剪辑
+        //     //参数newName（String）---动画剪辑名称
         //     if (err) {
         //         console.log('loadRes AnimationClip err');
         //         return;
@@ -71,11 +73,16 @@ cc.Class({
         //     self.targetNode.getComponent(cc.Sprite).spriteFrame = spriteFrame;
         // });
         //1.5---资源释放
-        //cc.loader.releaseRes(path, type)
-        //第一个参数path---不带后缀名的资源路径
-        //第二个可选参数type---资源类型
-        //2---加载Raw Asset
-        cc.loader.loadRes('audio/allin', function(err, res) {
+        //1.5.1---cc.loader.releaseAsset(asset)---通过资源对象自身来释放资源
+        //参数asset（Asset）
+        // cc.loader.releaseAsset(spriteFrame);
+        //1.5.2---cc.loader.releaseRes(path, type)---释放通过loadRes加载的资源
+        //参数path---不带后缀名的资源路径
+        //可选参数type---资源类型
+        // cc.loader.releaseRes('popup/cocosHead', cc.Prefab);
+
+        //2---加载Raw Asset，从项目里
+        cc.loader.loadRes('audio/allin', function (err, res) {
             if (err) {
                 console.log('loadRes audio err');
                 return;
@@ -87,11 +94,10 @@ cc.Class({
         var realUrl = cc.url.raw('resources/texture/HelloWorld.png');
         this.targetNode.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(realUrl);
 
-        //3---加载远程和设备资源
-        //cc.loader.load(url, cb)
-        //第一个参数url---路径
-        //第二个参数cb（Function）---在回调函数中获得载入的资源
-        //2.1---使用url从远程服务器上加载
+        //3---加载远程和设备资源---cc.loader.load(url, cb)
+        //参数url---路径
+        //参数cb（Function）---在回调函数中获得载入的资源
+        //3.1---使用url从远程服务器上加载
         //remoteUrl---远程资源路径
         //远程url带图片后缀名---url = remoteUrl
         //远程url不带图片后缀名，此时必须指定远程图片文件的类型---url = {url: remoteUrl, type: 'png'}
@@ -104,7 +110,7 @@ cc.Class({
         //     console.log('Should load a texture from external url: ' + (res instanceof cc.Texture2D));
         //     self.targetSprite.spriteFrame = new cc.SpriteFrame(res);
         // });
-        //2.2---使用url从设备中加载
+        //3.2---使用url从设备中加载
         // absolutePath-- - 设备资源绝对路径，带后缀名
         // url = absolutePath
         // cc.loader.load('/data/baiduyun/a.png', function(err, res) {
@@ -119,7 +125,6 @@ cc.Class({
 
         //在加载完资源之后，所有的资源都会临时被缓存到cc.loader中，以避免重复加载资源时发送无意义的http请求
         //资源之间是相互依赖的---cc.loader会自动使用缓存中的资源，不会重复请求相同的资源
-        //
     },
 
 

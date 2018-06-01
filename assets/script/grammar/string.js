@@ -6,7 +6,7 @@ cc.Class({
     },
 
     onLoad() {
-        //1---String.replace(regexp/substr, replacement)---用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串
+        //---String.replace(regexp/substr, replacement)---用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串
         //参数regexp（RegExp）/substr（String）---规定要替换的模式的RegExp对象或子字符串
         //参数replacement（String）---一个字符串值；规定了替换文本或生成替换文本的函数
         //返回值（String）---一个新的字符串；是用replacement替换了regexp的第一次匹配或所有匹配之后得到的
@@ -17,7 +17,7 @@ cc.Class({
         console.log('"hi microsoft, hello microsoft".replace() = ' + ('hi microsoft, hello microsoft'.replace(/microsoft/g, 'cocos')));
         //"hi microsoft, hello microsoft".replace() = hi cocos, hello cocos
 
-        //2---String.split(separator, howmany)---把一个字符串分割成字符串数组
+        //---String.split(separator, howmany)---把一个字符串分割成字符串数组
         //参数separator（String）---字符串或正则表达式，从该参数指定的地方分割String
         //可选参数howmany（Number）---该参数可指定返回的数组的最大长度
         //设置了howmany参数：返回的子串不会多于这个参数指定的数组
