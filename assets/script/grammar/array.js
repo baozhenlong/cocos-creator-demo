@@ -127,6 +127,32 @@ cc.Class({
         console.log('arrIndexOf.indexOf(2, -1) = ' + arrIndexOf.indexOf(2, -1)); //-1
         console.log('arrIndexOf.indexOf(2, -3) = ' + arrIndexOf.indexOf(2, -3)); //0
         console.log('arrIndexOf.indexOf(2, -7) = ' + arrIndexOf.indexOf(2, -7)); //0
+
+        //---添加/删除数组元素
+        //1---delete---删除元素
+        var arr = [1, 2, 3, 4];
+        console.log('arr = ' + arr);
+        delete arr[0];
+        console.log('delete arr[0] === undefined' + (arr[0] === undefined)); //true
+        //2---Array.splice(index, howmany, item1, ..., itemX)---从数组中添加/删除项目，然后返回被删除的项目
+        //参数index---规定添加/删除项目的位置，使用负数可从数组结尾处规定位置
+        //参数howmany---要删除的项目数量；如果设置为0，则不会删除项目；
+        //可选参数item---向数组添加的新项目
+        //返回值---包含被删除项目的新数组，否则返回空数组
+        var arr = [1, 2, 3, 4];
+        //howmany设置为0，不会删除项目
+        var arrSplice = arr.splice(0, 0, 5);
+        console.log('arrSplice = ' + JSON.stringify(arrSplice)); //[]
+        console.log('arr = ' + arr); //5,1,2,3,4
+        arrSplice = arr.splice(1, 3, 8, 9);
+        console.log('arrSplice = ' + arrSplice); //1,2,3
+        console.log('arr = ' + arr); //5,8,9,4
+        //省略howmany和item，删除从index到原数组结尾的所有元素
+        arrSplice = arr.splice(1);
+        console.log('arrSplice = ' + arrSplice); //8,9,4
+        console.log('arr = ' + arr); //5
+
+
     },
 
     // start () {
