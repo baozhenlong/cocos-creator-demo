@@ -6,12 +6,36 @@ cc.Class({
     },
 
     onLoad() {
-        //---arguments对象---是一个对应于传递给函数的参数的类数组对象；只有length和索引属性
+        //---声明---使用function关键字来声明，后跟一组参数以及函数体
+        function functionName(arg0, arg1) {
+            console.log('execute function');
+        }
+
+        //---调用---函数名(参数)
+        var back = functionName(); //execute function
+
+        //---返回值---使用return;，没有则返回undefined
+        console.log('return = ' + back); //undefined
+
+        //---参数
+        //ECMAScript中没有函数签名的概念，因为其函数参数是以一个包含0个或多个值数组形式传递的，所以没有重载，后定义的函数会覆盖先定义的函数
+        //所有参数传递的都是值，不可能通过引用传递参数
+        //在函数体内可以通过arguments对象来访问参数
+        //arguments对象---是一个对应于传递给函数的参数的类数组对象；只有length和索引属性
         //描述---是所有（非箭头）函数中都可用的局部变量
-        this.testArguments(1, 2, 3);
+        //arguments里的值与对应命名参数的值保持同步，但它们的内存空间是独立的
+        //没有传递值的命名参数将自动被赋予undefined值
+        function testArguments(a, b) {
+            console.log('arguments = ' + JSON.stringify(arguments));
+            console.log('arguments[0] = ' + arguments[0]);
+            console.log('arguments["1"] = ' + arguments['1']);
+            console.log('arguments[2] = ' + arguments[2]);
+        }
+        testArguments(1, 2);
         //arguments = {"0":1,"1":2,"2":3}
         //arguments[0] = 1
-        //arguments["0"] = 1
+        //arguments["1"] = 2
+        //arguments[0] = undefined        
 
         //---apply()和call()
         //this---一般来说，总是指向调用某个方法的对象
@@ -45,12 +69,6 @@ cc.Class({
         //参数Function（函数指针）
         //参数this（Object）---函数运行的作用域，代替Function类里的this的对象
         //参数param...（参数列表）---参数列表，如param1,param2,param3...,作为参数传递给Function
-    },
-
-    testArguments: function (a, b, c) {
-        console.log('arguments = ' + JSON.stringify(arguments));
-        console.log('arguments[0] = ' + arguments[0]);
-        console.log('arguments["0"] = ' + arguments['0']);
     },
 
     testApply: function (param1, param2) {
