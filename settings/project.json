@@ -8,7 +8,23 @@
   },
   "collision-matrix": [
     [
+      false
+    ],
+    [
+      false,
       true
+    ],
+    [
+      false,
+      false,
+      false,
+      true
+    ],
+    [
+      false,
+      false,
+      true,
+      false
     ]
   ],
   "design-resolution-height": 720,
@@ -17,7 +33,10 @@
   "fit-height": true,
   "fit-width": true,
   "group-list": [
-    "default"
+    "default",
+    "collider",
+    "bullet",
+    "platform"
   ],
   "simulator-orientation": false,
   "simulator-resolution": {

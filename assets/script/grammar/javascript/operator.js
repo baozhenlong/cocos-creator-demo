@@ -10,9 +10,9 @@ cc.Class({
         //1---递增和递减操作符
         var num1 = 2;
         var num2 = 20;
-        console.log('前置---先执行--，++ ' + (--num1 + num2)); //21
+        console.log('前置---先执行--，++，后赋值 ' + (--num1 + num2)); //21
         var num1 = 2;
-        console.log('后置---后执行--，++ ' + (num1++ + num2)); //22
+        console.log('后置---先赋值，后执行--，++ ' + (num1++ + num2)); //22
         //2---一元加减操作符
         //-+（param）
         //如果param是非数值，会先对其进行Number()转换

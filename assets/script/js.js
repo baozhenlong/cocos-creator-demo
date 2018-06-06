@@ -9,9 +9,7 @@ cc.Class({
 
     // },
 
-    // start () {
+    // start() {},
 
-    // },
-
-    // update (dt) {},
+    // update (dt) {}
 });

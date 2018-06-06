@@ -1,3 +1,9 @@
+var directionType = cc.Enum({
+    TOP: 0,
+    BOTTOM: 1,
+    LEFT: 2,
+    RIGHT: 3
+});
 cc.Class({
     extends: cc.Component,
 
@@ -82,6 +88,12 @@ cc.Class({
         },
 
         _hideId: '_hideId',
+
+        //---使用自定义的类型
+        customType: {
+            default: directionType.LEFT,
+            type: directionType
+        }
     },
 
 

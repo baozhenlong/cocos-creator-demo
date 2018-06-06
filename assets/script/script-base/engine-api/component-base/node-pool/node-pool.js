@@ -86,7 +86,7 @@ cc.Class({
         //---end        
         let node = this.nodePool.get('param1', ' param2');
         //如果没有空闲对象，即对象池中备用对象不够时，用cc.instantiate重新创建
-        if (node) {
+        if (!node) {
             node = cc.instantiate(this.eg);
         }
         node.parent = parentNode; //将生成的节点加入节点树
