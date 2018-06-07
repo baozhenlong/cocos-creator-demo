@@ -17,7 +17,7 @@ cc.Class({
         //开启debug绘制---可显示碰撞组件的碰撞检测范围；默认是禁用的
         this.manager.enabledDebugDraw = true;
         //显示碰撞组件的包围盒
-        // manager.enabledDrawBoundingBox = true;
+        this.manager.enabledDrawBoundingBox = true;
     },
 
     onDisable: function () {
