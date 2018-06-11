@@ -6,13 +6,17 @@ cc.Class({
     },
 
     onLoad() {
+        //---简介
+        //每个函数都是Function类型的实例；与其它引用类型一样，具有属性和方法
+        //函数是对象，函数名是一个指向函数对象的指针，
+
         //---定义函数的2种方式
-        //1---函数声明（需要名字）---使用function关键字来声明，后跟一组参数以及函数体
+        //1---使用函数声明语法定义（需要名字）---使用function关键字来声明，后跟一组参数以及函数体
         //重要特征---函数声明提升：在执行代码之前会先读取函数声明；这意味着可以把函数声明放在调用它的语句后面
         function functionName(arg0, arg1) {
             console.log('execute function');
         }
-        //2---函数表达式（名字可选）---创建没有名字的函数叫做匿名函数，也叫拉姆达函数
+        //2---使用函数表达式定义（名字可选）---创建没有名字的函数叫做匿名函数，也叫拉姆达函数
         var anonymityFunc = function () {};
         //定义一个匿名函数，并立即执行该匿名函数
         (function () {
@@ -23,17 +27,31 @@ cc.Class({
         })(1); //()---可选
         console.log('num = ' + num); //1
 
-        //---调用---函数名(参数)
+        //---函数名---仅仅是指向函数的指针
+        function print() {
+            console.log('print');
+        }
+        print(); //print
+        var anotherPrint = print;
+        anotherPrint(); //print
+        print = null;
+        //报错---此时print不再是函数---print();
+        anotherPrint(); //print
+
+        //---没有重载---声明同名函数，后面的函数会覆盖前面的函数
+
+        //---调用---使用圆括号()
         var back = functionName(); //execute function
 
         //---返回值---使用return;，没有则返回undefined
         console.log('return = ' + back); //undefined
 
-        //---参数
+        //---函数内部属性
+        console.log('\n------函数内部属性');
         //ECMAScript中没有函数签名的概念，因为其函数参数是以一个包含0个或多个值数组形式传递的，所以没有重载，后定义的函数会覆盖先定义的函数
         //所有参数传递的都是值，不可能通过引用传递参数
         //在函数体内可以通过arguments对象来访问参数
-        //arguments对象---是一个对应于传递给函数的参数的类数组对象；只有length和索引属性
+        //1---arguments对象---是一个对应于传递给函数的参数的类数组对象；只有length和索引属性
         //描述---是所有（非箭头）函数中都可用的局部变量
         //arguments里的值与对应命名参数的值保持同步，但它们的内存空间是独立的
         //没有传递值的命名参数将自动被赋予undefined值
@@ -47,13 +65,24 @@ cc.Class({
         //arguments = {"0":1,"1":2}
         //arguments[0] = 1
         //arguments["1"] = 2
-        //arguments[0] = undefined        
+        //arguments[0] = undefined     
 
-        //---apply()和call()
+        //---函数属性和方法
+        console.log('\n------函数属性和方法');
+        //1---属性
+        //1.1---length---表示函数希望接收的命名参数的个数
+        //0个命名参数
+        function test0() {}
+        console.log(test0.length); //0
+        //2个命名参数
+        function test2(a, b) {}
+        console.log(test2.length); //2
+        //1.2---prototype---原型属性：保存所有实例方法的所在
+        //2---方法（非继承而来）pply()和call()
         //this---一般来说，总是指向调用某个方法的对象
         //使用apply()和call()方法，可以改变this的指向
         //作用---在特定的作用域中调用函数，等于设置函数体内this对象的值，以扩充函数赖以运行的作用域
-        //1---Function.apply(this, args|arguments)
+        //2.1---Function.apply(this, args|arguments)
         //参数Function（函数指针）
         //参数this（Object）---函数运行的作用域，代替Function类里的this的对象
         //参数args（Array）|arguments（Object）---参数数组|arguments对象，作为参数传递给Function
@@ -88,12 +117,14 @@ cc.Class({
         //param1 = [1,2,3]
         //param2 = 4        
         //print arguments = {"0":[1,2,3],"1":4}
-        //2---Function.call(this, param...)
+        //2.2---Function.call(this, param...)
         //参数Function（函数指针）
         //参数this（Object）---函数运行的作用域，代替Function类里的this的对象
         //参数param...（参数列表）---参数列表，如param1,param2,param3...,作为参数传递给Function
+        //2.3---Function.bind()
 
         //---使用函数实现递归
+        console.log('\n------使用函数实现递归');
         //递归函数---一个函数通过名字调用自身
         function factorial(num) {
             if (num < 1) {
@@ -105,7 +136,7 @@ cc.Class({
         console.log('3! = ' + factorial(3)); //6
         var anotherFactorial = factorial;
         factorial = null; //此时factorial已经不是一个函数了
-        //报错---console.log(anotherFactorial(3));//实际调用的是factorial(3)
+        //报错---console.log(anotherFactorial(3));//return里的factorial()不再是函数了
         //解决方式---使用命名函数表达式
         var factorial = function f(num) {
             if (num < 1) {
@@ -119,6 +150,7 @@ cc.Class({
         console.log(anotherFactorial(3)); // 6
 
         //---闭包---有权访问另一个函数作用域中的变量的函数
+        console.log('\n------闭包');
         //1---创建闭包的常见方式---在一个函数内部创建另一个函数
         //在后台执行环境中，闭包的作用域链包含着它自己的作用域，外部函数的作用，全局作用域
         //通常，函数的作用域及其所有变量都会在函数执行结束后被销毁
@@ -181,9 +213,6 @@ cc.Class({
         for (let i = 0; i < funcs.length; i++) {
             console.log(funcs[i]()); //3,3,3
         }
-
-
-
 
     },
 
