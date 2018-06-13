@@ -9,6 +9,7 @@ cc.Class({
         //---创建对象
 
         //1---工厂模式---一种设计模式，抽象了创建具体对象的过程
+        //使用简单的函数创建对象，为对象添加属性和方法，然后返回对象
         //解决了创建多个相似对象的问题，但没有解决对象的识别问题（即怎样知道一个对象的类型）
         function createPerson(name, age) {
             var o = new Object();
@@ -23,6 +24,7 @@ cc.Class({
         person.sayName(); //damon
 
         //2---构造函数模式---ECMAScript中的构造函数可用来创建特定类型的对象
+        //缺点---每个成员无法得到复用，包括函数
         //开发人员可以创建自定义的构造函数，从而定义自定义对象类型的属性和方法
         //没有显式地创建对象，直接将属性和方法赋给了this对象
         //没有return语句，默认返回新对象实例
@@ -56,7 +58,7 @@ cc.Class({
         var anotherPerson = new Person('damon', 26);
         console.log(person.sayName === anotherPerson.sayName); //false
 
-        //3---原型模式
+        //3---原型模式---使用构造函数的prototype属性来指定那些应该共享的属性和方法
         //3.1---理解原型对象
         //3.1.1---构造函数.prototype---指向原型对象的指针
         //只要创建了一个新函数，就会根据一组特定的规则为该函数创建一个原型属性：prototype
