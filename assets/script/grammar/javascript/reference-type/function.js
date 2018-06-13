@@ -67,8 +67,8 @@ cc.Class({
         //arguments["1"] = 2
         //arguments[0] = undefined     
 
-        //---函数属性和方法
         console.log('\n------函数属性和方法');
+        //---函数属性和方法
         //1---属性
         //1.1---length---表示函数希望接收的命名参数的个数
         //0个命名参数
@@ -123,8 +123,8 @@ cc.Class({
         //参数param...（参数列表）---参数列表，如param1,param2,param3...,作为参数传递给Function
         //2.3---Function.bind()
 
-        //---使用函数实现递归
         console.log('\n------使用函数实现递归');
+        //---使用函数实现递归
         //递归函数---一个函数通过名字调用自身
         function factorial(num) {
             if (num < 1) {
@@ -149,8 +149,8 @@ cc.Class({
         factorial = null;
         console.log(anotherFactorial(3)); // 6
 
-        //---闭包---有权访问另一个函数作用域中的变量的函数
         console.log('\n------闭包');
+        //---闭包---有权访问另一个函数作用域中的变量的函数
         //1---创建闭包的常见方式---在一个函数内部创建另一个函数
         //在后台执行环境中，闭包的作用域链包含着它自己的作用域，外部函数的作用，全局作用域
         //通常，函数的作用域及其所有变量都会在函数执行结束后被销毁
@@ -214,6 +214,144 @@ cc.Class({
             console.log(funcs[i]()); //3,3,3
         }
 
+        console.log('\n------私有变量');
+        //---私有变量---任何在函数中定义的变量，都可以认为是私有变量，因为不能在函数的外部访问这些变量
+        //特权方法---有权访问私有变量和私有函数的公有方法
+        //严格来说，JavaScript中没有私有成员的概念，所有对象属性都是公有的
+        //但可以使用闭包来实现公有方法，而通过公有方法可以访问在包含作用域中定义的变量
+        //包括：函数的参数，局部变量，在函数内部定义的其他函数
+        //1---实现自定义类型的特权方法
+        //1.1---在构造函数中定义特权方法
+        function MyObject(name) {
+            //私有变量
+            var privateVariable = 10;
+            //私有函数
+            function privateFunction() {
+                return false;
+            }
+            //特权方法
+            this.publicMethod = function () {
+                privateVariable++;
+                return privateFunction();
+            };
+            this.setName = function (value) {
+                name = value;
+            };
+            this.getName = function () {
+                return name;
+            }
+            //利用特权方法可以隐藏那些不应该被直接修改的数据
+            //私有变量name在每个实例中都不相同，因为每次调用构造函数都会重新创建这2个方法
+        }
+        var myObject1 = new MyObject('damon');
+        var myObject2 = new MyObject('stefan');
+        console.log(myObject1.getName()); //damon
+        console.log(myObject2.getName()); //stefan
+        //缺点---必须使用构造函数模式来达到这个目的；构造函数模式的缺点是针对每个实例都会创建同样一组新方法
+        //1.2---使用原型模式定义特权方法---在私有作用域中定义私有变量或函数
+        //创建一个私有作用域
+        (function () {
+            //私有变量
+            var name = '';
+            var privateVariable = 10;
+            //私有函数
+            function privateFunction() {
+                return false;
+            }
+            //构造函数
+            var OtherObject = function (value) {
+                name = value;
+            }
+            //特权方法
+            OtherObject.prototype.publicMethod = function () {
+                privateVariable++;
+                return privateFunction();
+            };
+            OtherObject.prototype.getName = function () {
+                return name;
+            };
+            OtherObject.prototype.setName = function (value) {
+                name = value;
+            };
+            var other1 = new OtherObject('damon');
+            console.log(other1.getName()); //damon
+            var other2 = new OtherObject('stefan');
+            console.log(other1.getName()); //stefan
+            other1.setName('nicholas');
+            console.log(other2.getName()); //nicholas
+            //这个模式与在构造函数中定义特权方法的区别---私有变量和函数是由实例共享的
+            //name是一个静态的、由所有实例共享的属性
+        })();
+        //2---实现单例的特权方法
+        //单例---只有一个实例的对象
+        //按照惯例，JavaScript是以对象字面量的方式来创建单例对象的
+        var singleton = {
+            name: 'name',
+            method: function () {}
+        };
+        //2.1---模块模式
+        //适合需要对单例进行某些初始化，同时又需要维护其私有变量
+        var application = (function () {
+            //私有变量和函数
+            var components = new Array();
+            //初始化
+            components.push({
+                name: 'one'
+            });
+            //公共
+            return {
+                printComponents: function () {
+                    console.log(JSON.stringify(components));
+                },
+                getComponentCount: function () {
+                    return components.length;
+                },
+                registerComponent: function (component) {
+                    if (typeof component === 'object') {
+                        components.push(component);
+                    }
+                }
+            }
+        })();
+        application.printComponents(); //[{"name":"one"}]
+        application.registerComponent({
+            name: 'two'
+        });
+        application.printComponents(); //[{"name":"one"},{"name":"two"}]
+        //2.2---增强的模块模式---在返回之前加入对齐增强的代码
+        //适合那些单例必须是某种类型的实例，同时还必须添加某些属性和方法对其加以增强的情况
+        function CustomType() {
+            console.log('CustomType');
+        }
+        var app = (function () {
+            //私有变量和函数
+            var components = new Array();
+            //初始化
+            components.push({
+                name: 'one'
+            });
+            //创建对象
+            var obj = new CustomType(); //CustomType
+            //添加特权属性和方法
+            obj.printComponents = function () {
+                console.log(JSON.stringify(components));
+            };
+            obj.getComponentCount = function () {
+                return components.length;
+            };
+            obj.registerComponent = function (component) {
+                if (typeof component === 'object') {
+                    components.push(component);
+                }
+            };
+            //返回这个对象
+            return obj;
+        })();
+        app.printComponents(); //[{"name":"one"}]
+        app.registerComponent({
+            name: 'two'
+        });
+        app.printComponents(); //[{"name":"one"},{"name":"two"}]
     },
 
     // start () {
