@@ -3,6 +3,8 @@ window.constant = require('constant');
 window.commonFunc = require('common-func');
 window.localStorageMgr = require('local-storage-mgr');
 window.c2s = require('c2s');
+var PlayerData = require('player-data');
+var ServerData = require('server-data');
 cc.Class({
     extends: cc.Component,
 
@@ -35,11 +37,23 @@ cc.Class({
         });
 
         console.log('gameName = ' + constant.gameName);
+
+
     },
 
     //声明构造函数
     ctor: function () {
         console.log('------game-control ctor');
+        this.playerDataJs = new PlayerData();
+        this.serverDataJs = new ServerData();
+    },
+
+    //服务器消息接口
+    onSeverMsg: function (route, msg) {
+        //参数route---协议
+        //msg---消息
+        //存储数据
+        this.playerDataJs.storeMsg(route, msg);
     },
 
     showTip: function (tip) {
@@ -53,7 +67,7 @@ cc.Class({
 
     showHintBox: function (hint, confirmCb, cancelCb) {
         this.hintBoxNode.getComponent("hint-box").init(hint, confirmCb, cancelCb);
-    }
+    },
 
     // start () {
 

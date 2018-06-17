@@ -43,6 +43,8 @@ cc.Class({
         //assets/project.manifest：游戏的本地 Manifest 文件中的 packageUrl、remoteManifestUrl 和 remoteVersionUrl
         //remote-assets/project.manifest：远程包的 Manifest 文件中的 packageUrl、remoteManifestUrl 和 remoteVersionUrl
         //remote-assets/version.manifest：远程包的 Version 文件中的 packageUrl、remoteManifestUrl 和 remoteVersionUrl
+
+
     },
 
     // start () {
