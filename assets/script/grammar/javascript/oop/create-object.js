@@ -97,14 +97,15 @@ cc.Class({
         console.log(student2.name); //damon---来自原型
         delete student1.name;
         console.log(student1.name); //damon---来自原型
-        //3.1.7---检测属性---obj.hasOwnProperty(propertyName)---可以检测一个属性是存在实例中，还是存在于原型中
+        //3.1.7---检测属性---obj.hasOwnProperty(propertyName)
+        //作用---检测给定的名字是否是对象的自由属性，如果是继承属性则返回false
         //参数propertyName---给定的属性名
         //返回值---只在给定属性存在于对象实例中时，才返回true；否则返回false
         student1.name = 'stefan';
         console.log(student1.hasOwnProperty('name')); //true---实例中有name属性
         console.log(student2.hasOwnProperty('name')); //false---name属性存在于原型
         //3.2---原型与in操作符
-        //3.2.1---单独使用in---in操作符会在通过对象访问给定属性时，返回true；无论该属性存在于实例还是原型中
+        //3.2.1---单独使用in---in操作符会在通过对象访问给定属性时，返回true；无论该属性存在于实例（自由属性）还是原型（继承属性）中
         console.log('name' in student1); //true
         console.log('name' in student2); //true
         //同时使用in操作符和hasOwnProperty()方法，就可以确定属性是存在于对象中，还是原型中

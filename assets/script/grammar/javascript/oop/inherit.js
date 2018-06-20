@@ -57,11 +57,16 @@ cc.Class({
         //所有函数的默认原型都是Object，因此默认原型都会包含一个内部指针，指向Object.prototype
         //4---确定原型和实例的关系
         //4.1---obj instanceof constructor---用这个操作符来检测一个实例是否属于某种类型
+        //作用---判断一个对象是否是一个类的实例（包含对父类的检测）
         //由于原型链的关系，instance是Object，SuperType，SubType中任何一个类型的实例
         console.log(instance instanceof Object); //true
         console.log(instance instanceof SuperType); //true
         console.log(instance instanceof SubType); //true
         //4.2---obj.prototype.isPrototypeOf(obj)---只要原型链中出现过的原型，都可以说是该原型链所派生的实例的原型，返回true
+        //作用---检测一个对象是否是另一个对象的原型
+        //通过Object.create()创建的对象使用第一个参数作为原型
+        //通过{}对象直接量创建的对象使用Object.prototype作为原型
+        //通过new创建的对象使用构造函数的prototype属性作为原型
         console.log(Object.prototype.isPrototypeOf(instance)); //true
         console.log(SuperType.prototype.isPrototypeOf(instance)); //true
         console.log(SuperType.prototype.isPrototypeOf(instance)); //true
