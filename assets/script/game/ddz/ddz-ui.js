@@ -61,7 +61,23 @@ cc.Class({
         this.endHandle();
     },
     //游戏结束处理
-    endHandle: function () {}
+    endHandle: function () {},
+
+    //座位
+    getIndexBySeatId: function (seatId, ownSeatId) {
+        var index = 0;
+        if (seatId == ownSeatId) {
+            index = 1;
+        } else {
+            var diff = seatId - ownSeatId;
+            if (diff === 1 || diff === -2) {
+                index = 2;
+            } else {
+                index = 0;
+            }
+        }
+        return index;
+    }
 
     // start () {
 
