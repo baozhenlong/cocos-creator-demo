@@ -5,16 +5,16 @@ cc.Class({
 
     },
 
-    ctor: function() {
+    ctor: function () {
         console.log('------anim-mgr ctor');
         this.animCacheObj = {};
     },
 
-    getAnim: function(animName) {
+    getAnim: function (animName) {
         return this.animCacheObj[animName];
     },
 
-    animHandle: function(animName, animNode) {
+    animHandle: function (animName, animNode) {
         if (this.animCacheObj.hasOwnProperty(animName)) {
             console.log('------anim-mgr animHandle has');
         } else {
@@ -23,7 +23,7 @@ cc.Class({
         }
     },
 
-    releaseAnim: function(animName, animNode) {
+    releaseAnim: function (animName, animNode) {
         console.log('------anim-mgr releaseAnim');
         if (!this.animCacheObj[animName]) {
             delete this.animCacheObj[animName];
@@ -33,7 +33,7 @@ cc.Class({
         }
     },
 
-    playAnim: function(animName, isStopCurAnim = false) {
+    playAnim: function (animName, isStopCurAnim = false) {
         console.log('------anim-mgr playAnim');
         var animNode = this.getAnim(animName);
         if (isStopCurAnim) {
@@ -50,10 +50,10 @@ cc.Class({
         this.createAnim(animName, animNode);
     },
 
-    createAnim: function(animName, animNode) {
+    createAnim: function (animName, animNode) {
         console.log('------anim-mgr createAnim');
         var self = this;
-        cc.loader.loadRes('anim/' + animName, function(err, res) {
+        cc.loader.loadRes('anim/' + animName, function (err, res) {
             if (err) {
                 console.log('------anim-mgr createAnim err');
                 return;
@@ -65,7 +65,7 @@ cc.Class({
         });
     },
 
-    playHandle: function(animName, animNode) {
+    playHandle: function (animName, animNode) {
         console.log('------anim-mgr playHandle')
         this.animHandle(animName, animNode);
         var parent = cc.director.getScene().getChildByName('Canvas');
@@ -76,12 +76,11 @@ cc.Class({
         this.curAnim.play(animClips[0].name);
     },
 
-    onStop: function() {
-        console.log('------anim-mgr onStop this.name = ' + this.name);
+    onStop: function () {
         this.parent = null;
     },
 
-    stopCurAnim: function() {
+    stopCurAnim: function () {
         console.log('------anim-mgr stopCurAnim this.curAnim = ' + this.curAnim);
         if (this.curAnim) {
             this.curAnim.stop();
