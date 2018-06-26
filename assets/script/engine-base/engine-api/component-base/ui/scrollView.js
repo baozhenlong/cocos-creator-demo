@@ -69,7 +69,7 @@ cc.Class({
     onScrollEvent: function (sender, event) {
         console.log('this.name = ' + this.name); //scrollView<scrollView>---节点名<组件名>
         //---sender
-        //ScrollView组件
+        //ScrollView组件对象实例
         console.log('sender.name = ' + sender.name); //SV<ScrollView>---节点名<组件名>
         console.log('sender.brake = ' + sender.brake);
         switch (event) {

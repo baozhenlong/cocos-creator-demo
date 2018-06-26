@@ -80,6 +80,8 @@ cc.Class({
     //开始编辑文本输入框时，触发的事件回调
     onEditingDidBegan: function (sender, customEventData) {
         console.log('editBoxEditingDidBegan ' + sender.name); //EditBox<EditBox>---节点名（组件所在节点）<组件名>
+        //---customEventData
+        //作为最后一个参数传入
         console.log('customEventData = ' + customEventData); //began
     },
     //2---textChanged
