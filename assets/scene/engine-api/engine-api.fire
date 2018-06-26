@@ -29,10 +29,10 @@
         "__id__": 38
       },
       {
-        "__id__": 40
+        "__id__": 43
       },
       {
-        "__id__": 44
+        "__id__": 47
       }
     ],
     "_tag": -1,
@@ -1341,12 +1341,16 @@
     "_parent": {
       "__id__": 1
     },
-    "_children": [],
+    "_children": [
+      {
+        "__id__": 39
+      }
+    ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
-        "__id__": 39
+        "__id__": 41
       }
     ],
     "_prefab": null,
@@ -1387,6 +1391,80 @@
     "groupIndex": 0
   },
   {
+    "__type__": "cc.Node",
+    "_name": "Label",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 38
+    },
+    "_children": [],
+    "_tag": -1,
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 40
+      }
+    ],
+    "_prefab": null,
+    "_id": "a7cVRbsLxJCrVY+pGCevzU",
+    "_opacity": 255,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_cascadeOpacityEnabled": true,
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 97.87,
+      "height": 40
+    },
+    "_rotationX": 0,
+    "_rotationY": 0,
+    "_scaleX": 1,
+    "_scaleY": 1,
+    "_position": {
+      "__type__": "cc.Vec2",
+      "x": -7,
+      "y": 187
+    },
+    "_skewX": 0,
+    "_skewY": 0,
+    "_localZOrder": 0,
+    "_globalZOrder": 0,
+    "_opacityModifyRGB": false,
+    "groupIndex": 0
+  },
+  {
+    "__type__": "cc.Label",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 39
+    },
+    "_enabled": true,
+    "_useOriginalSize": false,
+    "_actualFontSize": 40,
+    "_fontSize": 40,
+    "_lineHeight": 40,
+    "_enableWrapText": true,
+    "_N$file": null,
+    "_isSystemFontUsed": true,
+    "_spacingX": 0,
+    "_N$string": "Label",
+    "_N$horizontalAlign": 1,
+    "_N$verticalAlign": 1,
+    "_N$fontFamily": "Arial",
+    "_N$overflow": 0
+  },
+  {
     "__type__": "d5d5280P/9ClKx8qeUw5ccO",
     "_name": "",
     "_objFlags": 0,
@@ -1418,7 +1496,19 @@
     "nodes": [],
     "names": [],
     "_hideId": "_hideId",
-    "customType": 2
+    "customType": 2,
+    "customType2": [
+      {
+        "__id__": 42
+      }
+    ]
+  },
+  {
+    "__type__": "info",
+    "label": {
+      "__id__": 40
+    },
+    "str": "str"
   },
   {
     "__type__": "cc.Node",
@@ -1429,17 +1519,17 @@
     },
     "_children": [
       {
-        "__id__": 41
+        "__id__": 44
       }
     ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
-        "__id__": 42
+        "__id__": 45
       },
       {
-        "__id__": 43
+        "__id__": 46
       }
     ],
     "_prefab": null,
@@ -1484,7 +1574,7 @@
     "_name": "child",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 40
+      "__id__": 43
     },
     "_children": [],
     "_tag": -1,
@@ -1532,7 +1622,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 40
+      "__id__": 43
     },
     "_enabled": true,
     "_useOriginalSize": false,
@@ -1554,7 +1644,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 40
+      "__id__": 43
     },
     "_enabled": true,
     "itemPrefab": null
@@ -1568,20 +1658,20 @@
     },
     "_children": [
       {
-        "__id__": 45
+        "__id__": 48
       },
       {
-        "__id__": 46
+        "__id__": 49
       },
       {
-        "__id__": 47
+        "__id__": 50
       }
     ],
     "_tag": -1,
     "_active": true,
     "_components": [
       {
-        "__id__": 48
+        "__id__": 51
       }
     ],
     "_prefab": null,
@@ -1626,7 +1716,7 @@
     "_name": "a",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 44
+      "__id__": 47
     },
     "_children": [],
     "_tag": -1,
@@ -1674,7 +1764,7 @@
     "_name": "b",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 44
+      "__id__": 47
     },
     "_children": [],
     "_tag": -1,
@@ -1722,7 +1812,7 @@
     "_name": "c",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 44
+      "__id__": 47
     },
     "_children": [],
     "_tag": -1,
@@ -1770,17 +1860,17 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 44
+      "__id__": 47
     },
     "_enabled": true,
     "aNode": {
-      "__id__": 45
+      "__id__": 48
     },
     "bNode": {
-      "__id__": 46
+      "__id__": 49
     },
     "cNode": {
-      "__id__": 47
+      "__id__": 50
     }
   }
 ]

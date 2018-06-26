@@ -18,9 +18,9 @@ cc.Class({
         console.log(cc.Label.HorizontalAlign.LEFT); //0
         //2---label.verticalAlign
         //垂直对齐（Enum）
-        //顶部对齐---Label.VerticalAlign.TOP
-        //居中对齐---Label.VerticalAlign.CENTER
-        //底部对齐---Label.VerticalAlign.BOTTOM
+        //顶部对齐---cc.Label.VerticalAlign.TOP
+        //居中对齐---cc.Label.VerticalAlign.CENTER
+        //底部对齐---cc.Label.VerticalAlign.BOTTOM
         console.log(this.label.verticalAlign); //1
         console.log(cc.Label.VerticalAlign.TOP); //0
 
