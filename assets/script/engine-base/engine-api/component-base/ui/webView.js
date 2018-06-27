@@ -16,12 +16,12 @@ cc.Class({
 
     //---webView.webviewLoadedEvents
     //WebView的回调事件，当网页加载过程中，加载完成后，加载出错时都会调用此函数
-    onWebViewLoaded: function (sedner, event) {
+    onWebViewLoaded: function (sender, eventType) {
         //---网页视图事件类型（Enum）
         //加载完成---cc.WebView.EventType.LOADED
         //加载中---cc.WebView.EventType.LOADING
         //加载出错---cc.WebView.EventType.ERROR
-        if (event === cc.WebView.EventType.LOADED) {
+        if (eventType === cc.WebView.EventType.LOADED) {
             console.log('is loaded!');
         } else if (event === cc.WebView.EventType.LOADING) {
             console.log('is loading!');
