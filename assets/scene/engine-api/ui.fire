@@ -7181,7 +7181,7 @@
       "__id__": 153
     },
     "component": "pageView",
-    "handler": "onRemoveAllPage",
+    "handler": "onRemoveAllPages",
     "customEventData": ""
   },
   {
