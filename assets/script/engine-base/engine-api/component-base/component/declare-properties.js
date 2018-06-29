@@ -15,6 +15,8 @@ var info = cc.Class({
     }
 });
 
+var MyCustomComponent = require('my-custom-component');
+
 cc.Class({
     extends: cc.Component,
 
@@ -117,6 +119,12 @@ cc.Class({
         customType2: {
             default: [],
             type: [info]
+        },
+        //---使用脚本作为类型
+        //需拖拽挂载脚本的节点；无需new
+        myComponent: {
+            default: null,
+            type: MyCustomComponent
         }
 
     },
@@ -127,6 +135,11 @@ cc.Class({
         console.log('hideId = ' + this.hideId); //undefined
         this.score = 12345; //------set
         console.log('score = ' + this.score); //-----get
+
+        //加载脚本
+        this.myComponent.printDesc();
+        var myCustomComponent = new MyCustomComponent();
+        myCustomComponent.printDesc();
     },
 
 
