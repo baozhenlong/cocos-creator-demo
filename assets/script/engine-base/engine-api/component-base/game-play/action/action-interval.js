@@ -31,7 +31,7 @@ cc.Class({
         //顺序执行动作，创建的动作将按顺序依次执行
         //参数action|actionArray（FiniteTimeAction|[FiniteTimeAction]）
         //返回值（ActionInterval）
-        var seq = cc.sequence(finish1, delayTime, finish2, finish3);
+        // var seq = cc.sequence(finish1, delayTime, finish2, finish3);
         // var seq = cc.sequence([finish1, delayTime, finish2, finish3]);
         // this.actionNode.runAction(seq);
 
@@ -123,12 +123,14 @@ cc.Class({
         //参数t（Number）---动作持续时间
         //参数c（[Vec2]）---贝塞尔曲线参考点
         //返回值（ActionInterval）        
-        var startPos = cc.p(0, 0);
-        var endPos = cc.p(640, 320);
-        var controlPos = cc.p(860, 480);
+        var startPos = cc.p(-640, -320); //node当前位置
+        this.node.setPosition(startPos);
+        var controlPos = cc.p(0, 0);
+        var endPos = cc.p(640, -320);
         var bezier = [startPos, controlPos, endPos];
         var bezierTo = cc.bezierTo(5, bezier);
-        this.actionNode.runAction(cc.spawn(scaleTo, rotateBy, bezierTo));
+        // this.node.runAction(cc.spawn(scaleTo, rotateBy, bezierTo));
+        this.node.runAction(bezierTo);
 
     },
 

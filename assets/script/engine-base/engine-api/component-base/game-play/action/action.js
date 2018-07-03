@@ -2,7 +2,6 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        actionNode: cc.Node,
         followNode: cc.Node
     },
 
