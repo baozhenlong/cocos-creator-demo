@@ -14,7 +14,7 @@ cc.Class({
             console.log('------scheduleOnce');
         }, 2);
 
-        //2---schedule(callback, interval, repeat, delay)---开始一个计时器
+        //2---schedule(callback, interval, repeat = cc.macro.REPEAT_FOREVER, delay = 0)---开始一个计时器
         //如果回调函数已调度，那么不会重复调度它，只会更新时间间隔参数
         //参数callback（Function）---回调函数
         //参数interval（Number）---以秒为单位的时间间隔；默认为0---每帧调用

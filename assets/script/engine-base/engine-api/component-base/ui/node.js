@@ -97,6 +97,46 @@ cc.Class({
             console.log(value.string); //node, b, c, a
         }
 
+        //---动作相关
+        //1---node.stopAllActions()
+        //停止并且移除所有正在运行的动作列表
+        //2---cc.director.getActionManager().pauseTarget(node)
+        //暂停指定对象：所有正在运行的动作和新添加的动作都将会暂停
+        //参数node（Node）
+        //3---cc.director.getActionManager().resumeTarget(node)
+        //让指定目标恢复运行，在执行序列中所有被暂停的动作将重新恢复运行
+        //参数node（Node）
+
+
+        //---node.cleanup()
+        //停止所有正在播放的动作和计时器
+
+        //---移除节点
+        //1---node.removeChild(child, cleanup = true)
+        //移除节点中指定的子节点
+        //参数cleanup（Boolean）---true：那么这个节点上所有绑定的事件、action都会被删除
+        //function body start
+        // if (cleanup) {
+        //     child.cleanup();
+        // }
+        // child.parent = null;
+        //function body end
+        //2---node.removeFromParent(cleanup = true)
+        //从父节点中删除该节点
+        //function body start
+        // node.parent.removeChild(node, cleanup);
+        //function body end
+        //3---node.removeChildByTag (tag, cleanup = true)
+        //通过标签起初节点中指定的子节点
+        //参数tag（Number）---标签
+        //function body start
+        // var child = node.getChildByTag(tag);
+        // node.removeChild(child, cleanup);
+        //function body end
+        //2---node.removeAllChildren(cleanup = true)
+        //移除节点所有子节点
+
+
     },
 
     // start () {
