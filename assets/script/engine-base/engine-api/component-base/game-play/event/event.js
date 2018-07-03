@@ -91,6 +91,7 @@ cc.Class({
             onTouchBegan: function (touch, event) {
                 console.log('onTouchBegan');
                 console.log('event.currentTarget.name = ' + event.currentTarget.name); //eventManager
+                return true;
             },
             onTouchMoved: function (touch, event) {
                 console.log('onTouchMoved');
