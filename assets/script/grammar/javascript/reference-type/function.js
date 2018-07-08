@@ -78,7 +78,7 @@ cc.Class({
         function test2(a, b) {}
         console.log(test2.length); //2
         //1.2---prototype---原型属性：保存所有实例方法的所在
-        //2---方法（非继承而来）pply()和call()
+        //2---方法（非继承而来）apply()和call()
         //this---一般来说，总是指向调用某个方法的对象
         //使用apply()和call()方法，可以改变this的指向
         //作用---在特定的作用域中调用函数，等于设置函数体内this对象的值，以扩充函数赖以运行的作用域
