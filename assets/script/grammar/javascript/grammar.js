@@ -61,6 +61,19 @@ cc.Class({
         var [param3, param4] = [3, 4, 5];
         console.log('param3 = ' + param3); //3
         console.log('param4 = ' + param4); //4
+
+        var str_0 = '00000';
+        console.log('[str_0]------0 = ' + str_0[0]);
+        var str = this.replace_str_by_index(str_0, 1, '1');
+        console.log('[str]------str = ' + str);
+        var str1 = this.replace_str_by_index(str_0, 0, '1');
+        console.log('[str1]------str1 = ' + str1);
+        var str2 = this.replace_str_by_index(str_0, 4, '1');
+        console.log('[str2]------str2 = ' + str2);
+    },
+
+    replace_str_by_index: function (str, index, change_str) {
+        return str.substring(0, index) + change_str + str.substring(index + 1, str.length);
     },
 
     // start () {
