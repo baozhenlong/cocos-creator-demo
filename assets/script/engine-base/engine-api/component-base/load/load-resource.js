@@ -6,7 +6,7 @@ cc.Class({
         //1---Asset---统一并自动化地加载，相互依赖的Asset能够被自动预加载
         //cc.SpriteFrame，cc.AnimationClip，cc.Prefab等
 
-        //2---Raw Asset---用URL字符串指代资源
+        //2---Raw Asset---用URL字符串指代资源；等到 v2.1 以上的某个版本，会全面移除对RawAsset
         //当要在引擎中使用Raw Asset，只要把URL传给引擎的API，引擎内部会自动加载这个URL对应的资源
         //cc.Texture2D，cc.AudioClip，cc.ParticleAsset等
         // textureURL: {
