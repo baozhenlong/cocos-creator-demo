@@ -10,6 +10,7 @@ cc.Class({
     },
 
     onLoad() {
+        console.log('dependAssets', cc.director.getScene().dependAssets);
         this.cacheAssetData = {};
         //动态加载---异步，需要在回调函数中获得载入的资源
         //所有需要通过脚本动态加载的资源，都必须放置在assets/resources文件夹下或它的子文件夹下
@@ -318,14 +319,7 @@ cc.Class({
     // cc.loader.releaseRes('popup/cocosHead', cc.Prefab);
     //3---cc.loader.release(asset)
     //通过id（通常是资源 url）来释放一个资源或者一个资源数组
-    //参数asset---Asset | RawAsset | String | Array
-    clearResource() {
-        //---cc.loader.getRes(url, type)
-        //参数url（String）---资源url
-        //参数type---如cc.Prefab
-        var res = cc.loader.getRes(url, type);
-        cc.loader.release(res);
-    },
+    //参数asset---Asset | url | Array
 
     cache() {
         // cc.loader.getDependsRecursively(owner)---获取某个已经加载好的资源的所有依赖资源，包含它自身，并保存在数组中返回
