@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "5bee2d54-9b25-46ff-ab6f-086c25f75a08",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "icon_RoomOwner": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "918dceb9-d45e-47d8-ac40-8e5a72198b67",
       "rawTextureUuid": "5bee2d54-9b25-46ff-ab6f-086c25f75a08",
       "trimType": "auto",

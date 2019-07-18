@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "113277d4-26a1-4d98-8b53-89b59d8a5c60",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "label_caifubang": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c0863cda-b180-49f8-80a8-41823489e4e2",
       "rawTextureUuid": "113277d4-26a1-4d98-8b53-89b59d8a5c60",
       "trimType": "auto",

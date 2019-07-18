@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "2ba99e8e-d1a3-4d83-813c-91674d23a295",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_kanpai_dis": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0682159f-fedf-42ea-bf31-e965520333f2",
       "rawTextureUuid": "2ba99e8e-d1a3-4d83-813c-91674d23a295",
       "trimType": "auto",

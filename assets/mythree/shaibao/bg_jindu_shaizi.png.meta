@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "7f12a489-df2b-47bd-97b9-79757ca7394d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "bg_jindu_shaizi": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "74289751-b64c-4f11-b30e-4c39b40a7baf",
       "rawTextureUuid": "7f12a489-df2b-47bd-97b9-79757ca7394d",
       "trimType": "auto",

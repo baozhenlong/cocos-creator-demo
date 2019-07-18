@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "01a14234-f738-4937-975f-d1933b066693",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "bg_renwu_gold": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4ddb4ae9-836f-4b3b-b806-4435230c4b71",
       "rawTextureUuid": "01a14234-f738-4937-975f-d1933b066693",
       "trimType": "auto",

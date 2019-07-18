@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "01996e90-e3a0-4629-8a47-e7d098db83f6",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "zuanshi6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d134a8b4-2355-4525-971c-e52f43bee232",
       "rawTextureUuid": "01996e90-e3a0-4629-8a47-e7d098db83f6",
       "trimType": "auto",

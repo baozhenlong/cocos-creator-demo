@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "769ac141-ecd7-4e1e-bc62-6fbad96a1253",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "lp_light1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "cce4d24a-b062-4535-ab80-4c7c433bf082",
       "rawTextureUuid": "769ac141-ecd7-4e1e-bc62-6fbad96a1253",
       "trimType": "auto",

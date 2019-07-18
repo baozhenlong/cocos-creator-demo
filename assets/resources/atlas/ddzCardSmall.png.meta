@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "4299c963-fccb-4d8e-a951-c1e05d7775a4",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "ddzCardSmall": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "3880b929-4874-4b1f-acee-87d905d6cf58",
       "rawTextureUuid": "4299c963-fccb-4d8e-a951-c1e05d7775a4",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "ea1c1bf0-8692-4a8c-8a39-f7ba3dfcc525",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "daoju_name_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2e50dc1f-d6ae-4b37-a331-6fa92e9b6b3c",
       "rawTextureUuid": "ea1c1bf0-8692-4a8c-8a39-f7ba3dfcc525",
       "trimType": "auto",

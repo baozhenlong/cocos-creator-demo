@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "69ee097d-cb7e-401b-bb8c-72d21aefd672",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_liaojie_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7a104970-6e8c-47a2-a613-12997199e619",
       "rawTextureUuid": "69ee097d-cb7e-401b-bb8c-72d21aefd672",
       "trimType": "auto",

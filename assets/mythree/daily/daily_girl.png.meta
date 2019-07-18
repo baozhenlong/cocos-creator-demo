@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "c492155e-320f-4833-8132-08d6b3a0433e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "daily_girl": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "37b62314-42a8-460b-9d68-34e81fc6d70e",
       "rawTextureUuid": "c492155e-320f-4833-8132-08d6b3a0433e",
       "trimType": "auto",

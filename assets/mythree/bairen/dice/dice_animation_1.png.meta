@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "2b815a15-470a-4d49-a431-65eba11e9dff",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "dice_animation_1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "ca90b120-4018-45e4-961f-8f987a05de38",
       "rawTextureUuid": "2b815a15-470a-4d49-a431-65eba11e9dff",
       "trimType": "auto",

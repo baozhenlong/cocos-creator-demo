@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "c4f76272-e676-4a05-9710-ee06e7854bc8",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "logo_zhuang": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f45adc82-fdff-4a45-93ea-ef9d82b887ed",
       "rawTextureUuid": "c4f76272-e676-4a05-9710-ee06e7854bc8",
       "trimType": "auto",

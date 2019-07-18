@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "45d761d1-855f-4104-a1b4-1c696f6db44e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "pcoin": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "9fec33e0-fd1f-4d92-8739-fdb61bbc2016",
       "rawTextureUuid": "45d761d1-855f-4104-a1b4-1c696f6db44e",
       "trimType": "auto",

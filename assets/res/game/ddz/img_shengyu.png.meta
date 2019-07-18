@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "0333f3fd-3724-4a03-b6f8-8c72c46dc889",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "img_shengyu": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2efafb9e-0f44-4407-94b2-7a34d5f382e5",
       "rawTextureUuid": "0333f3fd-3724-4a03-b6f8-8c72c46dc889",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "00ba39b8-7ccb-4e4c-bf73-4cc2c6e9f441",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_shangzhuang_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "5d246497-34e0-4133-ace5-5c75bff12ab6",
       "rawTextureUuid": "00ba39b8-7ccb-4e4c-bf73-4cc2c6e9f441",
       "trimType": "auto",

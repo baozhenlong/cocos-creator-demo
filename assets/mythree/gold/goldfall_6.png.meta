@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "4e411d4b-d689-4cc9-9336-ec9bbec9ddb2",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "goldfall_6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b7db6590-7d11-4837-8a70-2782ee5981e9",
       "rawTextureUuid": "4e411d4b-d689-4cc9-9336-ec9bbec9ddb2",
       "trimType": "auto",

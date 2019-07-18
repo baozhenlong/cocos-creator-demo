@@ -21,3 +21,4 @@ Thumbs.db
 .idea/
 *.err
 *.err.meta
+settings/services.json

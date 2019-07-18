@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "f9b374b8-83ee-4338-8f99-3a5c6107c9a5",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "jiesuan_iconloose": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d456e865-154d-4c91-9528-e2008b79dc98",
       "rawTextureUuid": "f9b374b8-83ee-4338-8f99-3a5c6107c9a5",
       "trimType": "auto",

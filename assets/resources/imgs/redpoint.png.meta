@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "12d0f5d6-488c-45c8-9ae7-d34589c6b4ae",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "redpoint": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d5ddc80d-7240-41a6-b5e1-0e50b2d72283",
       "rawTextureUuid": "12d0f5d6-488c-45c8-9ae7-d34589c6b4ae",
       "trimType": "auto",

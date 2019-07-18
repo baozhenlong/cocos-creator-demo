@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "22470b51-7b97-496d-a428-864c24f8cad2",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "title_zoushi_bairen": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8e783e0e-796d-4c5c-b7c0-d6c640c73be0",
       "rawTextureUuid": "22470b51-7b97-496d-a428-864c24f8cad2",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "ac7af13f-8da0-4cf8-8fc1-d2679ada3357",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_bianji": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "eea91c9b-394d-4639-a34e-b0dcef98e7e3",
       "rawTextureUuid": "ac7af13f-8da0-4cf8-8fc1-d2679ada3357",
       "trimType": "auto",

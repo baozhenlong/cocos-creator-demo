@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "095101e8-da65-44d6-b80f-17a4a328ddd7",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "bigbtngamepress": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2b615e34-3a1c-4dbc-8a14-e149e0f990df",
       "rawTextureUuid": "095101e8-da65-44d6-b80f-17a4a328ddd7",
       "trimType": "auto",

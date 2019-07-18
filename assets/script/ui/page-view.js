@@ -12,7 +12,7 @@ var Direction = cc.Enum({
 var PageView = cc.Class({
     extends: cc.ScrollView,
 
-    ctor: function() {
+    ctor: function () {
         this._curPageIndex = 0;
         this._lastPageIndex = 0;
         this._pageList = [];
@@ -22,10 +22,9 @@ var PageView = cc.Class({
 
     properties: {
         //内容节点
-        content: {
+        contentNode: {
             default: null,
-            tyep: cc.Node,
-            override: true
+            type: cc.Node,
         },
         //页面大小类型
         sizeMode: {
@@ -60,32 +59,32 @@ var PageView = cc.Class({
     },
 
     //返回视图中的所有页面
-    getPageList: function() {
+    getPageList: function () {
         return this._pageList;
     },
 
     //返回当前页面索引
-    getCurPageIndex: function() {
+    getCurPageIndex: function () {
         return this._curPageIndex;
     },
 
     //设置当前页面索引
-    setCurPageIndex: function(index) {
+    setCurPageIndex: function (index) {
         this.scrollToPage(index, true);
     },
 
     //在当前页面视图的尾部插入一个新视图
-    addPage: function(page) {
+    addPage: function (page) {
         if (!page || this._pageList.indexOf(page) !== -1) {
             return;
         }
-        this.content.addChild(page);
+        this.contentNode.addChild(page);
         this._pageList.push(page);
         this._updatePageView();
     },
 
     //将页面插入指定位置
-    insertPage: function(page, index) {
+    insertPage: function (page, index) {
         if (index < 0 || this._pageList.indexOf(page) !== -1) {
             return;
         }
@@ -94,13 +93,13 @@ var PageView = cc.Class({
             this.addPage(page);
         } else {
             this._pageList.splice(index, 0, page);
-            this.content.addChild(page);
+            this.contentNode.addChild(page);
             this._updatePageView();
         }
     },
 
     //移除指定页面
-    removePage: function(page) {
+    removePage: function (page) {
         if (!page) {
             return;
         }
@@ -112,7 +111,7 @@ var PageView = cc.Class({
     },
 
     //移除指定下标的页面
-    removePageAtIndex: function(index) {
+    removePageAtIndex: function (index) {
         var pageList = this._pageList;
         if (index < 0 || index >= pageList.length) {
             return;
@@ -121,23 +120,23 @@ var PageView = cc.Class({
         if (!page) {
             return
         }
-        this.content.removeChild(Page);
+        this.contentNode.removeChild(Page);
         pageList.splice(index, 1);
         this._updatePageView();
     },
 
     //移除所有页面
-    removeAllPage: function() {
+    removeAllPage: function () {
         var pageList = this._pageList;
         for (var i = 0; i < pageList.length; i++) {
-            this.content.removeChild(pageList[i]);
+            this.contentNode.removeChild(pageList[i]);
         }
         this._pageList.length = 0;
         this._updatePageView();
     },
 
     //滚动到指定页面
-    scrollToPage: function(index, timeInSecond) {
+    scrollToPage: function (index, timeInSecond) {
         if (index < 0 || index > this._pageList.length) {
             return;
         }
@@ -147,7 +146,7 @@ var PageView = cc.Class({
     },
 
     //刷新页面视图
-    _updatePageView: function() {
+    _updatePageView: function () {
         var pageCount = this._pageList.length;
         if (this._curPageIndex >= pageCount) {
             this._curPageIndex = pageCount === 0 ? 0 : pageCount - 1;
@@ -157,16 +156,16 @@ var PageView = cc.Class({
         for (var i = 0; i < pageCount; i++) {
             this._pageList[i].setSiblingIndex(i);
             if (this.direction === Direction.Horizontal) {
-                this._scrollCenterOffsetX[i] = Math.abs(this.content.x + this._pageList[i].x);
+                this._scrollCenterOffsetX[i] = Math.abs(this.contentNode.x + this._pageList[i].x);
             } else {
-                this._scrollCenterOffsetY[i] = Math.abs(this.content.y + this._pageList[i].y);
+                this._scrollCenterOffsetY[i] = Math.abs(this.contentNode.y + this._pageList[i].y);
             }
         }
         //当页面数组变化时修改content的大小
     },
 
     //通过index获取偏移值数值
-    _moveOffsetValue: function(index) {
+    _moveOffsetValue: function (index) {
         var offset = cc.p(0, 0);
     }
 

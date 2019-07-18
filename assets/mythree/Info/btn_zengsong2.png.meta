@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "a7e7ba11-5178-4584-aa11-347663455dda",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_zengsong2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "e7ce718d-3e27-4b79-a8a2-4b87f60bd9f5",
       "rawTextureUuid": "a7e7ba11-5178-4584-aa11-347663455dda",
       "trimType": "auto",

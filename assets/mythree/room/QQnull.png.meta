@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "a012fb83-8ec0-4995-9cfb-ab5858a4807b",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "QQnull": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "872847f9-68e8-4033-85ef-147a36154bc8",
       "rawTextureUuid": "a012fb83-8ec0-4995-9cfb-ab5858a4807b",
       "trimType": "auto",

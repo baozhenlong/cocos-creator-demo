@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "c141d16c-9355-4c52-ae9c-51519a2478e9",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "rwicon_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "92627aaf-f6df-42b5-8676-2de8e13044a6",
       "rawTextureUuid": "c141d16c-9355-4c52-ae9c-51519a2478e9",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "88c6aa63-135d-473e-b804-791769934a6e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_createroom_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c9bda44c-484a-4bfa-8347-ec52229dc7ab",
       "rawTextureUuid": "88c6aa63-135d-473e-b804-791769934a6e",
       "trimType": "auto",

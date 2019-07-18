@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "551172a9-7b80-48fb-9e50-dc8cc1974e9a",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "shandian2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d5dda14c-d007-40e3-9d5c-97213145df20",
       "rawTextureUuid": "551172a9-7b80-48fb-9e50-dc8cc1974e9a",
       "trimType": "auto",

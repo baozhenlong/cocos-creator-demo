@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "f5c1c9ad-f47e-494d-937a-c35975e806b8",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "zuojia_11": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "96ca9109-0fa6-42af-a272-6d5a78896643",
       "rawTextureUuid": "f5c1c9ad-f47e-494d-937a-c35975e806b8",
       "trimType": "auto",

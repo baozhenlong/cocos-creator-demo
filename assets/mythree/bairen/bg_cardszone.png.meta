@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "47080b1c-e7b1-470b-8b92-356290f5a11a",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "bg_cardszone": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "04479994-080d-460f-8132-508a3ab8fc87",
       "rawTextureUuid": "47080b1c-e7b1-470b-8b92-356290f5a11a",
       "trimType": "auto",

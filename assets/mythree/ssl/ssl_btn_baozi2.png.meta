@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "046e5507-e04c-4e06-8a43-8b31e9472e05",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "ssl_btn_baozi2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "31699e2d-f2c8-40be-af2b-4e2104707eaa",
       "rawTextureUuid": "046e5507-e04c-4e06-8a43-8b31e9472e05",
       "trimType": "auto",

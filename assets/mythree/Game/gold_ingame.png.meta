@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "1601323a-8b1e-4906-abde-60ff0de8c56c",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "gold_ingame": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "054dc197-e991-485b-a424-a46394b498f6",
       "rawTextureUuid": "1601323a-8b1e-4906-abde-60ff0de8c56c",
       "trimType": "auto",

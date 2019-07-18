@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "b8b8dae2-a4f6-473a-a262-55dfa4677d5e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "ssl_btn_shunjin": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "21db742c-e426-4266-8834-bb1702278e4e",
       "rawTextureUuid": "b8b8dae2-a4f6-473a-a262-55dfa4677d5e",
       "trimType": "auto",

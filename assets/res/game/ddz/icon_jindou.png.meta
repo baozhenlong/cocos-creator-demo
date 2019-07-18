@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "c55a615a-45e9-4a55-be03-cab05e388619",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "icon_jindou": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "fb5c8f48-0783-4451-b9dd-72ebd3d1aac2",
       "rawTextureUuid": "c55a615a-45e9-4a55-be03-cab05e388619",
       "trimType": "auto",

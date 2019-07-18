@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "7f475ef7-c209-4745-863d-ff8483eacc29",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_shanchu": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4f7950cc-bf01-4da4-82e4-fb59512c33a9",
       "rawTextureUuid": "7f475ef7-c209-4745-863d-ff8483eacc29",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "c7e32227-6d52-41e9-8f7d-f5884958ed4b",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "atlas": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "9ec6aa37-0d4f-4d66-95f5-7cd52bb2598b",
       "rawTextureUuid": "c7e32227-6d52-41e9-8f7d-f5884958ed4b",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "fd76f146-dc39-4e07-ad0f-770e591d9073",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "wenzi_tree": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "34573a48-afa7-4dfe-8a95-069edd3e93db",
       "rawTextureUuid": "fd76f146-dc39-4e07-ad0f-770e591d9073",
       "trimType": "auto",

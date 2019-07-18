@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "b1d352a8-dfdf-4f0d-8a25-5589413b3530",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "newsbg": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7c9f28b6-0158-458b-85c8-01a1f6084c4c",
       "rawTextureUuid": "b1d352a8-dfdf-4f0d-8a25-5589413b3530",
       "trimType": "auto",

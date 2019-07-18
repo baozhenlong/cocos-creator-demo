@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "d89ecfa8-a98e-4665-b72b-e1c590180b1e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "VIPsj_6": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d7e39020-ebc1-4418-a48e-0fa1abf27d5d",
       "rawTextureUuid": "d89ecfa8-a98e-4665-b72b-e1c590180b1e",
       "trimType": "auto",

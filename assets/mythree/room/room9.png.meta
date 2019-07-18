@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "853763eb-b43d-483e-978f-85e69a1d1c1c",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "room9": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8dfedd64-5a4d-46e5-8b02-24e094d36965",
       "rawTextureUuid": "853763eb-b43d-483e-978f-85e69a1d1c1c",
       "trimType": "auto",

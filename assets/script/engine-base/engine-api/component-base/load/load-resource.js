@@ -2,25 +2,15 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        //资源的分类
-        //1---Asset---统一并自动化地加载，相互依赖的Asset能够被自动预加载
-        //cc.SpriteFrame，cc.AnimationClip，cc.Prefab等
-
-        //2---Raw Asset---用URL字符串指代资源；等到 v2.1 以上的某个版本，会全面移除对RawAsset
-        //当要在引擎中使用Raw Asset，只要把URL传给引擎的API，引擎内部会自动加载这个URL对应的资源
-        //cc.Texture2D，cc.AudioClip，cc.ParticleAsset等
-        // textureURL: {
-        //     default: '',
-        //     url: cc.Texture2D
-        // },
-
         showNode: cc.Node,
         loadNodeList: [cc.Node],
         nameLb: cc.Label,
-        tipLb: cc.Label
+        tipLb: cc.Label,
+        prefab: cc.Prefab
     },
 
     onLoad() {
+        this.cacheAssetData = {};
         //动态加载---异步，需要在回调函数中获得载入的资源
         //所有需要通过脚本动态加载的资源，都必须放置在assets/resources文件夹下或它的子文件夹下
 
@@ -32,48 +22,84 @@ cc.Class({
         this.tipLb.string = 'target tip = ';
     },
 
-    onClicked: function (event) {
+    onClicked(event) {
         var self = this;
         this.clear();
         var name = event.target.name.split('_')[2];
         this.nameLb.string = 'target name = ' + name;
         this.tipLb.string = 'load tip = ';
         var url = '';
-        var node = new cc.Node('name');
+        var node = new cc.Node(name);
         node.setPosition(0, 0);
         node.parent = this.showNode;
         switch (name) {
             //---loadRes
-            //cc.loader.loadRes(path, type, cb)---一次只能加载单个Asset
-            //参数path（String）---相对于resources的路径，结尾处不能包含后缀名（文件扩展名）
-            //可选参数type（Function）---资源类型，查找重名资源或者获取"子资源"（如获取Texture2D生成的SpriteFrame）
-            //参数cb（Function）---在回调函数中获得载入的资源
+            // cc.loader.loadRes(url, type, progressCallback, completeCallback)---一次只能加载单个Asset
+            //参数 url(String)---相对于 assets/resources 的路径，结尾处不能包含后缀名（文件扩展名）
+            //可选参数 type(Function)---资源类型，查找重名资源或者获取"子资源"（如获取 atlas 的 SpriteFrame）
+            //参数 progressCallback(Function)---加载进度回调函数
+            //函数参数 completedCount(Number)---加载完成数
+            //函数参数 totalCount(Number)---加载总数
+            //函数参数 item(Object)---加载的最新项
+            //参数 completeCallback(Function)---加载完成回调
+            //函数参数 error(Error)---error info | null
+            //函数参数 resource(Object)---加载到的资源
+            // cc.loader.loadResArray(urls, type, progressCallback, completeCallback)
+            //参数 urls(String[])---Array of url
+            //参数 type(Function)---资源类型
+            //参数 progressCallback(Function)---加载进度回调函数
+            //函数参数 completedCount(Number)---加载完成数
+            //函数参数 totalCount(Number)---加载总数
+            //函数参数 item(Object)---最新的加载项
+            //参数 completeCallback(Function)---加载完成回调函数
+            //函数参数 error(Error)---error info || null；如果其中一个加载失败，立马执行加载完成回调函数
+            //函数参数 assets(Assets[])---Array of loaded asset
             case 'spriteFrame':
                 url = 'load-asset/image';
                 //1---Asset（3个参数）---加载独立的SpriteFrame
                 //需指定第二个参数为资源的类型，才能加载到图片生成的cc.SpriteFrame---直接加载图片得到的类型为cc.Texture2D  
-                cc.loader.loadRes(url, cc.SpriteFrame, function (err, spriteFrame) {
+                cc.loader.loadRes(url, cc.SpriteFrame, (err, spriteFrame) => {
                     if (err) {
-                        self.tipLb.string += 'err SpriteFrame';
+                        this.tipLb.string += 'err SpriteFrame';
                         return;
                     }
-                    self.tipLb.string += 'successful SpriteFrame';
-                    var component = node.addComponent(cc.Sprite);
+                    this.tipLb.string += 'successful SpriteFrame';
+                    let component = node.getComponent(cc.Sprite);
+                    if (!component) {
+                        component = node.addComponent(cc.Sprite);
+                    }
                     component.spriteFrame = spriteFrame;
+                    console.log('Result should be a sprite frame: ', spriteFrame instanceof cc.SpriteFrame);
+                });
+                cc.loader.loadResArray([url, url], cc.SpriteFrame, (err, assets) => {
+                    if (err) {
+                        this.tipLb.string += 'err loadResArray';
+                        return;
+                    }
+                    this.tipLb.string += 'successful loadResArray';
+                    console.log('loadResArray assets is: ', assets);
+                    assets.forEach((res) => {
+                        console.log('loadResArray ctor is cc.SpriteFrame: ', res instanceof cc.SpriteFrame);
+                        //true
+                    });
                 });
                 break;
             case 'atlas':
                 url = 'load-asset/atlas';
                 //2---Asset（3个参数）---加载SpriteAtlas（图集）
                 //需指定第二个参数为资源的类型---atlas资源文件（plist）通常会和一个同名的图片文件（png）放在一个目录下    
-                cc.loader.loadRes(url, cc.SpriteAtlas, function (err, atlas) {
+                cc.loader.loadRes(url, cc.SpriteAtlas, (err, atlas) => {
                     if (err) {
-                        self.tipLb.string += 'err SpriteAtlas';
+                        this.tipLb.string += 'err SpriteAtlas';
                         return;
                     }
-                    self.tipLb.string += 'successful SpriteAtlas';
-                    var frameList = atlas.getSpriteFrames();
-                    var component = node.addComponent(cc.Sprite);
+                    console.log('Result should be a atlas: ', atlas instanceof cc.SpriteAtlas);
+                    this.tipLb.string += 'successful SpriteAtlas';
+                    let frameList = atlas.getSpriteFrames();
+                    let component = node.getComponent(cc.Sprite);
+                    if (!component) {
+                        component = node.addComponent(cc.Sprite);
+                    }
                     component.spriteFrame = frameList[0];
                 });
                 break;
@@ -81,13 +107,17 @@ cc.Class({
                 url = 'load-asset/font';
                 //3---Asset（3个参数）---加载字体
                 //需指定第二个参数为资源的类型---cc.Font
-                cc.loader.loadRes(url, cc.Font, function (err, font) {
+                cc.loader.loadRes(url, cc.Font, (err, font) => {
                     if (err) {
-                        self.tipLb.string += 'err font';
+                        this.tipLb.string += 'err font';
                         return;
                     }
-                    self.tipLb.string += 'successful font';
-                    var component = node.addComponent(cc.Label);
+                    this.tipLb.string += 'successful font';
+                    console.log('Result should be a font: ', font instanceof cc.Font);
+                    let component = node.getComponent(cc.Label);
+                    if (!component) {
+                        component = node.addComponent(cc.Label);
+                    }
                     component.font = font;
                     component.string = 'this is fnt';
                 });
@@ -95,37 +125,41 @@ cc.Class({
             case 'texture':
                 url = 'load-asset/PurpleMonster';
                 //4---Raw Asset（2个参数）---加载纹理
-                cc.loader.loadRes(url, function (err, res) {
+                cc.loader.loadRes(url, (err, res) => {
                     if (err) {
-                        self.tipLb.string += 'err texture';
+                        this.tipLb.string += 'err texture';
                         return;
                     }
-                    self.tipLb.string += 'successful texture';
-                    var component = node.addComponent(cc.Sprite);
-                    console.log(res instanceof cc.Texture2D); //true
+                    this.tipLb.string += 'successful texture';
+                    let component = node.getComponent(cc.Sprite);
+                    if (!component) {
+                        component = node.addComponent(cc.Sprite);
+                    }
+                    console.log('Result should be a texture', res instanceof cc.Texture2D); //true
                     console.log(res);
+                    console.log('nativeUrl is: ', res.nativeUrl);
                     //cc_Texture2D---cc_Texture2D.url === "res/raw-assets/resources/load-asset/PurpleMonster.png"
                     component.spriteFrame = new cc.SpriteFrame(res);
                     //等价
                     //完整路径---resources/ + .后缀名
                     //当将url传给一些参数是URL形式的API，需要给出完整路径路径，并使用cc.url.raw(url)进行一次转换
-                    var realUrl = cc.url.raw('resources/load-asset/PurpleMonster.png');
-                    console.log(realUrl); //res/raw-assets/resources/load-asset/PurpleMonster.png
+                    let realUrl = cc.url.raw('resources/load-asset/PurpleMonster.png');
+                    console.log('realUrl: ', realUrl); //res/raw-assets/resources/load-asset/PurpleMonster.png
                     // this.targetNode.getComponent(cc.Sprite).spriteFrame = new cc.SpriteFrame(realUrl);
                 });
                 break;
             case 'prefab':
                 url = 'load-asset/prefab';
-                //5---Asset（2个参数）---加载预制
-                cc.loader.loadRes(url, function (err, res) {
+                //5---Asset(2个参数)---加载预制体
+                cc.loader.loadRes(url, (err, res) => {
                     if (err) {
-                        self.tipLb.string += 'err prefab';
+                        this.tipLb.string += 'err prefab';
                         return;
                     }
-                    self.tipLb.string += 'successful prefab';
-                    var prefab = cc.instantiate(res);
-                    prefab.setPosition(0, 0);
-                    prefab.parent = node;
+                    this.tipLb.string += 'successful prefab';
+                    let prefabNode = cc.instantiate(res);
+                    prefabNode.setPosition(0, 0);
+                    prefabNode.parent = node;
                 });
                 break;
             case 'animation':
@@ -141,7 +175,9 @@ cc.Class({
                     //参数clip（AnimationClip）---动画剪辑
                     //参数newName（String）---动画剪辑名称
                     console.log('clip name = ' + clip.name);
-                    node.addComponent(cc.Sprite);
+                    if (!node.getComponent(cc.Sprite)) {
+                        node.addComponent(cc.Sprite);
+                    }
                     var component = node.addComponent(cc.Animation);
                     component.addClip(clip);
                     component.play(clip.name);
@@ -173,14 +209,15 @@ cc.Class({
                     component.string = res;
                 });
                 break;
+            case 'httpImage':
                 //---load
                 //---加载远程和设备资源---cc.loader.load(resources, progressCallback, completeCallback)
-                //参数resources（String | [String]）---路径
-                //参数progressCallback（Function）---进度显示
-                //函数参数completedCount（Number）
-                //函数参数totalCount（Number）
-                //函数参数item（Object）---The latest item which flow out the pipeline
-                // //参数completeCallback（Function）---加载完成
+                //参数 resources(String | [String])---路径
+                //参数 progressCallback(Function)---加载进度回调函数
+                //函数参数 completedCount(Number)---加载完成数
+                //函数参数 totalCount(Number)---加载总数
+                //函数参数 item(Object)---最新的加载项
+                //参数 completeCallbac(Function)---加载完成回调函数
                 // if (completeCallback === undefined) {
                 //     completeCallback = progressCallback;
                 //     progressCallback = this.onProgress || null;
@@ -198,30 +235,73 @@ cc.Class({
                 //     var component = node.addComponent(cc.Sprite);
                 //     component.spriteFrame = new cc.SpriteFrame(res);
                 // });
-            case 'httpImage':
-                url = 'http://tools.itharbors.com/res/logo.png';
                 //2---使用url从远程服务器上加载
-                //remoteUrl---远程资源路径
-                //url---1---远程url带图片后缀名：url = remoteUrl
-                //url---2---远程url不带图片后缀名，此时必须指定远程图片文件的类型：url = {url: remoteUrl, type: 'png'}
-                cc.loader.load(url, function (err, res) {
+                // remoteUrl---远程资源路径
+                // url---1---远程url带图片后缀名：url = remoteUrl
+                // url---2---远程url不带图片后缀名，此时必须指定远程图片文件的类型：url = {url: remoteUrl, type: 'png'}
+                url = 'http://tools.itharbors.com/res/logo.png';
+                cc.loader.load(url, (err, res) => {
                     if (err) {
-                        self.tipLb.string += 'err http_image';
+                        this.tipLb.string += 'err http image';
                         return;
                     }
-                    self.tipLb.string += 'successful http_image';
-                    var component = node.addComponent(cc.Sprite);
+                    this.tipLb.string += 'successful http image';
+                    let component = node.addComponent(cc.Sprite);
                     component.spriteFrame = new cc.SpriteFrame(res);
-                    console.log(res instanceof cc.Texture2D); //true
-                    console.log(res);
-                    //cc_Texture2D---cc_Texture2D.url === "http://tools.itharbors.com/res/logo.png"
+                    console.log('加载单张图片 res instanceof cc.Texture2D', res instanceof cc.Texture2D); //true
+                    console.log('加载单张图片 res =', res);
+                    // cc_Texture2D---cc_Texture2D.url === "http://tools.itharbors.com/res/logo.png"
+                });
+                // resources 为数组时
+                let urlArr = [url, url];
+                cc.loader.load([url, url], (errors, results) => {
+                    if (errors) {
+                        this.tipLb.string += 'err http image arr';
+                        for (let i = 0; i < errors.length; i++) {
+                            console.log('加载多张图片 error url [' + errors[i] + ']: ', results.getError(errors[i]));
+                            return;
+                        }
+                    } else {
+                        this.tipLb.string += 'successful http image arr';
+                        console.log('加载多张图片 results = ', results);
+                        urlArr.forEach((url, index) => {
+                            console.log('第', (index + 1), '张图片 = ', results.getContent(url));
+                        });
+                    }
+                });
+                break;
+            case 'dir':
+                // cc.loader.loadResDir(url, progressCallback, completeCallback)---加载 assets/resources/url 文件夹下的资源
+                //参数 url(String)---文件夹路径
+                //参数 type(Function)---资源类型
+                //参数 progressCallback(Function)---加载进度回调函数
+                //函数参数 completedCount(Number)---加载完成数
+                //函数参数 totalCount(Number)---加载总数
+                //函数参数 item(Object)---最新的加载项
+                //参数 completeCallback(Function)---加载完成回调函数
+                //函数参数 error(Error)---error info || null；如果其中一个加载失败，立马执行加载完成回调函数
+                //函数参数 assets(Assets[])---Array of loaded asset
+                //函数参数 urls(String[])---Array of loaded asset url
+                cc.loader.loadResDir('imgs', cc.SpriteFrame, (err, assets, urls) => {
+                    if (err) {
+                        this.tipLb.string += 'err loadResDir';
+                        return;
+                    }
+                    this.tipLb.string += 'successful loadResDir';
+                    assets.forEach((asset) => {
+                        console.log('asset is: ', asset);
+                        console.log('asset ctor is cc.SpriteFrame: ', asset instanceof cc.SpriteFrame);
+                        console.log('asset name is: ', asset.name);
+                    });
+                    urls.forEach((url) => {
+                        console.log('url is: ', url);
+                    });
                 });
                 break;
         }
     },
 
-    clear: function () {
-        console.log('------clear');
+    clear() {
         this.showNode.removeAllChildren();
     },
 
@@ -239,18 +319,26 @@ cc.Class({
     //3---cc.loader.release(asset)
     //通过id（通常是资源 url）来释放一个资源或者一个资源数组
     //参数asset---Asset | RawAsset | String | Array
-    clearResource: function () {
+    clearResource() {
         //---cc.loader.getRes(url, type)
         //参数url（String）---资源url
         //参数type---如cc.Prefab
         var res = cc.loader.getRes(url, type);
         cc.loader.release(res);
+    },
+
+    cache() {
+        // cc.loader.getDependsRecursively(owner)---获取某个已经加载好的资源的所有依赖资源，包含它自身，并保存在数组中返回
+        //参数 owner(Asset | String)---asset 资源对象 | 资源目录下的 url
+        //返回 Array---[nativeUrl]；返回的数组保存依赖资源的 url
+        let params = this.prefab;
+        let func = () => {
+            let dependArr = [];
+            dependArr = cc.loader.getDependsRecursively(params);
+            console.log('cache dependArr: ', dependArr);
+        }
+        func();
+        params = 'prefab/cachePrefab';
+        func();
     }
-
-
-    // start () {
-
-    // },
-
-    // update (dt) {},
 });

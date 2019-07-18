@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "256dcadf-3835-4a65-8214-0cdf38c36b10",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "ssl_btn_duizi2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "93c879c4-6105-4ddb-b317-003d92e9dc5b",
       "rawTextureUuid": "256dcadf-3835-4a65-8214-0cdf38c36b10",
       "trimType": "auto",

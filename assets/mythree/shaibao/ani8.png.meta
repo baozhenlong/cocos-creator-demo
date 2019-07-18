@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "e94df48a-9ec2-4e84-8fea-d50ba722e477",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "ani8": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "cf8cbee9-539a-4421-a428-aa7d2c577e48",
       "rawTextureUuid": "e94df48a-9ec2-4e84-8fea-d50ba722e477",
       "trimType": "auto",

@@ -4,7 +4,7 @@ cc.Class({
     properties: {
         egAudio: {
             default: [],
-            url: [cc.AudioClip]
+            type: [cc.AudioClip]
         }
     },
 

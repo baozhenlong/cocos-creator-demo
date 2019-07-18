@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "46eea835-c583-4ae6-8ac9-c6eee43c694c",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_quanya": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4f5859c7-731e-4786-96a5-4ce135113e45",
       "rawTextureUuid": "46eea835-c583-4ae6-8ac9-c6eee43c694c",
       "trimType": "auto",

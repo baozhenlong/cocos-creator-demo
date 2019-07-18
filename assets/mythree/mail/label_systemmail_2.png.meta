@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "6277c950-e552-4726-bd95-854580c7385b",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "label_systemmail_2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f0fbe312-689b-4b3b-a9bf-566cc8f9dd94",
       "rawTextureUuid": "6277c950-e552-4726-bd95-854580c7385b",
       "trimType": "auto",

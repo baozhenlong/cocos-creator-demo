@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "d6b9053f-aad9-4913-845a-3f56c19f9a8f",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "zuanbtn": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "970e9b10-89b4-45cb-b918-499ba63ed2a9",
       "rawTextureUuid": "d6b9053f-aad9-4913-845a-3f56c19f9a8f",
       "trimType": "auto",

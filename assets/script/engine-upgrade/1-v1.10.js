@@ -2,6 +2,7 @@
 {
     //兼容RawAsset
     {
+        var file = {};
         //RawAsset调整为Asset，本质上无非就是从引擎层面把字符串转变成对象
         //只要保证跟引擎交互时，所使用的是对象即可
         //Asset转字符串
@@ -9,7 +10,7 @@
             //对于Texture2D，RawAsset，AudioClip，ParticleAsset类型的资源来说，
             //可以直接通过.nativeUrl获得原有的URL
             //如果无法获取，则说明这是其他类型的Asset对象，其他类型的对象就不用升级，所以不用修改
-            var url = this.file.nativeUrl || this.file
+            var url = file.nativeUrl || file
         }
         //字符串转Asset
         {
@@ -19,6 +20,7 @@
                 //'object'
             });
         }
+
         //不支持url类型
         var old_audio_bg_music = {
             default: null,
@@ -27,7 +29,7 @@
         //将url改为type，并且确保default为null
         var new_audio_bg_music = {
             default: null,
-            url: cc.AudioClip
+            type: cc.AudioClip
         };
         //注意：如果原先定义的类型是cc.RawAsset，除了修改url为type，连带类型也应该改为cc.Asset
         var old_manifest = {
@@ -49,7 +51,7 @@
             type: cc.TextAsset
         };
         //读取
-        var text = this.file.text;
+        var text = file.text;
     }
     //cc.JsonAsset：用于加载JSON文件
     {

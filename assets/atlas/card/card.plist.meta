@@ -9,7 +9,7 @@
   "type": "Texture Packer",
   "subMetas": {
     "card_1.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "99a6bf4f-c302-46f6-9488-1ee8d1ec9862",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -31,7 +31,7 @@
       "subMetas": {}
     },
     "card_10.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c0c3d23c-b9a0-4b8f-9ee1-18b5464c041d",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -53,7 +53,7 @@
       "subMetas": {}
     },
     "card_11.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "960c4c8d-2888-4aff-81ce-fe39971c9885",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -75,7 +75,7 @@
       "subMetas": {}
     },
     "card_12.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7d52e1c5-98d5-45f8-8e99-3b7d2d5491c1",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -97,7 +97,7 @@
       "subMetas": {}
     },
     "card_13.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "fc6607ce-c4f9-41fe-82a1-30156a6ee5e3",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -119,7 +119,7 @@
       "subMetas": {}
     },
     "card_14.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b41635e7-ef79-43cf-8c3a-442f549d0599",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -141,7 +141,7 @@
       "subMetas": {}
     },
     "card_15.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7faef40b-0b18-4bbf-bd33-c76300bb6ec4",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -163,7 +163,7 @@
       "subMetas": {}
     },
     "card_16.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "13e0c9dd-4e52-43e8-b747-82c6ee46ae07",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -185,7 +185,7 @@
       "subMetas": {}
     },
     "card_17.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0dda913e-614b-472c-8113-fd222df29d63",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -207,7 +207,7 @@
       "subMetas": {}
     },
     "card_18.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "778573e4-aaf9-4806-971c-ab22db1c6b01",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -229,7 +229,7 @@
       "subMetas": {}
     },
     "card_19.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "46db1d71-936f-413b-861b-d0c3e9d67fdb",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -251,7 +251,7 @@
       "subMetas": {}
     },
     "card_2.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "6c191d82-8d0d-4851-8823-621d6a112d69",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -273,7 +273,7 @@
       "subMetas": {}
     },
     "card_20.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "90ca7539-5414-4ce2-9c61-8b5e841cae29",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -295,7 +295,7 @@
       "subMetas": {}
     },
     "card_21.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "377ed2df-1850-4f32-aebd-d356e5484eb1",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -317,7 +317,7 @@
       "subMetas": {}
     },
     "card_22.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0c2ca770-e557-4113-852e-8c45687389e3",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -339,7 +339,7 @@
       "subMetas": {}
     },
     "card_23.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0ee3c12c-9c2d-4050-8bb6-384c04a8d8a5",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -361,7 +361,7 @@
       "subMetas": {}
     },
     "card_24.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "e6b7f3a0-8974-4d73-8136-e05fc94ca2af",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -383,7 +383,7 @@
       "subMetas": {}
     },
     "card_25.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d53a2397-44ad-4058-ae1f-846bf681078b",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -405,7 +405,7 @@
       "subMetas": {}
     },
     "card_26.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "11567f69-03cb-4a4e-a2fa-e9a4db6b1377",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -427,7 +427,7 @@
       "subMetas": {}
     },
     "card_27.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7e81dfd7-6ac8-4736-b70f-476c36111df1",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -449,7 +449,7 @@
       "subMetas": {}
     },
     "card_28.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "e2671932-0eba-4ecb-a16f-e99a952ded7d",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -471,7 +471,7 @@
       "subMetas": {}
     },
     "card_29.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c158c942-3851-415e-900e-28a57507d6bd",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -493,7 +493,7 @@
       "subMetas": {}
     },
     "card_3.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4f7cec66-5f76-45bc-a0ff-41216fe2d49c",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -515,7 +515,7 @@
       "subMetas": {}
     },
     "card_30.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b0496f0f-45fc-4603-8af7-8d2576baa829",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -537,7 +537,7 @@
       "subMetas": {}
     },
     "card_31.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "24793bc6-6aa4-477c-9df5-02ad86e1d317",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -559,7 +559,7 @@
       "subMetas": {}
     },
     "card_32.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0209195e-c196-4424-9754-2d5433852ffa",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -581,7 +581,7 @@
       "subMetas": {}
     },
     "card_33.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4c6c59b6-7af1-49ed-8c39-c0a6af0cb4dd",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -603,7 +603,7 @@
       "subMetas": {}
     },
     "card_34.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "ae4517e9-30cd-4cd4-9b4f-4feaf549132c",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -625,7 +625,7 @@
       "subMetas": {}
     },
     "card_35.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b2d14f72-8131-47cd-87a3-ea5dd7cfff67",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -647,7 +647,7 @@
       "subMetas": {}
     },
     "card_36.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "32622d91-c037-4338-ad5f-a783cc40c254",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -669,7 +669,7 @@
       "subMetas": {}
     },
     "card_37.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "b378d3de-0ed0-49f7-8883-b4f19bc7ea37",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -691,7 +691,7 @@
       "subMetas": {}
     },
     "card_38.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f5afbd62-a4fa-4356-a05d-7661b0f8c5a3",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -713,7 +713,7 @@
       "subMetas": {}
     },
     "card_39.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "5f86cdff-77cb-4774-b8ab-9581e8a3d1af",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -735,7 +735,7 @@
       "subMetas": {}
     },
     "card_4.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "90392e69-8da7-4fed-b445-845e3d391592",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -757,7 +757,7 @@
       "subMetas": {}
     },
     "card_40.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "70dec38d-edab-4a17-a2ef-c69c5d79ae14",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -779,7 +779,7 @@
       "subMetas": {}
     },
     "card_41.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "601982c5-746b-46b8-9161-bfe1bbe395a4",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -801,7 +801,7 @@
       "subMetas": {}
     },
     "card_42.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "7d85dc0d-caa9-4d52-8866-fa2c2d7aee00",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -823,7 +823,7 @@
       "subMetas": {}
     },
     "card_43.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8ad24dc4-8329-4b75-aaaf-a7b661ffe97d",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -845,7 +845,7 @@
       "subMetas": {}
     },
     "card_44.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "924098ab-11de-4db1-9476-8ee2893287fd",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -867,7 +867,7 @@
       "subMetas": {}
     },
     "card_45.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "3e87c078-b925-43f2-b8ce-6aaccbec5010",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -889,7 +889,7 @@
       "subMetas": {}
     },
     "card_46.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "10898e0a-492a-4300-bbfe-1f15e5fcd03c",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -911,7 +911,7 @@
       "subMetas": {}
     },
     "card_47.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "22cababb-4b2f-4398-9cca-0e7c07eb5855",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -933,7 +933,7 @@
       "subMetas": {}
     },
     "card_48.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f6c6a326-8e8f-473e-9015-a59a37ee86c9",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -955,7 +955,7 @@
       "subMetas": {}
     },
     "card_49.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "e9fe4675-2ec8-4bab-bbb0-2907392d1ce0",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -977,7 +977,7 @@
       "subMetas": {}
     },
     "card_5.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "1924ae0a-6aaf-449d-b80e-60fb8d7967fc",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -999,7 +999,7 @@
       "subMetas": {}
     },
     "card_50.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "95a4d72a-e5c8-4edb-a78f-05d37a4a48e2",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1021,7 +1021,7 @@
       "subMetas": {}
     },
     "card_51.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d2178cc7-1f23-42d8-ab07-81c328b824d5",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1043,7 +1043,7 @@
       "subMetas": {}
     },
     "card_52.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "25d58d58-db2d-4478-a79e-c1293504999a",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1065,7 +1065,7 @@
       "subMetas": {}
     },
     "card_53.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0be72d1d-bd2f-49f6-ac5f-2f691bca4abf",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1087,7 +1087,7 @@
       "subMetas": {}
     },
     "card_54.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "605f1e47-a89b-4796-b2d0-d8e058e28faa",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1109,7 +1109,7 @@
       "subMetas": {}
     },
     "card_6.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0358b84b-f616-41c7-bd0e-2488ca29c06e",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1131,7 +1131,7 @@
       "subMetas": {}
     },
     "card_7.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "09b639a3-e5a1-4f45-a43d-8c077e08af6f",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1153,7 +1153,7 @@
       "subMetas": {}
     },
     "card_8.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "19c1e23e-e11c-4151-ae71-39e5ac5e42a8",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1175,7 +1175,7 @@
       "subMetas": {}
     },
     "card_9.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "29347d23-e770-4c31-8c18-a2097b115221",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1197,7 +1197,7 @@
       "subMetas": {}
     },
     "card_beimian1.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "ec3217f6-72cb-486a-a297-496d0468c18d",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",
@@ -1219,7 +1219,7 @@
       "subMetas": {}
     },
     "card_beimian2.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "45aa2eea-4c56-40c6-bd3f-4eae3bca6f7b",
       "rawTextureUuid": "67d301d3-d94f-41f0-8c26-6d18951c93db",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "100392ca-2e76-45d1-beb6-e0a25095efa7",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "qq_ingame": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "a83e9121-6ac6-4a4e-b3cf-aeaad3019add",
       "rawTextureUuid": "100392ca-2e76-45d1-beb6-e0a25095efa7",
       "trimType": "auto",

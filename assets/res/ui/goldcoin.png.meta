@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "37764376-bbc6-465c-92e1-f01735d3f86b",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "goldcoin": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0fd2d7c3-3204-4426-af87-72c1f2bd676f",
       "rawTextureUuid": "37764376-bbc6-465c-92e1-f01735d3f86b",
       "trimType": "auto",

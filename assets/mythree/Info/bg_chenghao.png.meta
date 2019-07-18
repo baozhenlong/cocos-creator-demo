@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "107b1e18-9ab2-456d-bdd2-172c5a7d4d31",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "bg_chenghao": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "ac34a101-6579-4fad-ae59-a151b105af2f",
       "rawTextureUuid": "107b1e18-9ab2-456d-bdd2-172c5a7d4d31",
       "trimType": "auto",

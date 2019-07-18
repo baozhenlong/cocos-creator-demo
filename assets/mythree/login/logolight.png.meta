@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "fbd866eb-d5a8-4112-bd08-1174753cbdf9",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "logolight": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "f4298044-7449-4d59-9147-e5488f385317",
       "rawTextureUuid": "fbd866eb-d5a8-4112-bd08-1174753cbdf9",
       "trimType": "auto",

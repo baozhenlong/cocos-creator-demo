@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "e53a37a3-850e-4aae-8726-7537b85bed58",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_tongguo2": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "ed2e7dc1-3b5f-49c6-ac97-5d992295b013",
       "rawTextureUuid": "e53a37a3-850e-4aae-8726-7537b85bed58",
       "trimType": "auto",

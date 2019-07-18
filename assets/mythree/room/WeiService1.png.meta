@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "1ab84889-044f-4917-8168-e476605c573e",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "WeiService1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0c41ed67-de68-4ba3-9ed0-9a232fa03a90",
       "rawTextureUuid": "1ab84889-044f-4917-8168-e476605c573e",
       "trimType": "auto",

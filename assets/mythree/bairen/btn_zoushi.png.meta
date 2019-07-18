@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "5c709d1b-32af-4677-9398-4e67840ce844",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "btn_zoushi": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8065a921-40ab-46bb-8db1-a7cb3b70c372",
       "rawTextureUuid": "5c709d1b-32af-4677-9398-4e67840ce844",
       "trimType": "auto",

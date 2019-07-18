@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "2c69a825-16a9-4de6-8a54-829f1027fe4a",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "beibao_btn_shiyong_d": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "a4e32c27-001b-4e16-ac70-8d7daa86f2ea",
       "rawTextureUuid": "2c69a825-16a9-4de6-8a54-829f1027fe4a",
       "trimType": "auto",

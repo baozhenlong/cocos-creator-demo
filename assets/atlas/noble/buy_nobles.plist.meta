@@ -9,7 +9,7 @@
   "type": "Texture Packer",
   "subMetas": {
     "buy_nobles_btn_buy_n.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "44f98ff4-52ad-41c4-9808-8cf74aa4d707",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -31,7 +31,7 @@
       "subMetas": {}
     },
     "buy_nobles_btn_close_n.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "0075c84a-03c6-4d84-ac09-b9e1eaeff456",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -53,7 +53,7 @@
       "subMetas": {}
     },
     "buy_nobles_btn_more_n.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "a7193896-116e-4305-ae73-944fabdef1ae",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -75,7 +75,7 @@
       "subMetas": {}
     },
     "buy_nobles_btn_select_n.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "a80fb29a-1e89-488e-955b-665a005a5913",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -97,7 +97,7 @@
       "subMetas": {}
     },
     "buy_nobles_btn_select_s.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "d39d248f-127b-49ca-942c-bd17585d0c19",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -119,7 +119,7 @@
       "subMetas": {}
     },
     "buy_nobles_gift_bag_bg.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2c30564b-0507-4cdd-ba52-9e3d9be8c8dc",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -141,7 +141,7 @@
       "subMetas": {}
     },
     "buy_nobles_icon_diamond.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "cd401796-24aa-4ee5-891e-be8e3cfcf0ff",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -163,7 +163,7 @@
       "subMetas": {}
     },
     "buy_nobles_tip_bg.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "a5c65be5-f5e4-4672-b10e-c6d168a80a2b",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -185,7 +185,7 @@
       "subMetas": {}
     },
     "buy_nobles_txt_buy.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "c4410d0c-767d-4537-95fd-92bd070d1f50",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -207,7 +207,7 @@
       "subMetas": {}
     },
     "buy_nobles_txt_cancel.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "26243930-cf6d-4cd9-aafc-6fbd7a10d406",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -229,7 +229,7 @@
       "subMetas": {}
     },
     "buy_nobles_txt_more.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "ab10c4ae-fb52-4996-a491-e1feec6f3181",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",
@@ -251,7 +251,7 @@
       "subMetas": {}
     },
     "buy_nobles_txt_rmb.png": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "bc3ff096-483c-4594-9ddb-c080c11b21a1",
       "rawTextureUuid": "6f44e4fc-b478-4682-acb8-a9e258dc2739",
       "trimType": "auto",

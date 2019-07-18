@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "cb3faddd-e8bb-410b-974d-803f580aab15",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "star3": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "30875309-2066-472d-945c-e9d0bedce6f0",
       "rawTextureUuid": "cb3faddd-e8bb-410b-974d-803f580aab15",
       "trimType": "auto",

@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "34b26599-8cc6-4a5e-9549-d249dcf80fa3",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "vip_icontongka": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "8a812bd1-11f2-4b6d-8950-6b46112cdee4",
       "rawTextureUuid": "34b26599-8cc6-4a5e-9549-d249dcf80fa3",
       "trimType": "auto",

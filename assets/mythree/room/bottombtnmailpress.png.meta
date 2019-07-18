@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "1234593f-63c3-4986-9099-bc931a3743af",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "bottombtnmailpress": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "4fe20dfc-75d1-4759-8ac3-e1fbe32a0828",
       "rawTextureUuid": "1234593f-63c3-4986-9099-bc931a3743af",
       "trimType": "auto",

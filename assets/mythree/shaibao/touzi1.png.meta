@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "15b29098-8acb-4d07-adbe-04241045833d",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "touzi1": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "02ace8dd-12ea-43f9-9d7b-a5520200b230",
       "rawTextureUuid": "15b29098-8acb-4d07-adbe-04241045833d",
       "trimType": "auto",

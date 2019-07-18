@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "21613ab2-06f1-4cb2-a006-abc818bfe308",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "loginlight": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "e705e898-2754-43c9-bfd1-c1fa1e3ec7e1",
       "rawTextureUuid": "21613ab2-06f1-4cb2-a006-abc818bfe308",
       "trimType": "auto",

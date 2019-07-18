@@ -1,12 +1,13 @@
 {
-  "ver": "1.0.0",
+  "ver": "2.2.0",
   "uuid": "98c8cac4-2e44-42ef-b84a-85d7dee57359",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
+  "premultiplyAlpha": false,
   "subMetas": {
     "desk_bairen": {
-      "ver": "1.0.3",
+      "ver": "1.0.4",
       "uuid": "2ece5370-0ca5-49e1-a85d-065083ba7129",
       "rawTextureUuid": "98c8cac4-2e44-42ef-b84a-85d7dee57359",
       "trimType": "auto",
