@@ -16,7 +16,7 @@
         {
             var music_url = '';
             cc.loader.loadRes(music_url, cc.AudioClip, function (err, audioClip) {
-                console.log(typeof audioClip);
+                console.log('audioClip', typeof audioClip);
                 //'object'
             });
         }
