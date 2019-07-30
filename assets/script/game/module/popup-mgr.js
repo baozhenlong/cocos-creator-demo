@@ -5,22 +5,22 @@ cc.Class({
 
     },
 
-    ctor: function() {
+    ctor: function () {
         this.popupCacheObj = {};
     },
 
-    getPopup: function(popupName) {
+    getPopup: function (popupName) {
         if (this.popupCacheObj[popupName]) {
             return this.popupCacheObj[popupName]
         }
         return false;
     },
 
-    retainPopup: function(popupName, popupNode) {
+    retainPopup: function (popupName, popupNode) {
         this.popupCacheObj[popupName] = popupNode;
     },
 
-    releasePoppup: function(popupName, popupNode) {
+    releasePoppup: function (popupName, popupNode) {
         if (this.popupCacheObj[popupName]) {
             delete this.popupCacheObj[popupName];
         }
@@ -29,7 +29,7 @@ cc.Class({
         }
     },
 
-    showPopup: function(popupName, paramObj, params) {
+    showPopup: function (popupName, paramObj, params) {
         var self = this;
         if (!paramObj) {
             console.log('------no paramObj');
@@ -41,7 +41,7 @@ cc.Class({
         }
         console.log('------popup-mgr paramObj = ' + JSON.stringify(paramObj));
         var parent = paramObj.parent ? paramObj.parent : cc.director.getScene().getChildByName("Canvas");
-        var pos = paramObj.pos ? paramObj.pos : cc.p(0, 0);
+        var pos = paramObj.pos ? paramObj.pos : cc.v2(0, 0);
         var isCleanup = paramObj.isCleanup ? paramObj.isCleanup : false;
         this.openFunc = paramObj.openFunc ? paramObj.openFunc : null;
         // console.log("------popup-mgr showPopup openFunc = " + this.openFunc);
@@ -59,7 +59,7 @@ cc.Class({
             console.log("------popup-mgr release popup");
             this.releasePoppup(popupName, popupNode);
         }
-        cc.loader.loadRes("popup/" + popupName, function(err, res) {
+        cc.loader.loadRes("popup/" + popupName, function (err, res) {
             if (err) {
                 console.log("------popup-mgr error url");
                 return;
@@ -70,7 +70,7 @@ cc.Class({
         });
     },
 
-    showHandle: function(popupName, popupNode, parent, pos, params, isCleanup) {
+    showHandle: function (popupName, popupNode, parent, pos, params, isCleanup) {
         console.log("------popup-mgr showHandle parent = " + parent.name);
         var self = this;
         if (!isCleanup) {
@@ -90,9 +90,9 @@ cc.Class({
         var popupJs = popupNode.getComponent('popup-sup');
         if (popupJs) {
             console.log("------popup-mgr showHandle popupJs name = " + popupJs.name);
-            popupJs.popup(params, function() {
+            popupJs.popup(params, function () {
                 self.openHandle();
-            }, function() {
+            }, function () {
                 self.closeHandle(popupNode);
                 if (isCleanup) {
                     self.releasePoppup(popupName, popupNode);
@@ -101,13 +101,13 @@ cc.Class({
         }
     },
 
-    openHandle: function() {
+    openHandle: function () {
         console.log('execute openHandle');
         if (this.openFunc) {
             this.openFunc();
         }
     },
-    closeHandle: function(popupNode) {
+    closeHandle: function (popupNode) {
         console.log('execute closeHandle');
         if (this.closeFunc) {
             this.closeFunc();
@@ -120,17 +120,17 @@ cc.Class({
     //预加载弹窗
     //参数popupNameList（Array）---弹窗名字
     //参数cb（Function）---回调函数
-    preLoadPopup: function(popupNameList, cb = null) {
+    preLoadPopup: function (popupNameList, cb = null) {
         console.log("------popup-mgr preLoadPopup");
         var self = this;
         var len = popupNameList.length;
-        popupNameList.forEach(function(popupName, index) {
+        popupNameList.forEach(function (popupName, index) {
             //预加载Asset资源---cc.loader.loadRes(path, type, cb)，只能加载单个Asset
             //动态加载位于assets/resources/下的Asset资源（cc.Prefab，cc.SpriteFrame，cc.AnimationClip等）
             //参数path（String）---资源路径，不能包含文件扩展名
             //可选参数type（Function）---资源的类型，当类型为cc.SpriteAtlas，cc.SpriteFrame时，必需
             //参数cb（Function）---回调函数
-            cc.loader.loadRes("popup/" + popupName, function(err, res) {
+            cc.loader.loadRes("popup/" + popupName, function (err, res) {
                 if (err) {
                     console.log("------popup-mgr preLoadPopup err = " + JSON.stringify(err));
                     return;

@@ -123,10 +123,10 @@ cc.Class({
         //参数t（Number）---动作持续时间
         //参数c（[Vec2]）---贝塞尔曲线参考点
         //返回值（ActionInterval）        
-        var startPos = cc.p(-640, -320); //node当前位置
+        var startPos = cc.v2(-640, -320); //node当前位置
         this.node.setPosition(startPos);
-        var controlPos = cc.p(0, 0);
-        var endPos = cc.p(640, -320);
+        var controlPos = cc.v2(0, 0);
+        var endPos = cc.v2(640, -320);
         var bezier = [startPos, controlPos, endPos];
         var bezierTo = cc.bezierTo(5, bezier);
         // this.node.runAction(cc.spawn(scaleTo, rotateBy, bezierTo));

@@ -15,19 +15,19 @@ cc.Class({
         this.addTouchEvent();
     },
 
-    addTouchEvent: function() {
+    addTouchEvent: function () {
         var self = this;
-        this.targetNode.on(cc.Node.EventType.TOUCH_START, function(event) {
+        this.targetNode.on(cc.Node.EventType.TOUCH_START, function (event) {
             console.log('------touch start');
             self.autoScroll = false;
             self.startPos = self.targetNode.convertTouchToNodeSpaceAR(event.touch);
             self.movePos = self.startPos;
         }, this);
-        this.targetNode.on(cc.Node.EventType.TOUCH_MOVE, function(event) {
+        this.targetNode.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
             console.log('------touch move');
             self.movePos = self.targetNode.convertTouchToNodeSpaceAR(event.touch);
         }, this);
-        this.targetNode.on(cc.Node.EventType.TOUCH_END, function() {
+        this.targetNode.on(cc.Node.EventType.TOUCH_END, function () {
             console.log('------touch end');
             if (Math.abs(self.movePos.y - self.startPos.y) > 50) {
                 console.log('------scollAction diff = ' + Math.abs(self.movePos.y - self.startPos.y));
@@ -38,13 +38,13 @@ cc.Class({
             }
             self.autoScroll = true;
         }, this);
-        this.targetNode.on(cc.Node.EventType.TOUCH_CANCEL, function() {
+        this.targetNode.on(cc.Node.EventType.TOUCH_CANCEL, function () {
             console.log('------touch cancel');
             self.autoScroll = true;
         }, this);
     },
 
-    initUi: function() {
+    initUi: function () {
         this.autoScroll = true;
         this.nodePosList = [];
         this.nodeList = [];
@@ -54,13 +54,13 @@ cc.Class({
         console.log('nodePosList = ' + JSON.stringify(this.nodePosList));
     },
 
-    addItem: function(index) {
+    addItem: function (index) {
         var item = cc.instantiate(this.itemPrefab);
         item.getChildByName('Lb_index').getComponent(cc.Label).string = index + '';
         item.parent = this.targetNode;
-        var pos = cc.p(0, 0);
+        var pos = cc.v2(0, 0);
         if (index !== 0) {
-            pos = cc.p(0, this.itemHeight * index);
+            pos = cc.v2(0, this.itemHeight * index);
         }
         item.setPosition(pos);
         item.tag = index;
@@ -68,7 +68,7 @@ cc.Class({
         this.nodeList.push(item);
     },
 
-    scrollUi: function(value) {
+    scrollUi: function (value) {
         for (var i = 0; i < this.nodeList.length; i++) {
             var ele = this.nodeList[i];
             var diff = value !== undefined ? value : this.scrollSpeed;
@@ -76,7 +76,7 @@ cc.Class({
         }
     },
 
-    checkReset: function() {
+    checkReset: function () {
         if (this.nodeList[0].y <= (0 - this.itemHeight)) {
             var preNode = this.nodeList.shift();
             this.nodeList.push(preNode);
@@ -84,7 +84,7 @@ cc.Class({
         }
     },
 
-    updateUi: function() {
+    updateUi: function () {
         if (this.autoScroll) {
             return;
         }
@@ -99,12 +99,12 @@ cc.Class({
             var lastNode = this.nodeList.pop();
             this.nodeList.unshift(lastNode);
         }
-        this.nodeList.forEach(function(node, index) {
+        this.nodeList.forEach(function (node, index) {
             node.setPosition(self.nodePosList[index]);
         });
     },
 
-    executeClick: function() {
+    executeClick: function () {
         var posY = this.nodeList[0].y;
         console.log('------executeClick posY = ' + posY);
         console.log('------executeClick -itemHeight = ' + (-this.itemHeight / 2));

@@ -10,7 +10,7 @@ cc.Class({
 
         var self = this;
         this.isMoving = false;
-        this.moveToPos = cc.p(0, 0);
+        this.moveToPos = cc.v2(0, 0);
 
         //---注册方式
 

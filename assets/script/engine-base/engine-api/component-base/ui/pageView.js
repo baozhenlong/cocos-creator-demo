@@ -84,7 +84,7 @@ cc.Class({
     //创建页面实例
     createPage: function () {
         var page = cc.instantiate(this.pageTemplate);
-        page.position = cc.p(0, 0);
+        page.position = cc.v2(0, 0);
         //---pageView.getPages()
         //返回视图中的所有页面
         //返回值（[Node]）

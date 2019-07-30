@@ -60,7 +60,7 @@ cc.Class({
 
         //---scrollView.scrollToOffset(offset, timeInSecond, attenuated)
         //视图内容将在规定时间内滚动到相对左上角原点的偏移量
-        //参数offset（Vec2）---0~maxScrollOffset之间的值-cc.p()
+        //参数offset（Vec2）---0~maxScrollOffset之间的值-cc.v2()
 
     },
 

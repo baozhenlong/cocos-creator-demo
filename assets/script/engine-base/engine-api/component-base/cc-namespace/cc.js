@@ -28,17 +28,17 @@ cc.Class({
         console.log('direction = ' + JSON.stringify(direction));
         //direction = {"up":0,"down":1,"left":4,"right":5}
 
-        //---cc.p()---创建cc.Vec2对象---cc.Vec2表示2D向量和坐标
-        //cc.p = cc.v2;
-        //1---cc.p()
-        console.log("cc.p() = " + JSON.stringify(cc.p(1, 2))); //{"x":0,"y":0}        
-        //2---cc.p(x, y)
+        //---cc.v2()---创建cc.Vec2对象---cc.Vec2表示2D向量和坐标
+        //cc.v2 = cc.v2;
+        //1---cc.v2()
+        console.log("cc.v2() = " + JSON.stringify(cc.v2(1, 2))); //{"x":0,"y":0}        
+        //2---cc.v2(x, y)
         //参数x（Number）
         //参数y（Number）
-        console.log("cc.p(1, 2) = " + JSON.stringify(cc.p(1, 2))); //{"x":1,"y":2}
-        //3---cc.p(Object)
+        console.log("cc.v2(1, 2) = " + JSON.stringify(cc.v2(1, 2))); //{"x":1,"y":2}
+        //3---cc.v2(Object)
         //参数Object（Object）---{x: 0, y: 0}
-        console.log("cc.p(obj) = " + JSON.stringify(cc.p({
+        console.log("cc.v2(obj) = " + JSON.stringify(cc.v2({
             x: 1,
             y: 2
         }))); //{"x":1,"y":2}

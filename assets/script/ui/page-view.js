@@ -166,7 +166,7 @@ var PageView = cc.Class({
 
     //通过index获取偏移值数值
     _moveOffsetValue: function (index) {
-        var offset = cc.p(0, 0);
+        var offset = cc.v2(0, 0);
     }
 
 

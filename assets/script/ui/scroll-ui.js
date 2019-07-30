@@ -15,14 +15,14 @@ cc.Class({
 
     onLoad() {
         var self = this;
-        this.startPos = cc.p(0, 0);
-        this.movePos = cc.p(0, 0);
+        this.startPos = cc.v2(0, 0);
+        this.movePos = cc.v2(0, 0);
         this.playingCount = 0;
         this.curPageIndex = 0;
         this.isMoving = false;
         this.pageCount = 5;
         this.initView();
-        this.parentNode.on(cc.Node.EventType.TOUCH_START, function(event) {
+        this.parentNode.on(cc.Node.EventType.TOUCH_START, function (event) {
             //第三个参数target用于绑定响应函数的this对象
             // console.log("this.node.name = " + this.node.name);
             //获得当前触点对象
@@ -48,12 +48,12 @@ cc.Class({
             this.isMoving = true;
         }, this);
 
-        this.parentNode.on(cc.Node.EventType.TOUCH_MOVE, function(event) {
+        this.parentNode.on(cc.Node.EventType.TOUCH_MOVE, function (event) {
             var nodePos = this.parentNode.convertTouchToNodeSpaceAR(event.touch);
             this.movePos = nodePos;
         }, this);
 
-        this.parentNode.on(cc.Node.EventType.TOUCH_END, function(event) {
+        this.parentNode.on(cc.Node.EventType.TOUCH_END, function (event) {
             if (Math.abs(this.movePos.x - this.startPos.x) > 50 && this.playingCount == 0) {
                 console.log("xDiff = " + Math.abs(this.movePos.x - this.startPos.x));
                 this.updateView();
@@ -61,18 +61,18 @@ cc.Class({
             this.isMoving = false;
         }, this);
 
-        this.parentNode.on(cc.Node.EventType.TOUCH_CANCEL, function(event) {
+        this.parentNode.on(cc.Node.EventType.TOUCH_CANCEL, function (event) {
             this.isMoving = false;
         }, this);
 
 
     },
 
-    getCurPageNode: function(index) {
+    getCurPageNode: function (index) {
         return this.pageNodeList[index];
     },
 
-    updateView: function() {
+    updateView: function () {
         var diffIndex = 0
         if (!this.isMoving) {
             return;
@@ -92,7 +92,7 @@ cc.Class({
         this.initView(diffIndex);
     },
 
-    initView: function(first = 0) {
+    initView: function (first = 0) {
         var self = this;
         var lastIndex = this.pageNodeList.length - 1;
         if (first === 0) {
@@ -107,7 +107,7 @@ cc.Class({
             }
             this.middleIndex = parseInt(this.pageNodeList.length / 2);
             console.log("middleIndex = " + this.middleIndex);
-            this.pageNodeList.forEach(function(node, index) {
+            this.pageNodeList.forEach(function (node, index) {
                 self.indexList.push(index);
                 self.frameDataList.push(self.setFrameData(index));
                 if (index != self.middleIndex) {
@@ -120,7 +120,7 @@ cc.Class({
                 node.name = "frame" + index;
             });
         } else {
-            this.pageNodeList.forEach(function(node, index) {
+            this.pageNodeList.forEach(function (node, index) {
                 //获取层级显示信息
                 var index = self.indexList.indexOf(index);
                 var frameData = self.getFrameData(index);
@@ -131,7 +131,7 @@ cc.Class({
         }
     },
 
-    setFrameData: function(index) {
+    setFrameData: function (index) {
         //以中间为基准，设置缩放比例        
         var indexDiff = index - this.middleIndex;
         var scale = 1 - Math.abs(indexDiff * this.pageScale);
@@ -165,18 +165,18 @@ cc.Class({
         return frameData;
     },
 
-    getFrameData: function(index) {
+    getFrameData: function (index) {
         return this.frameDataList[index];
     },
 
-    moveEffect: function(node, frameData) {
+    moveEffect: function (node, frameData) {
         console.log("moveEffect");
         // console.log("frameData = " + JSON.stringify(frameData));
         console.log("node.zIndex = " + node.zIndex);
         var self = this;
         // console.log("start playingCount = " + this.playingCount);
         this.playingCount++;
-        var moveTo = cc.moveTo(0.5, cc.p(frameData.nx, frameData.ny));
+        var moveTo = cc.moveTo(0.5, cc.v2(frameData.nx, frameData.ny));
         var scaleTo = cc.scaleTo(0.5, frameData.scale);
         var finish = cc.callFunc(() => {
             this.playingCount--;
