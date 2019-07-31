@@ -8,71 +8,71 @@ cc.Class({
     onLoad() {
         this.animation = this.node.getComponent(cc.Animation);
 
-        //---animation.getClips()
-        //获取动画组件上的所有动画剪辑
-        //返回值（[cc.AnimationClip]）
+        // --- animation.getClips()
+        // 获取动画组件上的所有动画剪辑
+        // 返回值 ([cc.AnimationClip])
         this.animClips = this.animation.getClips();
 
-        //---AnimationClip
-        //动画剪辑；用于存储动画数据
-        //1---animationClip.name
-        //动画名
+        // --- AnimationClip
+        // 动画剪辑；用于存储动画数据
+        // 1 --- animationClip.name
+        // 动画名
         console.log('animationClip.name = ' + this.animClips[0].name); //anim-right-1
-        //2---animationClip.duration
-        //动画的持续时间（Number）
-        //3---animationClip.sample
-        //动画的帧速率（Number）
-        //4---animationClip.speed
-        //动画的播放速度（Number）
-        //5--animationClip.wrapMode
-        //动画的循环模式（Enum）
-        //默认---Default---向Animation Component或者AnimationClip查找warpMode
-        //正向播放一遍---Normal---动画只播放一遍
-        //反向播放一遍---Reverse---从最后一帧或结束位置开始反向播放，到第一帧或开始位置停止
-        //循环播放---Loop
-        //反向循环播放---LoopReverse
-        //正向来回播放---PingPong---从第一帧播放到最后一帧，然后反向播放回第一帧，到第一帧再正向播放，如此循环
-        //反向来回播放---PingPongReverse---从最后一帧开始方向播放，其它同PingPong
+        // 2 --- animationClip.duration
+        // 动画的持续时间 (Number)
+        // 3 --- animationClip.sample
+        // 动画的帧速率 (Number)
+        // 4 --- animationClip.speed
+        // 动画的播放速度 (Number)
+        // 5 --- animationClip.wrapMode
+        // 动画的循环模式 (Enum)
+        // 默认 --- Default --- 向 Animation Component 或者 AnimationClip 查找 warpMode
+        // 正向播放一遍 --- Normal --- 动画只播放一遍
+        // 反向播放一遍 --- Reverse --- 从最后一帧或结束位置开始反向播放，到第一帧或开始位置停止
+        // 循环播放 --- Loop
+        // 反向循环播放 --- LoopReverse
+        // 正向来回播放 --- PingPong --- 从第一帧播放到最后一帧，然后反向播放回第一帧，到第一帧再正向播放，如此循环
+        // 反向来回播放 --- PingPongReverse --- 从最后一帧开始方向播放，其它同PingPong
 
-        //---animation.getAnimationState(name)
-        //获取AnimationState；获取当前或指定的动画状态
-        //参数name（String）---动画名
-        //返回值（AnimationState）
+        // --- animation.getAnimationState(name)
+        // 获取 AnimationState ；获取当前或指定的动画状态
+        // 参数 name (String) --- 动画名
+        // 返回值 (AnimationState)
         var animState = this.animation.getAnimationState('anim-right-1');
 
-        //---AnimationState
-        //AnimationClip运行时的实例，它将动画数据解析为方便程序中做计算的数值；完全控制动画播放过程
-        //获取动画信息；可以利用这些信息修改动画
-        //1---AnimationState.clip
-        //获取动画关联的clip（AnimationClip）
+        // --- AnimationState
+        // AnimationClip 运行时的实例，它将动画数据解析为方便程序中做计算的数值；完全控制动画播放过程
+        // 获取动画信息；可以利用这些信息修改动画
+        // 1 --- AnimationState.clip
+        // 获取动画关联的 clip (AnimationClip)
         var clip = animState.clip;
-        //2---AnimationState.name
-        //获取动画的名字（String）
+        // 2 --- AnimationState.name
+        // 获取动画的名字 (String)
         var name = animState.name;
-        console.log('name = ' + name); //anim-right-1
-        //3---AnimationState.speed
-        //获取动画的播放速率（Number）
+        console.log('name = ' + name); // anim-right-1
+        // 3 --- AnimationState.speed
+        // 获取动画的播放速率 (Number)
         var speed = animState.speed;
-        //4---AnimationState.duration
-        //获取动画的播放总时长（Number）---秒
+        // 4 --- AnimationState.duration
+        // 获取动画的播放总时长 (Number) ---秒
         var duration = animState.duration;
-        //5---AnimationState.time
-        //获取动画的播放时间（Number）---秒
+        // 5 --- AnimationState.time
+        // 获取动画的播放时间 (Number) ---秒
         var time = animState.time;
-        //6---AnimationState.repeatCount
-        //获取动画的重复次数（（Number））
+        // 6 --- AnimationState.repeatCount
+        // 获取动画的重复次数 (Number)
         var repeatCount = animState.repeatCount;
-        //7---AnimationState.wrapMode
-        //获取动画的循环模式（Enum）
+        // 7 --- AnimationState.wrapMode
+        // 获取动画的循环模式 (Enum)
         var wrapMode = animState.wrapMode;
-        //8---AnimationState.playing
-        //获取动画是否正在播放（Boolean）
+        // 8 --- AnimationState.playing
+        // 获取动画是否正在播放 (Boolean)
         var playing = animState.isPlaying;
-        //9---AnimationState.paused
-        //获取动画是否已经暂停（Boolean）
+        // 9 --- AnimationState.paused
+        // 获取动画是否已经暂停 (Boolean)
         var paused = animState.isPaused;
-        //10---AnimationState.frameRate
-        //获取动画的帧率
+        // 10 --- AnimationState.frameRate
+        // 获取动画的帧率
         var frameRate = animState.frameRate;
     },
 
@@ -130,11 +130,8 @@ cc.Class({
         this.animation.stop('anim-right-1');
     },
 
-
-
-    // start () {
-
-    // },
-
-    // update (dt) {},
+    // setCurrentTime(time, name)
+    // 设定指定动画的播放时间；如果没有指定名字，则设置当前播放动画的播放时间
+    // 参数 time (Number) --- 指定动画所在的时间
+    // 参数 name (String) --- 动画名称
 });
