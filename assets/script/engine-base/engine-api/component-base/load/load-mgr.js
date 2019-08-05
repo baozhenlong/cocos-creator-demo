@@ -1,245 +1,288 @@
-function doAfterTick(callback, delay = 300) {
+function doAfterTick(callback, delayTime = 100) {
+    // 参数
+    // callback
+    // 回调函数
+    // delayTime
+    // 单位， ms
     setTimeout(() => {
-        try {
-            callback();
-        } catch (err) {
-            console.log('执行回调出错');
-        }
-    }, delay);
-}
-//加载资源
-class LoadItem {
-    constructor({
-        id = -1, //资源id
-        type, //资源类型
-        desc = '', //加载描述
-        url, //资源路径
-        mgr //资源管理者
-    }) {
-        this.id = id;
-        this.url = url;
-        this.type = type;
-        this.desc = `load<${desc}>`;
-        this.mgr = mgr;
-        this.isLoaded = false;
-        this.isReleased = false;
-        this.cacheResData = {};
-    }
-
-    load({
-        successCallback,
-        failureCallback,
-        progressCallback
-    }) {
-        const completedCallback = (err, asset) => {
-            this.isLoaded = true;
-            if (err) {
-                if (failureCallback instanceof Function) {
-                    failureCallback();
-                }
-            } else {
-                this.cacheRes(asset);
-                if (successCallback instanceof Function) {
-                    successCallback();
-                }
-            }
-        }
-        const args = [this.url];
-        if (this.type) {
-            args.push(this.type);
-        }
-        if (progressCallback instanceof Function) {
-            args.push(progressCallback);
-        }
-        args.push(completedCallback);
-    }
-
-    cacheRes(asset) {
-        if (asset instanceof cc.Asset) {
-            let dependArr = cc.loader.getDependsRecursively(asset);
-            dependArr.forEach((url) => {
-                if (!this.cacheResData[url]) {
-                    this.cacheResData[url] = true;
-                }
-            });
-        }
-    }
-
-    release() {
-        this.mgr = null;
-        this.isReleased = true;
-    }
+        callback();
+    }, delayTime);
 }
 
-//资源根管理者
-class LoadMgr {
+// 设计概念
+// rootLoader
+// 拥有 subLoader subLoader ...
+// 维护 assets 引用计数
+// loader
+// 拥有 loaderItem loaderItem ...
+class Loader {
+
     constructor(desc = '') {
         this.desc = desc;
+        this.parentLoader = null;
         this.isReleased = false;
-        this.parentLoadMgr = null;
-        this.subLoadMgrArr = [];
-        //场景上的资源
-        this.sceneResData = {};
-        // loadItem 相关数据
         this.itemData = {};
         this.itemCount = 0;
-        //引用计数以 loadItem为单位；即使 loadItem 用到了 3 次 xxx.png，xxx.png的引用次数也只算 1 次
-        this.resReferenceCountData = {};
-        //延迟加载清单
-        this.delayLoadArr = [];
+        this.subLoaderArr = [];
+        this.sceneAssetsData = {};
+        // 场景上的资源是静态资源， 不会被释放
+        this.assetsReferenceCountData = {};
     }
 
-    get rootLoadMgr() {
-        let root = this;
-        while (root.parentLoadMgr) {
-            root = root.parentLoadMgr;
+    get rootLoader() {
+        let rootLoader = this;
+        while (rootLoader.parentLoader) {
+            rootLoader = rootLoader.parentLoader;
         }
-        return root;
+        return rootLoader;
     }
 
-    //暂存场景上的静态资源，LoadMgr 释放时会跳过这些资源
-    cacheSceneRes(scene) {
-        const {
-            dependAssets
-        } = scene;
-        dependAssets.forEach((url) => {
-            if (!this.rootLoadMgr.sceneResData[url]) {
-                this.rootLoadMgr.sceneResData[url] = true;
+    cacheSceneAssets(scene) {
+        let assets = scene.dependAssets;
+        assets.forEach(uuid => {
+            if (!this.rootLoader.sceneAssetsData[uuid]) {
+                this.rootLoader.sceneAssetsData[uuid] = true;
             }
         });
     }
 
-    //清除场景暂存
-    uncancheSceneRes() {
-        this.rootLoadMgr.sceneResData = {};
+    uncacheSceneAssets() {
+        this.rootLoader.sceneAssetsData = {};
     }
 
-    //排除场景上的资源
-    excludeSceneRes(resArr = []) {
-        return resArr.filter(res => !this.sceneResData[res]);
-    }
-
-    //创建子资源管理者
-    createSubLoadMgr(desc = '') {
+    createSubLoader(desc) {
         if (this.isReleased) {
-            throw new Error('loadMgr is released');
+            throw new Error('loader is released');
         }
-        const loadMgr = new LoadMgr(desc);
-        loadMgr.parentLoadMgr = this;
-        this.subLoadMgrArr.push(loadMgr);
+        let loader = new Loader(desc);
+        loader.parentLoader = this;
+        this.subLoaderArr.push(loader);
+        return loader;
     }
 
-    load({
+    load(funcName, {
         url,
         type,
         desc,
         successCallback,
         failureCallback,
         progressCallback,
+        retryTimes,
+        retryTimeInterval
     }) {
         if (this.isReleased) {
-            throw new Error('loadMgr is released');
+            throw new Error('loader is released');
         }
         this.itemCount++;
-        const id = this.itemCount;
-        const loadItem = new LoadItem({
+        let id = this.itemCount;
+        let loaderItem = new LoaderItem({
+            id,
             url,
             type,
-            desc,
-            mgr: this
+            retryTimes,
+            retryTimeInterval,
+            loader
         });
-        loadItem.load({
-            successCallback: () => {
-                this.addLoadItemReference(loadItem);
-                if (this.isReleased || loadItem.isReleased) {
-                    this.doAfterTick(() => {
-                        this.removeLoadItemReference(loadItem);
-                        this.releaseResHandle();
-                    });
+        this.itemData[id] = loaderItem;
+
+        loaderItem.load(funcName, {
+            successCallback: (assets) => {
+                this.addLoaderItemReference(loaderItem);
+                if (this.isReleased || loaderItem.isReleased) {
+                    this.releasedLoaderItemHandle(loaderItem);
+                } else if (successCallback instanceof Function) {
+                    successCallback(assets);
                 }
             },
-            failureCallback,
-            progressCallback
+            failureCallback: (err) => {
+                if (this.isReleased) {
+                    if (failureCallback instanceof Function) {
+                        failureCallback(err);
+                    }
+                }
+            },
+            progressCallback: () => {
+                if (progressCallback instanceof Function) {
+                    progressCallback(completedCount, totalCount, item);
+                }
+            }
         });
-        this.itemData[id] = loadItem;
     }
 
-    addLoadItemReference(loadItem) {
-        const resReferenceCountData = this.rootLoadMgr.resReferenceCountData;
-        for (let url in loadItem.cacheResData) {
-            if (typeof resReferenceCountData[url] === 'number') {
-                resReferenceCountData[url]++;
+    releasedLoaderItemHandle(loaderItem) {
+        // 下一个 tick 再释放，以防释放到正在载入的资源
+        doAfterTick(() => {
+            this.removeLoaderItemReference(loaderItem);
+            this.assetsReferenceCountHandle();
+        });
+    }
+
+    addLoaderItemReference(loaderItem) {
+        let assetsData = loaderItem.assetsData;
+        let assetsReferenceCountData = this.rootLoader.assetsReferenceCountData;
+        Object.keys(assetsData).forEach((uuid) => {
+            if (assetsReferenceCountData[uuid] === undefiend) {
+                assetsReferenceCountData[uuid] = 0;
+            }
+            assetsReferenceCountData[uuid]++;
+        });
+    }
+
+    removeLoaderItemReference(loaderItem) {
+        let assetsData = loaderItem.assetsData;
+        let assetsReferenceCountData = this.rootLoader.assetsReferenceCountData;
+        Object.keys(assetsData).forEach((uuid) => {
+            if (assetsReferenceCountData[uuid] === undefiend) {
+                console.log(`${uuid} is not found`);
             } else {
-                resReferenceCountData[url] = 1;
-            }
-        }
-    }
-
-    removeLoadItemReference(loadItem) {
-        const resReferenceCountData = this.rootLoadMgr.resReferenceCountData;
-        for (let url in loadItem.cacheResData) {
-            if (typeof resReferenceCountData[url] === 'number') {
-                resReferenceCountData[url]--;
-                if (resReferenceCountData[url] < 0) {
-                    throw new Error('移除资源引用错误 引用计数 < 0');
+                assetsReferenceCountData[uuid]--;
+                if (assetsReferenceCountData[uuid] < 0) {
+                    console.log(`${uuid} count is < 0`);
                 }
-            } else {
-                throw new Error('移除资源引用错误');
             }
+        });
+    }
+
+    assetsReferenceCountHandle() {
+        let assetsReferenceCountData = this.rootLoader.assetsReferenceCountData;
+        let sceneAssetsData = this.rootLoader.sceneAssetsData;
+        let uuidArr = Object.keys(assetsReferenceCountData);
+        uuidArr.filter(uuid => assetsReferenceCountData[uuid] === 0 && !sceneAssetsData[uuid]);
+        if (uuidArr.length > 0) {
+            cc.loader.release(uuidArr);
         }
     }
 
-    releaseResHandle() {
-        const resReferenceCountData = this.rootLoadMgr.resReferenceCountData;
-        const sceneResData = this.rootLoadMgr.sceneResData;
-        let releaseUrlArr = [];
-        for (let url in resReferenceCountData) {
-            if (resReferenceCountData[url] === 0) {
-                if (!sceneResData[url]) {
-                    releaseUrlArr.push(url);
-                }
-                delete resReferenceCountData[url];
-            }
-        }
-        if (releaseUrlArr.length > 0) {
-            cc.loader.release(releaseUrlArr);
-        }
-    }
-
-    releaseResById(id) {
-        if (this.isReleased) {
-            return;
-        }
-        if (this.itemData[id]) {
-            this.removeLoadItemReference(this.itemData[id]);
-            this.itemData[id].release();
-            delete this.itemData[id];
-        }
-        this.releaseResHandle();
-    }
-
-    release() {
+    releaseAll() {
         if (this.isReleased) {
             return;
         }
         this.isReleased = true;
-        if (this.parentLoadMgr) {
-            this.parentLoadMgr.removeSubLoadMgr(this);
+        if (this.parentLoader) {
+            this.parentLoader.removeSubLoader(this);
         }
-        for (let id in this.itemData) {
-            this.releaseResById(id);
-        }
+        this.release(Object.keys(this.itemData));
         this.itemCount = 0;
-        this.subLoadMgrArr.forEach((subLoadMgr) => {
-            subLoadMgr.release();
+        this.subLoaderArr.forEach((loader) => {
+            loader.releaseAll();
         });
-        this.subLoadMgrArr = [];
+        this.subLoaderArr = [];
     }
 
-    removeSubLoadMgr(loadMgr) {
-        let index = this.subLoadMgrArr.indexOf(loadMgr);
-        if (index !== -1) {
-            this.subLoadMgrArr.splice(index, 1);
+    release(itemIdArr) {
+        if (this.isReleased) {
+            return;
         }
+        itemIdArr.forEach((itemId) => {
+            if (this.itemData[itemId]) {
+                this.removeLoaderItemReference(this.itemData[itemId]);
+                this.itemData[itemId].releaseAll();
+                delete this.itemData[itemId];
+            } else {
+                console.log(`loaderItem$(id) not found`);
+            }
+        });
+        this.assetsReferenceCountHandle();
+    }
+
+    removeSubLoader(loader) {
+        let index = this.subLoaderArr.indexOf(loader);
+        if (index !== -1) {
+            this.subLoaderArr.splice(index, 1);
+        }
+    }
+}
+
+class loaderItem {
+    constructor({
+        id, // 用于 loader 管理
+        url, // 资源路径
+        type = null, // 资源的类型
+        retryTimes = 0, // 重试次数
+        retryTimeInterval = 300, // 重试间隔， 单位 ms
+        desc = '', // 此次加载的描述
+        loader, // 资源加载管理者
+    }) {
+        this.id = id;
+        this.type = type;
+        this.retryTimes = retryTimes;
+        this.retryTimeInterval = retryTimeInterval;
+        this.desc = `LoaderItem<${desc}>`;
+        this.loader = loader;
+        this.url = url;
+        this.currentRetryTimes = 0;
+        this.assetsData = {};
+        this.isLoaded = false;
+        this.isReleased = false;
+    }
+
+    load(funcName, {
+        successCallback,
+        failureCallback,
+        progressCallback
+    }) {
+        let completedCallback = (err, assets) => {
+            if (err) {
+                if (this.currentRetryTimes <= this.retryTimes) {
+                    this.currentRetryTimes++;
+                    doAfterTick(() => {
+                        this.load(funcName, {
+                            successCallback,
+                            failureCallback,
+                            progressCallback
+                        });
+                    }, this.retryTimeInterval);
+                } else {
+                    this.isLoaded = true;
+                    if (failureCallback instanceof Function) {
+                        failureCallback(err);
+                    }
+                }
+            } else {
+                this.isLoaded = true;
+                if (!Array.isArray(assets)) {
+                    assets = [assets];
+                }
+                this.cacheAsset(assets);
+                if (successCallback instanceof Function) {
+                    successCallback(assets);
+                }
+            }
+        };
+        let args = [this.url];
+        if (this.type !== null) {
+            args.push(type);
+        }
+        if (progressCallback instanceof Function) {
+            args.push(progressCallback);
+        }
+        args.push(completedCallback);
+        cc.loader[funcName](...args);
+    }
+
+    cacheAssets(assets) {
+        assets.forEach((asset) => {
+            this.cacheAsset(asset);
+        });
+    }
+
+    cacheAsset(asset) {
+        if (!asset._uuid) {
+            if (asset.url) {
+                asset._uuid = asset.url;
+            }
+        }
+        let uuidArr = cc.loader.getDependsRecursively(asset);
+        uuidArr.forEach((uuid) => {
+            if (!this.assetsData[uuid]) {
+                this.assetsData[uuid] = true;
+            }
+        });
+    }
+
+    release() {
+        this.isReleased = true;
+        this.loader = null;
+        this.assetData = {};
     }
 }
