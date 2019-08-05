@@ -31,14 +31,14 @@
               "value": 1
             }
           ],
-          "rotation": [
+          "angle": [
             {
               "frame": 0,
               "value": 0
             },
             {
               "frame": 0.5,
-              "value": 360
+              "value": -360
             }
           ]
         }

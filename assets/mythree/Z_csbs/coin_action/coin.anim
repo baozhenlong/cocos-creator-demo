@@ -39,14 +39,14 @@
               "value": 1
             }
           ],
-          "rotation": [
+          "angle": [
             {
               "frame": 0.25,
-              "value": 240
+              "value": -240
             },
             {
               "frame": 0.5,
-              "value": 360
+              "value": -360
             }
           ]
         }
