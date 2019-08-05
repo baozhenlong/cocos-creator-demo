@@ -243,7 +243,7 @@ class loaderItem {
                 if (!Array.isArray(assets)) {
                     assets = [assets];
                 }
-                this.cacheAsset(assets);
+                this.cacheAssets(assets);
                 if (successCallback instanceof Function) {
                     successCallback(assets);
                 }
