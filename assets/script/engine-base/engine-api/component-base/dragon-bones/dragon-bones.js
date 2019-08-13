@@ -41,7 +41,7 @@ cc.Class({
         {
             // 当前播放的动画名称 --- String
             // 默认为 ''
-            console.log('animationName', this.dragonBone.animationName === ''); // true
+            console.log('animationName', this.dragonBone.animationName);
         }
         // timeScale
         {
@@ -101,6 +101,16 @@ cc.Class({
             // 参数 node (Node) node || new cc.Node()
             // 返回值 dragonBones.ArmatureDisplay
         }
+    },
+
+    // comp.getAnimationNames(armatureName)
+    getAnimNames() {
+        // 获取指定的 armature 的所有动画名称
+        // 参数 armatureName (String)
+        // 返回值 animationNames[]
+        let armature = this.dragonBone.armature();
+        let animNames = this.dragonBone.getAnimationNames(armature.name);
+        console.log('animNames', animNames);
     },
 
     // playAnimation(animName, playTimes = -1)
@@ -182,6 +192,7 @@ cc.Class({
     playWalk() {
         this.walkState = this.dragonBone.playAnimation('walk', -1);
         console.log('walkState', this.walkState);
+        console.log('animationName', this.dragonBone.animationName);
     },
 
     stopWalk() {
