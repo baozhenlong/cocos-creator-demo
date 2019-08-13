@@ -6,16 +6,14 @@ cc.Class({
         rotatianSpeed: 10
     },
 
-    // onLoad() {
-
-    // },
-
-    // start() {
-
-    // },
+    // 旋转
+    printAngle() {
+        // node.angle
+        // 节点的旋转角度，正值为逆时针方向
+    },
 
     update(dt) {
         this.node.x += dt * this.moveSpeed;
-        this.node.rotation += dt * this.rotatianSpeed;
+        this.node.angle += dt * this.rotatianSpeed;
     },
 });
