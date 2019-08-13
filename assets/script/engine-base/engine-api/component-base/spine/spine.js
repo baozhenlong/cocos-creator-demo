@@ -1,13 +1,9 @@
-// 骨骼动画
+// spine 骨骼动画
 cc.Class({
     extends: cc.Component,
 
     properties: {
-        spineNode: cc.Node
-    },
-
-    onLoad() {
-        this.spine = this.spineNode.getComponent(sp.Skeleton);
+        spine: sp.Skeleton
     },
 
     // 组件属性
