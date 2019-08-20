@@ -384,9 +384,6 @@
     "_components": [
       {
         "__id__": 11
-      },
-      {
-        "__id__": 12
       }
     ],
     "_prefab": null,
@@ -433,16 +430,6 @@
     "_rotationX": 0,
     "_rotationY": 0,
     "_id": "1a0VIqpV5PNYmQcT9eG0Xt"
-  },
-  {
-    "__type__": "b01b5KrrklISqwaD7Wg9gyB",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 10
-    },
-    "_enabled": true,
-    "_id": "bfGTWv/JZGqIYHDBSnK/kV"
   },
   {
     "__type__": "7f236RXIQNGrqV3YgBVt8e+",
