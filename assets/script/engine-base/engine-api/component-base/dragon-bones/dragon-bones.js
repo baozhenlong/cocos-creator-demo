@@ -107,7 +107,7 @@ cc.Class({
     getAnimNames() {
         // 获取指定的 armature 的所有动画名称
         // 参数 armatureName (String)
-        // 返回值 animationNames[]
+        // 返回值 animationNames[String]
         let armature = this.dragonBone.armature();
         let animNames = this.dragonBone.getAnimationNames(armature.name);
         console.log('animNames', animNames);
