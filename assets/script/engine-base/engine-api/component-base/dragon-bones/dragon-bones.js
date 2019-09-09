@@ -74,7 +74,33 @@ cc.Class({
             {
                 // animation (dragonBones.Animation)
                 {
-                    // 获得动画控制器
+                    // 动画控制器，用来播放动画数据，管理动画状态
+                    // animation.play(animationName: string | null, playTimes:number): dragonBones.AnimationState | null
+                    {
+                        // 播放动画
+                        // 参数 animationName ：动画数据名称，如果未设置，则播放默认动画，或将暂停状态切换为播放状态(重新播放)，或重新播放上一个正在播放的动画
+                        // 参数 playTimes ：播放次数；[-1 ：使用动画数据默认值； 0 ：无限循环播放； [1-N] ：循环播放 N 次]
+                        // 返回值：对应的动画数据
+                    }
+                    // animation.stop(animationName: string | null): void
+                    {
+                        // 暂停播放动画
+                        // 参数 animationName 动画状态的名称，如果未设置，则暂停所有动画状态
+                    }
+                    // animation.reset(): void
+                    {
+                        // 清除所有动画状态
+                    }
+                    // 停止动画
+                    {
+                        // animation.gotoAndStopByFrame(animationName: string, frame: number): dragonBones.AnimationState | null
+                        {
+                            // 将动画停止到指定的帧
+                            // 参数 animationName ：动画数据的名称
+                            // 参数 frame ：帧数
+                            // 返回值：对应的动画状态
+                        }
+                    }
                 }
             }
             // 方法
@@ -114,6 +140,7 @@ cc.Class({
     },
 
     // playAnimation(animName, playTimes = -1)
+    // 实际调用的是 animation.play()
     // 播放指定的动画；从头播放
     // 参数 animName (String) 指定播放动画的名称
     // 参数 playTimes (Number) 指定播放动画的次数
@@ -150,6 +177,7 @@ cc.Class({
         }
         // dragonBones.AnimationState
         {
+            // 动画状态，播放动画时产生，可以对每个播放的动画进行更细致的控制和调节
             // 属性
             {
                 // isPlaying (boolean) 是否正在播放，只读
@@ -195,7 +223,12 @@ cc.Class({
         console.log('animationName', this.dragonBone.animationName);
     },
 
-    stopWalk() {
+    playWalkByAnimation() {
+        let animation = this.dragonBone.armature().animation;
+        this.walkState = animation.play('walk', -1);
+    },
+
+    stopWalkByAnimationState() {
         if (this.walkState) {
             let isPlaying = this.walkState.isPlaying;
             if (isPlaying) {
@@ -203,11 +236,20 @@ cc.Class({
                 this.walkState.stop();
             } else {
                 console.log('is stop to walk');
-                this.walkState.play();
             }
         } else {
             this.playWalk();
         }
+    },
+
+    stopWalkByAnimation() {
+        let animation = this.dragonBone.armature().animation;
+        animation.stop('walk');
+    },
+
+    stopWalkByAnimationGotoFrame() {
+        let animation = this.dragonBone.armature().animation;
+        animation.gotoAndStopByFrame('walk', 0);
     },
 
     playWalkFadeInNone() {
