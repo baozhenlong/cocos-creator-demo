@@ -9,12 +9,31 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        dragonBone: dragonBones.ArmatureDisplay
+        dragonBones: dragonBones.ArmatureDisplay
     },
 
     onLoad() {
         this.printComponentProperties();
         this.printApi();
+        this.dragonBones.playAnimation('walk', 0);
+    },
+
+    onEnable() {
+        this.dragonBones.on(dragonBones.EventObject.COMPLETE, this.onComplete, this);
+        this.dragonBones.on(dragonBones.EventObject.LOOP_COMPLETE, this.onLoopComplete, this);
+    },
+
+    onDisable() {
+        this.dragonBones.off(dragonBones.EventObject.COMPLETE, this.onComplete, this);
+        this.dragonBones.off(dragonBones.EventObject.LOOP_COMPLETE, this.onLoopComplete, this);
+    },
+
+    onComplete() {
+        console.log('播放完成');
+    },
+
+    onLoopComplete() {
+        console.log('动画循环播放完成一次');
     },
 
     // 组件
@@ -25,29 +44,29 @@ cc.Class({
         // dragonAsset
         {
             // 骨骼数据
-            console.log('骨骼数据', typeof this.dragonBone.dragonAsset); // object
+            console.log('骨骼数据', typeof this.dragonBones.dragonAsset); // object
         }
         // dragonAtlasAsset 
         {
             // 图集数据
-            console.log('图集数据', typeof this.dragonBone.dragonAtlasAsset); // object
+            console.log('图集数据', typeof this.dragonBones.dragonAtlasAsset); // object
         }
         // armatureName
         {
             // 当前的 Armature 名称 --- String
-            console.log('armatureName', this.dragonBone.armatureName); // mecha_1502b
+            console.log('armatureName', this.dragonBones.armatureName); // mecha_1502b
         }
         // animationName
         {
             // 当前播放的动画名称 --- String
             // 默认为 ''
-            console.log('animationName', this.dragonBone.animationName);
+            console.log('animationName', this.dragonBones.animationName);
         }
         // timeScale
         {
             // 当前播放的动画名称 --- Number
             // 默认为 1
-            console.log('timeScale', this.dragonBone.timeScale);
+            console.log('timeScale', this.dragonBones.timeScale);
         }
         // playTimes
         {
@@ -56,7 +75,7 @@ cc.Class({
             // 0 ：表示无限循环
             // >0 ：表示循环次数
             // 默认为 -1
-            console.log('playTimes', this.dragonBone.playTimes);
+            console.log('playTimes', this.dragonBones.playTimes);
         }
     },
 
@@ -66,7 +85,7 @@ cc.Class({
         // comp.armature()
         // 获取 ArmatureDisplay 当前使用的 Armature 对象
         // 返回值 dragonBones.Armature 骨架，是骨骼动画系统的核心，由显示容器、骨骼、插槽、动画、事件系统构成
-        this.currentArmature = this.dragonBone.armature();
+        this.currentArmature = this.dragonBones.armature();
         console.log('armature', this.currentArmature);
         // Armature 对象
         {
@@ -134,8 +153,8 @@ cc.Class({
         // 获取指定的 armature 的所有动画名称
         // 参数 armatureName (String)
         // 返回值 animationNames[String]
-        let armature = this.dragonBone.armature();
-        let animNames = this.dragonBone.getAnimationNames(armature.name);
+        let armature = this.dragonBones.armature();
+        let animNames = this.dragonBones.getAnimationNames(armature.name);
         console.log('animNames', animNames);
     },
 
@@ -218,13 +237,13 @@ cc.Class({
     },
 
     playWalk() {
-        this.walkState = this.dragonBone.playAnimation('walk', -1);
+        this.walkState = this.dragonBones.playAnimation('walk', -1);
         console.log('walkState', this.walkState);
-        console.log('animationName', this.dragonBone.animationName);
+        console.log('animationName', this.dragonBones.animationName);
     },
 
     playWalkByAnimation() {
-        let animation = this.dragonBone.armature().animation;
+        let animation = this.dragonBones.armature().animation;
         this.walkState = animation.play('walk', -1);
     },
 
@@ -243,22 +262,22 @@ cc.Class({
     },
 
     stopWalkByAnimation() {
-        let animation = this.dragonBone.armature().animation;
+        let animation = this.dragonBones.armature().animation;
         animation.stop('walk');
     },
 
     stopWalkByAnimationGotoFrame() {
-        let animation = this.dragonBone.armature().animation;
+        let animation = this.dragonBones.armature().animation;
         animation.gotoAndStopByFrame('walk', 0);
     },
 
     playWalkFadeInNone() {
-        let armature = this.dragonBone.armature();
+        let armature = this.dragonBones.armature();
         armature.animation.fadeIn('walk', -1, -1, 0, 'walkGroup', dragonBones.AnimationFadeOutMode.None);
     },
 
     playWalkFadeInAll() {
-        let armature = this.dragonBone.armature();
+        let armature = this.dragonBones.armature();
         armature.animation.fadeIn('walk', -1, -1, 0, 'walkGroup', dragonBones.AnimationFadeOutMode.All);
     }
 
