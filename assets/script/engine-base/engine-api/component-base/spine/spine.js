@@ -23,6 +23,7 @@ cc.Class({
     // 参数 animName (String) --- 动画名称
     // 参数 loop (Boolean) --- 是否循环
     // 返回值 trackEntry (sp.spine.TrackEntry) --- 一个 sp.spine.TrackEntry 对象
+    // fixme 使用不同的 trackIndex 会有动画叠加的视觉效果
     playAnim() {
         console.log('last animation property', this.spine.animation);
         let animNameArr = ['DDAO2', 'SJ2', 'JQ2', 'LC2', 'LZS2'];
@@ -43,15 +44,15 @@ cc.Class({
     // 返回值 trackEntry (sp.spine.TrackEntry) --- 一个 sp.spine.TrackEntry 对象
 
     playMultipleAnim() {
-        this.spine.clearTracks();
-        // console.log('last animation property', this.spine.animation);
-        this.spine.setAnimation(1, 'WQ2', true);
-        this.spine.addAnimation(2, 'JF1', false, 3);
-        // console.log('current animation property', this.spine.animation);
-        // 播放一次 JF2 并延迟 3 秒后，会播放一次 JF2
-        // fix me: 当连续使用 addAnimation 时，会出现奇奇怪怪的问题 （animation 属性未更新，setAnimation 被覆盖等）
-        // 可使用 clearTracks() 解决，但 animation 属性会丢失
-        // fix me： 连续切换 playAnim 、 playMultipleAnim 会出现动画卡住的现象
+        // this.spine.clearTracks();
+        // this.spine.clearTrack(0);
+        console.log('last animation property', this.spine.animation);
+        this.spine.setAnimation(0, 'WQ2', true);
+        this.spine.addAnimation(0, 'JF1', false, 3);
+        console.log('current animation property', this.spine.animation);
+        // 播放一次 JF2 并延迟 3 秒后，会播放一次 JF1
+        // fix me: 使用 addAnimation 时，会出现奇奇怪怪的问题 （animation 属性未更新）
+        // 使用 clearTrack clearTracks 会清空 spine.animation
     },
 
     // clearTrack(trackIndex)

@@ -109,6 +109,7 @@ cc.Class({
                     // animation.reset(): void
                     {
                         // 清除所有动画状态
+                        // 动画停止在当前帧
                     }
                     // 停止动画
                     {
@@ -279,6 +280,16 @@ cc.Class({
     playWalkFadeInAll() {
         let armature = this.dragonBones.armature();
         armature.animation.fadeIn('walk', -1, -1, 0, 'walkGroup', dragonBones.AnimationFadeOutMode.All);
+    },
+
+    resetAnim() {
+        let armature = this.dragonBones.armature();
+        armature.animation.reset();
+    },
+
+    gotoWalkFirstFrame() {
+        let armature = this.dragonBones.armature();
+        armature.animation.gotoAndStopByFrame('walk', 0);
     }
 
 });

@@ -48,8 +48,6 @@
       "width": 0,
       "height": 0
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -135,8 +133,6 @@
       "width": 1334,
       "height": 750
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -192,8 +188,6 @@
       "width": 1334,
       "height": 750
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -312,8 +306,6 @@
       "width": 420,
       "height": 419
     },
-    "_rotationX": 360,
-    "_rotationY": 360,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -326,7 +318,13 @@
     "_localZOrder": 0,
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
-    "groupIndex": 0
+    "groupIndex": 0,
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": -360
+    }
   },
   {
     "__type__": "cc.Widget",
@@ -432,8 +430,6 @@
       "width": 357,
       "height": 357
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1.5,
     "_scaleY": 1.5,
     "_position": {
@@ -552,8 +548,6 @@
       "width": 357,
       "height": 357
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -672,8 +666,6 @@
       "width": 528,
       "height": 528
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -799,8 +791,6 @@
       "width": 420,
       "height": 300
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -856,8 +846,6 @@
       "width": 420,
       "height": 300
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -973,8 +961,6 @@
       "width": 410,
       "height": 175
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -1064,8 +1050,6 @@
       "width": 46,
       "height": 46
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1,
     "_scaleY": 1,
     "_position": {
@@ -1192,8 +1176,6 @@
       "width": 25,
       "height": 17
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1.01,
     "_scaleY": 1.01,
     "_position": {
@@ -1283,8 +1265,6 @@
       "width": 25,
       "height": 17
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1.5,
     "_scaleY": 1.5,
     "_position": {
@@ -1374,8 +1354,6 @@
       "width": 15,
       "height": 23
     },
-    "_rotationX": 0,
-    "_rotationY": 0,
     "_scaleX": 1.5,
     "_scaleY": 1.5,
     "_position": {
@@ -1465,8 +1443,6 @@
       "width": 70,
       "height": 70
     },
-    "_rotationX": 138.0566,
-    "_rotationY": 138.0597,
     "_scaleX": 1.1,
     "_scaleY": 1.1,
     "_position": {
@@ -1479,7 +1455,13 @@
     "_localZOrder": 0,
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
-    "groupIndex": 0
+    "groupIndex": 0,
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 138.0566,
+      "y": 138.0597,
+      "z": 0
+    }
   },
   {
     "__type__": "cc.Sprite",
@@ -1556,8 +1538,6 @@
       "width": 70,
       "height": 70
     },
-    "_rotationX": 183.6526,
-    "_rotationY": 183.6568,
     "_scaleX": 1.5,
     "_scaleY": 1.5,
     "_position": {
@@ -1570,7 +1550,13 @@
     "_localZOrder": 0,
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
-    "groupIndex": 0
+    "groupIndex": 0,
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 183.6526,
+      "y": 183.6568,
+      "z": 0
+    }
   },
   {
     "__type__": "cc.Sprite",
@@ -1647,8 +1633,6 @@
       "width": 70,
       "height": 70
     },
-    "_rotationX": 161.7166,
-    "_rotationY": 161.7166,
     "_scaleX": 0.7,
     "_scaleY": 0.7,
     "_position": {
@@ -1661,7 +1645,13 @@
     "_localZOrder": 0,
     "_globalZOrder": 0,
     "_opacityModifyRGB": false,
-    "groupIndex": 0
+    "groupIndex": 0,
+    "_eulerAngles": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": -161.7166
+    }
   },
   {
     "__type__": "cc.Sprite",
