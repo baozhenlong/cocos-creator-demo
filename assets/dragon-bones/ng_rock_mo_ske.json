@@ -1,0 +1,281 @@
+{
+    "frameRate": 30,
+    "name": "ng_rock_mo",
+    "version": "5.5",
+    "compatibleVersion": "5.5",
+    "armature": [{
+        "type": "Armature",
+        "frameRate": 30,
+        "name": "ng_rock_mo_mov",
+        "aabb": {
+            "x": 21.05,
+            "y": -780.9,
+            "width": 98,
+            "height": 440
+        },
+        "bone": [{
+            "name": "root"
+        }, {
+            "inheritScale": false,
+            "name": "ng_rock_mo2",
+            "parent": "root",
+            "transform": {
+                "x": 70.05,
+                "y": -615.9
+            }
+        }, {
+            "inheritScale": false,
+            "name": "ng_rock_mo3",
+            "parent": "root",
+            "transform": {
+                "x": 70.05,
+                "y": -505.9
+            }
+        }, {
+            "inheritScale": false,
+            "name": "ng_rock_mo4",
+            "parent": "root",
+            "transform": {
+                "x": 70.05,
+                "y": -395.9
+            }
+        }, {
+            "inheritScale": false,
+            "name": "ng_rock_mo1",
+            "parent": "root",
+            "transform": {
+                "x": 70.05,
+                "y": -725.9
+            }
+        }],
+        "slot": [{
+            "name": "ng_rock_mo4",
+            "parent": "ng_rock_mo4"
+        }, {
+            "name": "ng_rock_mo3",
+            "parent": "ng_rock_mo3"
+        }, {
+            "name": "ng_rock_mo2",
+            "parent": "ng_rock_mo2"
+        }, {
+            "name": "ng_rock_mo1",
+            "parent": "ng_rock_mo1"
+        }],
+        "skin": [{
+            "slot": [{
+                "name": "ng_rock_mo2",
+                "display": [{
+                    "name": "_mov/ng_rock"
+                }]
+            }, {
+                "name": "ng_rock_mo1",
+                "display": [{
+                    "name": "_mov/ng_rock"
+                }]
+            }, {
+                "name": "ng_rock_mo4",
+                "display": [{
+                    "name": "_mov/ng_rock"
+                }]
+            }, {
+                "name": "ng_rock_mo3",
+                "display": [{
+                    "name": "_mov/ng_rock"
+                }]
+            }]
+        }],
+        "animation": [{
+            "duration": 0,
+            "name": "ng_rock_stop"
+        }, {
+            "duration": 54,
+            "name": "ng_rock_mo",
+            "bone": [{
+                "name": "ng_rock_mo4",
+                "translateFrame": [{
+                    "duration": 10,
+                    "tweenEasing": 0
+                }, {
+                    "tweenEasing": 0,
+                    "y": 140
+                }, {
+                    "duration": 19,
+                    "tweenEasing": 0,
+                    "x": -70.05,
+                    "y": 395.9
+                }, {
+                    "tweenEasing": 0,
+                    "y": -408
+                }, {
+                    "duration": 6,
+                    "tweenEasing": 0,
+                    "y": -408
+                }, {
+                    "duration": 2,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 4,
+                    "tweenEasing": 0,
+                    "y": -3
+                }, {
+                    "duration": 11
+                }]
+            }, {
+                "name": "ng_rock_mo3",
+                "translateFrame": [{
+                    "duration": 3,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 3,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 8,
+                    "tweenEasing": 0,
+                    "y": 27.1
+                }, {
+                    "tweenEasing": 0,
+                    "y": 240
+                }, {
+                    "duration": 19,
+                    "tweenEasing": 0,
+                    "x": -70.05,
+                    "y": 505.9
+                }, {
+                    "tweenEasing": 0,
+                    "y": -298
+                }, {
+                    "duration": 6,
+                    "tweenEasing": 0,
+                    "y": -298
+                }, {
+                    "duration": 2,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 3,
+                    "tweenEasing": 0,
+                    "y": -3
+                }, {
+                    "duration": 8
+                }]
+            }, {
+                "name": "ng_rock_mo2",
+                "translateFrame": [{
+                    "duration": 6,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 3,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 9,
+                    "tweenEasing": 0,
+                    "y": 27.1
+                }, {
+                    "tweenEasing": 0,
+                    "y": 340
+                }, {
+                    "duration": 19,
+                    "tweenEasing": 0,
+                    "x": -70.05,
+                    "y": 615.9
+                }, {
+                    "tweenEasing": 0,
+                    "y": -188
+                }, {
+                    "duration": 6,
+                    "tweenEasing": 0,
+                    "y": -188
+                }, {
+                    "duration": 2,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 3,
+                    "tweenEasing": 0,
+                    "y": -3
+                }, {
+                    "duration": 4
+                }]
+            }, {
+                "name": "ng_rock_mo1",
+                "translateFrame": [{
+                    "duration": 9,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 3,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 10,
+                    "tweenEasing": 0,
+                    "y": 47.1
+                }, {
+                    "tweenEasing": 0,
+                    "y": 440
+                }, {
+                    "duration": 19,
+                    "tweenEasing": 0,
+                    "x": -70.05,
+                    "y": 725.9
+                }, {
+                    "tweenEasing": 0,
+                    "y": -188
+                }, {
+                    "duration": 6,
+                    "tweenEasing": 0,
+                    "y": -188
+                }, {
+                    "duration": 2,
+                    "tweenEasing": 0
+                }, {
+                    "duration": 3,
+                    "tweenEasing": 0,
+                    "y": -3
+                }, {
+                    "duration": 0
+                }]
+            }],
+            "slot": [{
+                "name": "ng_rock_mo4",
+                "displayFrame": [{
+                    "duration": 11
+                }, {
+                    "duration": 19,
+                    "value": -1
+                }, {
+                    "duration": 24
+                }]
+            }, {
+                "name": "ng_rock_mo3",
+                "displayFrame": [{
+                    "duration": 15
+                }, {
+                    "duration": 19,
+                    "value": -1
+                }, {
+                    "duration": 20
+                }]
+            }, {
+                "name": "ng_rock_mo2",
+                "displayFrame": [{
+                    "duration": 19
+                }, {
+                    "duration": 19,
+                    "value": -1
+                }, {
+                    "duration": 16
+                }]
+            }, {
+                "name": "ng_rock_mo1",
+                "displayFrame": [{
+                    "duration": 23
+                }, {
+                    "duration": 19,
+                    "value": -1
+                }, {
+                    "duration": 12
+                }]
+            }]
+        }],
+        "defaultActions": [{
+            "gotoAndPlay": "ng_rock_stop"
+        }]
+    }]
+}

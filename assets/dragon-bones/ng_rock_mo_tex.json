@@ -1,0 +1,13 @@
+{
+    "width": 128,
+    "SubTexture": [{
+        "width": 98,
+        "y": 1,
+        "height": 110,
+        "name": "_mov/ng_rock",
+        "x": 1
+    }],
+    "height": 128,
+    "name": "ng_rock_mo",
+    "imagePath": "ng_rock_mo_tex.png"
+}

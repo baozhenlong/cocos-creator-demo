@@ -1,0 +1,7 @@
+{
+  "ver": "1.0.0",
+  "uuid": "39b1e0e0-02eb-4aec-b375-acf0cbcfa79e",
+  "atlasJson": "{\r\n    \"width\": 128,\r\n    \"SubTexture\": [{\r\n        \"width\": 98,\r\n        \"y\": 1,\r\n        \"height\": 110,\r\n        \"name\": \"_mov/ng_rock\",\r\n        \"x\": 1\r\n    }],\r\n    \"height\": 128,\r\n    \"name\": \"ng_rock_mo\",\r\n    \"imagePath\": \"ng_rock_mo_tex.png\"\r\n}",
+  "texture": "f66425af-4320-4e2e-88b6-7fc6e20db49c",
+  "subMetas": {}
+}

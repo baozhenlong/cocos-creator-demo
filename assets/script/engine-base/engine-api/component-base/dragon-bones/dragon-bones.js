@@ -9,13 +9,16 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        dragonBones: dragonBones.ArmatureDisplay
+        dragonBones: dragonBones.ArmatureDisplay,
+        slateDB: dragonBones.ArmatureDisplay
     },
 
     onLoad() {
         this.printComponentProperties();
         this.printApi();
         this.dragonBones.playAnimation('walk', 0);
+        this.logBone();
+        this.logSlot();
     },
 
     onEnable() {
@@ -26,6 +29,19 @@ cc.Class({
     onDisable() {
         this.dragonBones.off(dragonBones.EventObject.COMPLETE, this.onComplete, this);
         this.dragonBones.off(dragonBones.EventObject.LOOP_COMPLETE, this.onLoopComplete, this);
+    },
+
+    update() {
+        // this.logBone();
+    },
+
+    logBone() {
+        cc.log('骨骼', this.slateDB.armature().getBone('ng_rock_mo4').global.y);
+    },
+
+    logSlot() {
+        // dragonBones.armature().getSlot(slotName: string): dragonBones.Slot
+        cc.log('插槽', this.slateDB.armature().getSlot('ng_rock_mo4').globalTransformMatrix.tx);
     },
 
     onComplete() {
