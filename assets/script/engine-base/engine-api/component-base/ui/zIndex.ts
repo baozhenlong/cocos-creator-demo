@@ -26,7 +26,7 @@ export default class ZIndex extends cc.Component {
         // this.symbolNodeArr[0].zIndex = this.symbolNodeArr.length - 1 + 2;
         // this.symbolNodeArr[4].zIndex = this.symbolNodeArr.length - 1 + 2;
 
-        // 调用 setSiblingIndex 和 zIndex
+        // 调用 setSiblingIndex 和 zIndex 都会改变 Layout 的布局
         this.logZIndex();
     }
 
