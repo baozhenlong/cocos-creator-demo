@@ -4,7 +4,8 @@ cc.Class({
     properties: {
         rootNode: cc.Node,
         followedNode: cc.Node,
-        actionNode: cc.Node
+        actionNode: cc.Node,
+        particleNode: cc.Node
     },
 
     onLoad() {
@@ -104,6 +105,25 @@ cc.Class({
         }
         let inexistentAction = this.actionNode.getActionByTag(1);
         console.log('inexistentAction', inexistentAction); // null
-    }
+    },
 
+    testActiveAndPos() {
+        // cc.log('false 前粒子位置', this.particleNode.getPosition());
+        // this.particleNode.getComponent(cc.ParticleSystem).resetSystem();
+
+        // 改变粒子位置，上次发射出去还存在的粒子会影响视觉效果
+
+        // this.particleNode.active = false;
+        let x = Math.random() * 400;
+        let y = Math.random() * 400;
+        this.particleNode.setPosition(x, y);
+        // cc.log('false 后粒子位置', this.particleNode.getPosition());
+        // this.scheduleOnce(() => {
+        //     // this.particleNode.active = true;
+        // }, 1);
+    },
+
+    // update() {
+    //     cc.log('粒子位置', this.particleNode.getPosition());
+    // }
 });
