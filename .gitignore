@@ -13,6 +13,7 @@ packages/
 .DS_Store
 ehthumbs.db
 Thumbs.db
+creator.d.ts
 
 *.log
 *.sql
