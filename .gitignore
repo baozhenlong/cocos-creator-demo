@@ -3,6 +3,7 @@ temp/
 local/
 build/
 packages/
+settings
 
 *.sln
 *.csproj
@@ -14,6 +15,8 @@ packages/
 ehthumbs.db
 Thumbs.db
 creator.d.ts
+project.json
+jsconfig.json
 
 *.log
 *.sql
@@ -22,4 +25,3 @@ creator.d.ts
 .idea/
 *.err
 *.err.meta
-settings/services.json
