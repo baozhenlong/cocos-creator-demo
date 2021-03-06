@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "lib": ["dom", "es6", "es2015.promise", "ES2017"],
+        "target": "es6",
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "outDir": "temp/test"
+    },
+    "exclude": [
+        "node_modules",
+        "library",
+        "local",
+        "temp",
+        "build",
+        "settings"
+    ]
+}

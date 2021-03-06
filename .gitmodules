@@ -1,0 +1,3 @@
+[submodule "cocos-creator"]
+	path = cocos-creator
+	url = https://github.com/baozhenlong/cocos-creator.git
